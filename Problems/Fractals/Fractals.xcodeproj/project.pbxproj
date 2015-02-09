@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42A72E781A885A91000CAE3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A72E771A885A91000CAE3B /* AppDelegate.swift */; };
+		42A72E7A1A885A91000CAE3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A72E791A885A91000CAE3B /* Images.xcassets */; };
+		42A72E7D1A885A91000CAE3B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A72E7B1A885A91000CAE3B /* MainMenu.xib */; };
+		42A72E891A885A91000CAE3B /* FractalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A72E881A885A91000CAE3B /* FractalsTests.swift */; };
+		42A72E951A8878AF000CAE3B /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A72E921A8878AF000CAE3B /* FractalView.swift */; };
+		42A72E961A8878AF000CAE3B /* MondrianFractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A72E931A8878AF000CAE3B /* MondrianFractalView.swift */; };
+		42A72E971A8878AF000CAE3B /* TriangleFractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A72E941A8878AF000CAE3B /* TriangleFractalView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42A72E831A885A91000CAE3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42A72E6A1A885A91000CAE3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42A72E711A885A91000CAE3B;
+			remoteInfo = Fractals;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42A72E721A885A91000CAE3B /* Fractals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A72E761A885A91000CAE3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A72E771A885A91000CAE3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42A72E791A885A91000CAE3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		42A72E7C1A885A91000CAE3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		42A72E821A885A91000CAE3B /* FractalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A72E871A885A91000CAE3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A72E881A885A91000CAE3B /* FractalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalsTests.swift; sourceTree = "<group>"; };
+		42A72E921A8878AF000CAE3B /* FractalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalView.swift; sourceTree = "<group>"; };
+		42A72E931A8878AF000CAE3B /* MondrianFractalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MondrianFractalView.swift; sourceTree = "<group>"; };
+		42A72E941A8878AF000CAE3B /* TriangleFractalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleFractalView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42A72E6F1A885A91000CAE3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A72E7F1A885A91000CAE3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42A72E691A885A91000CAE3B = {
+			isa = PBXGroup;
+			children = (
+				42A72E741A885A91000CAE3B /* Fractals */,
+				42A72E851A885A91000CAE3B /* FractalsTests */,
+				42A72E731A885A91000CAE3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42A72E731A885A91000CAE3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42A72E721A885A91000CAE3B /* Fractals.app */,
+				42A72E821A885A91000CAE3B /* FractalsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42A72E741A885A91000CAE3B /* Fractals */ = {
+			isa = PBXGroup;
+			children = (
+				42A72E771A885A91000CAE3B /* AppDelegate.swift */,
+				42A72E921A8878AF000CAE3B /* FractalView.swift */,
+				42A72E941A8878AF000CAE3B /* TriangleFractalView.swift */,
+				42A72E931A8878AF000CAE3B /* MondrianFractalView.swift */,
+				42A72E791A885A91000CAE3B /* Images.xcassets */,
+				42A72E7B1A885A91000CAE3B /* MainMenu.xib */,
+				42A72E751A885A91000CAE3B /* Supporting Files */,
+			);
+			path = Fractals;
+			sourceTree = "<group>";
+		};
+		42A72E751A885A91000CAE3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42A72E761A885A91000CAE3B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42A72E851A885A91000CAE3B /* FractalsTests */ = {
+			isa = PBXGroup;
+			children = (
+				42A72E881A885A91000CAE3B /* FractalsTests.swift */,
+				42A72E861A885A91000CAE3B /* Supporting Files */,
+			);
+			path = FractalsTests;
+			sourceTree = "<group>";
+		};
+		42A72E861A885A91000CAE3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42A72E871A885A91000CAE3B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42A72E711A885A91000CAE3B /* Fractals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A72E8C1A885A91000CAE3B /* Build configuration list for PBXNativeTarget "Fractals" */;
+			buildPhases = (
+				42A72E6E1A885A91000CAE3B /* Sources */,
+				42A72E6F1A885A91000CAE3B /* Frameworks */,
+				42A72E701A885A91000CAE3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fractals;
+			productName = Fractals;
+			productReference = 42A72E721A885A91000CAE3B /* Fractals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42A72E811A885A91000CAE3B /* FractalsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A72E8F1A885A91000CAE3B /* Build configuration list for PBXNativeTarget "FractalsTests" */;
+			buildPhases = (
+				42A72E7E1A885A91000CAE3B /* Sources */,
+				42A72E7F1A885A91000CAE3B /* Frameworks */,
+				42A72E801A885A91000CAE3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A72E841A885A91000CAE3B /* PBXTargetDependency */,
+			);
+			name = FractalsTests;
+			productName = FractalsTests;
+			productReference = 42A72E821A885A91000CAE3B /* FractalsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42A72E6A1A885A91000CAE3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Rogelio Gudino";
+				TargetAttributes = {
+					42A72E711A885A91000CAE3B = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					42A72E811A885A91000CAE3B = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 42A72E711A885A91000CAE3B;
+					};
+				};
+			};
+			buildConfigurationList = 42A72E6D1A885A91000CAE3B /* Build configuration list for PBXProject "Fractals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42A72E691A885A91000CAE3B;
+			productRefGroup = 42A72E731A885A91000CAE3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42A72E711A885A91000CAE3B /* Fractals */,
+				42A72E811A885A91000CAE3B /* FractalsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42A72E701A885A91000CAE3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A72E7A1A885A91000CAE3B /* Images.xcassets in Resources */,
+				42A72E7D1A885A91000CAE3B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A72E801A885A91000CAE3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42A72E6E1A885A91000CAE3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A72E951A8878AF000CAE3B /* FractalView.swift in Sources */,
+				42A72E781A885A91000CAE3B /* AppDelegate.swift in Sources */,
+				42A72E971A8878AF000CAE3B /* TriangleFractalView.swift in Sources */,
+				42A72E961A8878AF000CAE3B /* MondrianFractalView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A72E7E1A885A91000CAE3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A72E891A885A91000CAE3B /* FractalsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A72E841A885A91000CAE3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42A72E711A885A91000CAE3B /* Fractals */;
+			targetProxy = 42A72E831A885A91000CAE3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42A72E7B1A885A91000CAE3B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42A72E7C1A885A91000CAE3B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42A72E8A1A885A91000CAE3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42A72E8B1A885A91000CAE3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		42A72E8D1A885A91000CAE3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fractals/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42A72E8E1A885A91000CAE3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fractals/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		42A72E901A885A91000CAE3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FractalsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fractals.app/Contents/MacOS/Fractals";
+			};
+			name = Debug;
+		};
+		42A72E911A885A91000CAE3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FractalsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fractals.app/Contents/MacOS/Fractals";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42A72E6D1A885A91000CAE3B /* Build configuration list for PBXProject "Fractals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A72E8A1A885A91000CAE3B /* Debug */,
+				42A72E8B1A885A91000CAE3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A72E8C1A885A91000CAE3B /* Build configuration list for PBXNativeTarget "Fractals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A72E8D1A885A91000CAE3B /* Debug */,
+				42A72E8E1A885A91000CAE3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42A72E8F1A885A91000CAE3B /* Build configuration list for PBXNativeTarget "FractalsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A72E901A885A91000CAE3B /* Debug */,
+				42A72E911A885A91000CAE3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42A72E6A1A885A91000CAE3B /* Project object */;
+}
