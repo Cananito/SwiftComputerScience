@@ -1,6 +1,6 @@
 //
 //  LinkedList.swift
-//  DataStructures
+//  LinkedList
 //
 //  Created by Rogelio Gudino on 2/13/15.
 //

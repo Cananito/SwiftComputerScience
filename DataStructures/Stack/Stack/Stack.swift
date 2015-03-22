@@ -1,6 +1,6 @@
 //
 //  Stack.swift
-//  CananitoSwift
+//  Stack
 //
 //  Created by Rogelio Gudino on 7/20/14.
 //  Copyright (c) 2014 Cananito. All rights reserved.
