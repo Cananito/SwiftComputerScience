@@ -6,27 +6,33 @@
 //  Copyright (c) 2014 Cananito. All rights reserved.
 //
 
-public class Queue<T> {
-    private var objectsArray = Array<T>()
+public struct Queue<T> {
+    private var array = Array<T>()
     
     public init() {
     }
     
+    public init(elements: [T]) {
+        self.array = elements
+    }
+    
     public func count() -> Int {
-        return self.objectsArray.count
+        return self.array.count
     }
     
-    public func peekObject() -> T {
-        return self.objectsArray[0]
+    public func peek() -> T {
+        return self.array[0]
     }
     
-    public func enqueueObject(object: T) {
-        self.objectsArray.append(object)
+    public mutating func add(element: T) {
+        self.array.append(element)
     }
     
-    public func dequeueObject() -> T {
-        let object: T = self.objectsArray[0]
-        self.objectsArray.removeAtIndex(0)
-        return object
+    public mutating func next() -> T? {
+        if self.array.count < 1 {
+            return nil
+        }
+        let element = array.removeAtIndex(0)
+        return element
     }
 }
