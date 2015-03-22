@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42D265A01ABE248F000929F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D2659F1ABE248F000929F9 /* AppDelegate.swift */; };
+		42D265A21ABE248F000929F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D265A11ABE248F000929F9 /* Images.xcassets */; };
+		42D265A51ABE248F000929F9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D265A31ABE248F000929F9 /* MainMenu.xib */; };
+		42D265B11ABE248F000929F9 /* BestShirtTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D265B01ABE248F000929F9 /* BestShirtTradeTests.swift */; };
+		42D265BB1ABE251D000929F9 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D265BA1ABE251D000929F9 /* FieldView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42D265AB1ABE248F000929F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42D265921ABE248F000929F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D265991ABE248F000929F9;
+			remoteInfo = BestShirtTrade;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42D2659A1ABE248F000929F9 /* BestShirtTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestShirtTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D2659E1ABE248F000929F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D2659F1ABE248F000929F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42D265A11ABE248F000929F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		42D265A41ABE248F000929F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		42D265AA1ABE248F000929F9 /* BestShirtTradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestShirtTradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D265AF1ABE248F000929F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D265B01ABE248F000929F9 /* BestShirtTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestShirtTradeTests.swift; sourceTree = "<group>"; };
+		42D265BA1ABE251D000929F9 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42D265971ABE248F000929F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D265A71ABE248F000929F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42D265911ABE248F000929F9 = {
+			isa = PBXGroup;
+			children = (
+				42D2659C1ABE248F000929F9 /* BestShirtTrade */,
+				42D265AD1ABE248F000929F9 /* BestShirtTradeTests */,
+				42D2659B1ABE248F000929F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42D2659B1ABE248F000929F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42D2659A1ABE248F000929F9 /* BestShirtTrade.app */,
+				42D265AA1ABE248F000929F9 /* BestShirtTradeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42D2659C1ABE248F000929F9 /* BestShirtTrade */ = {
+			isa = PBXGroup;
+			children = (
+				42D2659F1ABE248F000929F9 /* AppDelegate.swift */,
+				42D265BA1ABE251D000929F9 /* FieldView.swift */,
+				42D265A11ABE248F000929F9 /* Images.xcassets */,
+				42D265A31ABE248F000929F9 /* MainMenu.xib */,
+				42D2659D1ABE248F000929F9 /* Supporting Files */,
+			);
+			path = BestShirtTrade;
+			sourceTree = "<group>";
+		};
+		42D2659D1ABE248F000929F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42D2659E1ABE248F000929F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42D265AD1ABE248F000929F9 /* BestShirtTradeTests */ = {
+			isa = PBXGroup;
+			children = (
+				42D265B01ABE248F000929F9 /* BestShirtTradeTests.swift */,
+				42D265AE1ABE248F000929F9 /* Supporting Files */,
+			);
+			path = BestShirtTradeTests;
+			sourceTree = "<group>";
+		};
+		42D265AE1ABE248F000929F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42D265AF1ABE248F000929F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42D265991ABE248F000929F9 /* BestShirtTrade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D265B41ABE248F000929F9 /* Build configuration list for PBXNativeTarget "BestShirtTrade" */;
+			buildPhases = (
+				42D265961ABE248F000929F9 /* Sources */,
+				42D265971ABE248F000929F9 /* Frameworks */,
+				42D265981ABE248F000929F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BestShirtTrade;
+			productName = BestShirtTrade;
+			productReference = 42D2659A1ABE248F000929F9 /* BestShirtTrade.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42D265A91ABE248F000929F9 /* BestShirtTradeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D265B71ABE248F000929F9 /* Build configuration list for PBXNativeTarget "BestShirtTradeTests" */;
+			buildPhases = (
+				42D265A61ABE248F000929F9 /* Sources */,
+				42D265A71ABE248F000929F9 /* Frameworks */,
+				42D265A81ABE248F000929F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42D265AC1ABE248F000929F9 /* PBXTargetDependency */,
+			);
+			name = BestShirtTradeTests;
+			productName = BestShirtTradeTests;
+			productReference = 42D265AA1ABE248F000929F9 /* BestShirtTradeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42D265921ABE248F000929F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Rogelio Gudino";
+				TargetAttributes = {
+					42D265991ABE248F000929F9 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					42D265A91ABE248F000929F9 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 42D265991ABE248F000929F9;
+					};
+				};
+			};
+			buildConfigurationList = 42D265951ABE248F000929F9 /* Build configuration list for PBXProject "BestShirtTrade" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42D265911ABE248F000929F9;
+			productRefGroup = 42D2659B1ABE248F000929F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42D265991ABE248F000929F9 /* BestShirtTrade */,
+				42D265A91ABE248F000929F9 /* BestShirtTradeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42D265981ABE248F000929F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D265A21ABE248F000929F9 /* Images.xcassets in Resources */,
+				42D265A51ABE248F000929F9 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D265A81ABE248F000929F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42D265961ABE248F000929F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D265A01ABE248F000929F9 /* AppDelegate.swift in Sources */,
+				42D265BB1ABE251D000929F9 /* FieldView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D265A61ABE248F000929F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D265B11ABE248F000929F9 /* BestShirtTradeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42D265AC1ABE248F000929F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D265991ABE248F000929F9 /* BestShirtTrade */;
+			targetProxy = 42D265AB1ABE248F000929F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42D265A31ABE248F000929F9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42D265A41ABE248F000929F9 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42D265B21ABE248F000929F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42D265B31ABE248F000929F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		42D265B51ABE248F000929F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BestShirtTrade/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42D265B61ABE248F000929F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BestShirtTrade/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		42D265B81ABE248F000929F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BestShirtTradeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BestShirtTrade.app/Contents/MacOS/BestShirtTrade";
+			};
+			name = Debug;
+		};
+		42D265B91ABE248F000929F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BestShirtTradeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BestShirtTrade.app/Contents/MacOS/BestShirtTrade";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42D265951ABE248F000929F9 /* Build configuration list for PBXProject "BestShirtTrade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D265B21ABE248F000929F9 /* Debug */,
+				42D265B31ABE248F000929F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42D265B41ABE248F000929F9 /* Build configuration list for PBXNativeTarget "BestShirtTrade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D265B51ABE248F000929F9 /* Debug */,
+				42D265B61ABE248F000929F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42D265B71ABE248F000929F9 /* Build configuration list for PBXNativeTarget "BestShirtTradeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D265B81ABE248F000929F9 /* Debug */,
+				42D265B91ABE248F000929F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42D265921ABE248F000929F9 /* Project object */;
+}
