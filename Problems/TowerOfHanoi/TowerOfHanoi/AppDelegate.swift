@@ -27,12 +27,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.backgroundOperationQueue = NSOperationQueue()
     }
     
-    func applicationDidFinishLaunching(aNotification: NSNotification?) {
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
         self.resetTower()
     }
     
     @IBAction func buttonWasClicked(sender: AnyObject!) {
-        let cell: NSCell = sender.selectedCell() as NSCell
+        let cell: NSCell = sender.selectedCell() as! NSCell
         if cell.title == "Solve" {
             cell.title = "Finish"
             self.resetTower()
@@ -96,7 +96,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func isCurrentOperationCancelled() -> Bool {
         if let currentQueue = NSOperationQueue.currentQueue() {
             if currentQueue.operationCount > 0 {
-                let operation: NSOperation = currentQueue.operations[0] as NSOperation
+                let operation: NSOperation = currentQueue.operations[0] as! NSOperation
                 return operation.cancelled
             }
         }
