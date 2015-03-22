@@ -8,7 +8,7 @@
 
 import AppKit;
 
-@IBDesignable class FieldView: NSView {
+@IBDesignable class PitchView: NSView {
     private enum PitchSide {
         case Left, Right
     }

@@ -11,7 +11,7 @@
 		42D265A21ABE248F000929F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D265A11ABE248F000929F9 /* Images.xcassets */; };
 		42D265A51ABE248F000929F9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D265A31ABE248F000929F9 /* MainMenu.xib */; };
 		42D265B11ABE248F000929F9 /* BestShirtTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D265B01ABE248F000929F9 /* BestShirtTradeTests.swift */; };
-		42D265BB1ABE251D000929F9 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D265BA1ABE251D000929F9 /* FieldView.swift */; };
+		42D265BB1ABE251D000929F9 /* PitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D265BA1ABE251D000929F9 /* PitchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,7 @@
 		42D265AA1ABE248F000929F9 /* BestShirtTradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestShirtTradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D265AF1ABE248F000929F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D265B01ABE248F000929F9 /* BestShirtTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestShirtTradeTests.swift; sourceTree = "<group>"; };
-		42D265BA1ABE251D000929F9 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		42D265BA1ABE251D000929F9 /* PitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				42D2659F1ABE248F000929F9 /* AppDelegate.swift */,
-				42D265BA1ABE251D000929F9 /* FieldView.swift */,
+				42D265BA1ABE251D000929F9 /* PitchView.swift */,
 				42D265A11ABE248F000929F9 /* Images.xcassets */,
 				42D265A31ABE248F000929F9 /* MainMenu.xib */,
 				42D2659D1ABE248F000929F9 /* Supporting Files */,
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D265A01ABE248F000929F9 /* AppDelegate.swift in Sources */,
-				42D265BB1ABE251D000929F9 /* FieldView.swift in Sources */,
+				42D265BB1ABE251D000929F9 /* PitchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

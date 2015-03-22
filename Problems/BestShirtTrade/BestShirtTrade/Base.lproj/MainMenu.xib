@@ -671,7 +671,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="690" height="444"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" id="EiT-Mj-1SZ" customClass="FieldView" customModule="BestShirtTrade" customModuleProvider="target">
+            <view key="contentView" id="EiT-Mj-1SZ" customClass="PitchView" customModule="BestShirtTrade" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="690" height="444"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
