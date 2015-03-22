@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424D666E1ABF39B200D6C819 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D666D1ABF39B200D6C819 /* Queue.swift */; };
 		427540561A96FECF00BDAF9E /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 427540551A96FECF00BDAF9E /* Queue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4275405C1A96FECF00BDAF9E /* Queue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427540501A96FECF00BDAF9E /* Queue.framework */; };
 		427540631A96FECF00BDAF9E /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427540621A96FECF00BDAF9E /* QueueTests.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		424D666D1ABF39B200D6C819 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		427540501A96FECF00BDAF9E /* Queue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Queue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427540541A96FECF00BDAF9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		427540551A96FECF00BDAF9E /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		427540521A96FECF00BDAF9E /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				424D666D1ABF39B200D6C819 /* Queue.swift */,
 				427540551A96FECF00BDAF9E /* Queue.h */,
 				427540531A96FECF00BDAF9E /* Supporting Files */,
 			);
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424D666E1ABF39B200D6C819 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +320,7 @@
 		427540671A96FECF00BDAF9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,12 +332,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		427540681A96FECF00BDAF9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -398,6 +405,7 @@
 				427540681A96FECF00BDAF9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		427540691A96FECF00BDAF9E /* Build configuration list for PBXNativeTarget "QueueTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +414,7 @@
 				4275406B1A96FECF00BDAF9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
