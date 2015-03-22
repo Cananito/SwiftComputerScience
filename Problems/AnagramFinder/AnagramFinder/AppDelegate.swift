@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     @IBOutlet weak var anagramsTableView: NSTableView!
     var textView: NSTextView! {
         get {
-            return self.textScrollView.contentView.documentView as NSTextView
+            return self.textScrollView.contentView.documentView as! NSTextView
         }
     }
     var currentClusterArray = [String: [String]]()
@@ -24,16 +24,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     // MARK: Action Methods
     @IBAction func findAnagrams(sender: AnyObject!) {
         if let string = self.textView.string as String? {
-            let words = split(string) { $0 == " "}
+            let words = split(string, isSeparator: { $0 == " " })
             self.currentClusterArray = clusterArrayOfWords(words)
-            println(self.currentClusterArray)
             self.anagramsTableView.reloadData()
         }
     }
     
     // MARK: NSTableViewDataSource Methods
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return countElements(self.currentClusterArray.keys)
+        return count(self.currentClusterArray.keys)
     }
     
     // MARK: NSTableViewDelegate Methods
@@ -41,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
         let key = self.currentClusterArray.keys.array[row]
         var numberOfOccurrences = 0
         if let words = self.currentClusterArray[key] {
-            numberOfOccurrences = countElements(words)
+            numberOfOccurrences = count(words)
         }
         
         let tableCellView = tableView.makeViewWithIdentifier("AnagramCell", owner: self) as? NSTableCellView

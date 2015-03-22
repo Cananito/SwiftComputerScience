@@ -15,7 +15,7 @@ func clusterArrayOfWords(words: [String]) -> [String: [String]] {
         var existingArray = wordsClusterDictionary[alphabetizedWord]
         var newArray = [String]()
         
-        if let array = existingArray? {
+        if let array = existingArray {
             newArray = array
             newArray.append(word)
         } else {
