@@ -133,22 +133,22 @@ import AppKit;
         case .TopLeft:
             x = CGRectGetMinX(containerRect) + pitchPadding
             y = CGRectGetMaxY(containerRect) - pitchPadding
-            startAngle = CGFloat(M_PI) + CGFloat(M_PI / 2.0)
+            startAngle = CGFloat(M_PI * 1.5)
         case .TopRight:
             x = CGRectGetMaxX(containerRect) - pitchPadding
             y = CGRectGetMaxY(containerRect) - pitchPadding
-            startAngle = CGFloat(M_PI)
+            startAngle = CGFloat(M_PI * 1.0)
         case .BottomRight:
             x = CGRectGetMaxX(containerRect) - pitchPadding
             y = CGRectGetMinY(containerRect) + pitchPadding
-            startAngle = CGFloat(M_PI / 2.0)
+            startAngle = CGFloat(M_PI * 0.5)
         case .BottomLeft:
             x = CGRectGetMinX(containerRect) + pitchPadding
             y = CGRectGetMinY(containerRect) + pitchPadding
-            startAngle = 0.0
+            startAngle = CGFloat(M_PI * 2.0)
         }
         
-        let endAngle = startAngle + CGFloat(M_PI / 2.0)
+        let endAngle = startAngle + CGFloat(M_PI * 0.5)
         CGPathAddArc(path, nil, x, y, radius, startAngle, endAngle, false)
         return path
     }
@@ -165,9 +165,7 @@ import AppKit;
         case .Left:
             CGPathAddArc(path, nil, centerX, centerY, radius, 1.0, -1.0, true)
         case .Right:
-            let startAngle = CGFloat(1.0 + M_PI)
-            let endAngle = CGFloat(-1.0 + M_PI)
-            CGPathAddArc(path, nil, centerX, centerY, radius, startAngle, endAngle, true)
+            CGPathAddArc(path, nil, centerX, centerY, radius, CGFloat(1.0 + M_PI), CGFloat(-1.0 + M_PI), true)
         }
         return path
     }
