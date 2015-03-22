@@ -25,12 +25,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.currentFractalView = self.triangleFractalView
     }
     
-    func applicationDidFinishLaunching(aNotification: NSNotification?) {
+    func applicationDidFinishLaunching(aNotification: NSNotification) {
         self.changeToFractalView(fractalView: self.currentFractalView!)
     }
     
     @IBAction func changeFractal(sender: NSMatrix!) {
-        let cell: NSCell = sender.selectedCell() as NSCell
+        let cell: NSCell = sender.selectedCell() as! NSCell
         if cell.title == "Triangle" {
             changeToFractalView(fractalView: self.triangleFractalView)
         } else if cell.title == "Mondrian" {

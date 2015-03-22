@@ -24,7 +24,7 @@ class MondrianFractalView: FractalView {
         self.drawSquare(rect)
         
         let sequence = MondrianSquareSequence(rawValue: Int(arc4random_uniform(UInt32(3))))
-        if let mondrianSequence = sequence? {
+        if let mondrianSequence = sequence {
             switch mondrianSequence {
             case .SplitHorizontal:
                 self.splitHorizontal(rect)
