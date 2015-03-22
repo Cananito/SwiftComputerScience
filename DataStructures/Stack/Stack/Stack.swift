@@ -6,25 +6,29 @@
 //  Copyright (c) 2014 Cananito. All rights reserved.
 //
 
-public class Stack<T> {
-    private var objectsArray = Array<T>()
+public struct Stack<T> {
+    private var array = Array<T>()
     
     public init() {
     }
     
+    public init(elements: [T]) {
+        self.array = elements
+    }
+    
     public func count() -> Int {
-        return self.objectsArray.count
+        return self.array.count
     }
     
-    public func peekObject() -> T {
-        return self.objectsArray[self.objectsArray.endIndex]
+    public func peek() -> T? {
+        return self.array.last
     }
     
-    public func pushObject(object: T) {
-        self.objectsArray.append(object)
+    public mutating func push(object: T) {
+        self.array.append(object)
     }
     
-    public func popLastObject() -> T {
-        return self.objectsArray.removeLast()
+    public mutating func pop() -> T {
+        return self.array.removeLast()
     }
 }
