@@ -11,18 +11,12 @@ func clusterArrayOfWords(words: [String]) -> [String: [String]] {
     
     for word in words {
         let alphabetizedWord = alphabetizeWord(word)
-        
-        var existingArray = wordsClusterDictionary[alphabetizedWord]
-        var newArray = [String]()
-        
-        if let array = existingArray {
-            newArray = array
-            newArray.append(word)
+        if var existingArray = wordsClusterDictionary[alphabetizedWord] {
+            existingArray.append(word)
+            wordsClusterDictionary[alphabetizedWord] = existingArray
         } else {
-            newArray.append(word)
+            wordsClusterDictionary[alphabetizedWord] = [word]
         }
-        
-        wordsClusterDictionary[alphabetizedWord] = newArray
     }
     
     return wordsClusterDictionary
@@ -33,21 +27,7 @@ private func alphabetizeWord(word: String) -> String {
         return word
     }
     
-    var lowercasedWord = word.lowercaseString
-    
-    var charactersArray = [String]()
-    for character in lowercasedWord {
-        charactersArray.append(String(character))
-    }
-    charactersArray = sorted(charactersArray, { (firstString: String, secondString: String) -> Bool in
-        return firstString < secondString
-    })
-    
-    var alphabetizedWord = ""
-    
-    for stringCharacter in charactersArray {
-        alphabetizedWord += stringCharacter
-    }
-    
+    let charactersArray = sorted(word.lowercaseString)
+    let alphabetizedWord = reduce(charactersArray, "") { $0 + String($1) }
     return alphabetizedWord
 }
