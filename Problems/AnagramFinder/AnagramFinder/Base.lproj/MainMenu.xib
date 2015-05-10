@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7515.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -14,7 +14,9 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AnagramFinder" customModuleProvider="target">
             <connections>
                 <outlet property="anagramsTableView" destination="8lk-Ht-qTG" id="13r-73-l9c"/>
+                <outlet property="anagramsTableViewScrollContainer" destination="bc2-9A-2uB" id="Eix-Qi-6Iz"/>
                 <outlet property="findAnagramsButton" destination="y6h-lC-WSV" id="pjx-w7-zpa"/>
+                <outlet property="progressIndicator" destination="eip-yx-Nfv" id="Nfg-Er-pX6"/>
                 <outlet property="textScrollView" destination="MgO-gu-avh" id="i6L-tw-CHg"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -678,6 +680,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="510" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="eip-yx-Nfv">
+                        <rect key="frame" x="247" y="172" width="16" height="16"/>
+                    </progressIndicator>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgO-gu-avh">
                         <rect key="frame" x="20" y="20" width="341" height="320"/>
                         <clipView key="contentView" id="lJu-iy-LmE">
@@ -716,20 +721,20 @@
                             <action selector="findAnagrams:" target="Voe-Tx-rLC" id="gyb-GU-Xkx"/>
                         </connections>
                     </button>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-9A-2uB">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-9A-2uB">
                         <rect key="frame" x="369" y="20" width="121" height="279"/>
-                        <clipView key="contentView" misplaced="YES" id="hbv-fE-dfq">
+                        <clipView key="contentView" id="hbv-fE-dfq">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="hRO-S0-6Z5" viewBased="YES" id="8lk-Ht-qTG">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="25" rowSizeStyle="automatic" headerView="fdn-WV-Mht" viewBased="YES" id="8lk-Ht-qTG">
                                     <rect key="frame" x="0.0" y="0.0" width="119" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="116" minWidth="40" maxWidth="1000" id="i6A-Ln-Wa3">
+                                        <tableColumn identifier="AnagramCell" width="116" minWidth="40" maxWidth="1000" id="i6A-Ln-Wa3">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -742,13 +747,13 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="AnagramCell" id="KDl-Ze-Lk4">
-                                                    <rect key="frame" x="1" y="1" width="116" height="17"/>
+                                                <tableCellView id="1WI-Cx-YY2">
+                                                    <rect key="frame" x="1" y="1" width="116" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-50-z4U">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="uI5-7c-AKP">
+                                                        <textField identifier="AnagramCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ood-mk-i45">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="QMs-GW-oCO">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -756,7 +761,7 @@
                                                         </textField>
                                                     </subviews>
                                                     <connections>
-                                                        <outlet property="textField" destination="Ndf-50-z4U" id="MBz-aF-hok"/>
+                                                        <outlet property="textField" destination="ood-mk-i45" id="PuS-v0-wek"/>
                                                     </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>
@@ -774,12 +779,12 @@
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IPO-E9-uLd">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="IPO-E9-uLd">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="hRO-S0-6Z5">
-                            <rect key="frame" x="0.0" y="0.0" width="238" height="17"/>
+                        <tableHeaderView key="headerView" id="fdn-WV-Mht">
+                            <rect key="frame" x="0.0" y="0.0" width="10000" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
@@ -793,8 +798,10 @@
                     <constraint firstAttribute="trailing" secondItem="y6h-lC-WSV" secondAttribute="trailing" constant="20" id="ZBW-QY-n4G"/>
                     <constraint firstItem="bc2-9A-2uB" firstAttribute="width" secondItem="y6h-lC-WSV" secondAttribute="width" id="bmQ-iT-MyW"/>
                     <constraint firstItem="bc2-9A-2uB" firstAttribute="top" secondItem="y6h-lC-WSV" secondAttribute="bottom" constant="20" id="eYh-sR-PcA"/>
+                    <constraint firstAttribute="centerY" secondItem="eip-yx-Nfv" secondAttribute="centerY" id="nGa-jy-9zV"/>
                     <constraint firstItem="y6h-lC-WSV" firstAttribute="leading" secondItem="MgO-gu-avh" secondAttribute="trailing" constant="8" id="oEX-hd-EXC"/>
                     <constraint firstAttribute="trailing" secondItem="bc2-9A-2uB" secondAttribute="trailing" constant="20" id="xwN-dR-WWm"/>
+                    <constraint firstAttribute="centerX" secondItem="eip-yx-Nfv" secondAttribute="centerX" id="ySu-Tq-mJ7"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="348" y="407"/>
