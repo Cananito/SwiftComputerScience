@@ -93,16 +93,16 @@ class DrawingView: NSView {
             return
         }
         
-        let reverseFirstPoleDisks = Array(self.towerOfHanoi.sourcePole.reverse())
-        let reverseSecondPoleDisks = Array(self.towerOfHanoi.destinationPole.reverse())
-        let reverseThirdPoleDisks = Array(self.towerOfHanoi.temporaryPole.reverse())
+        let reverseFirstPoleDisks = self.towerOfHanoi.sourcePole.reverse()
+        let reverseSecondPoleDisks = self.towerOfHanoi.destinationPole.reverse()
+        let reverseThirdPoleDisks = self.towerOfHanoi.temporaryPole.reverse()
         
         self.drawPoleDisks(disks: reverseFirstPoleDisks, forPoleRect: self.firstPoleRect)
         self.drawPoleDisks(disks: reverseSecondPoleDisks, forPoleRect: self.secondPoleRect)
         self.drawPoleDisks(disks: reverseThirdPoleDisks, forPoleRect: self.thirdPoleRect)
     }
     
-    private func drawPoleDisks(disks disks: [Disk], forPoleRect poleRect: NSRect) {
+    private func drawPoleDisks<S: SequenceType where S.Generator.Element == Disk>(disks disks: S, forPoleRect poleRect: NSRect) {
         let diskHeight = poleRect.size.height * 0.05
         let diskVerticalPadding: CGFloat = 2.0
         var currentY = poleRect.origin.y + diskHeight + diskVerticalPadding
