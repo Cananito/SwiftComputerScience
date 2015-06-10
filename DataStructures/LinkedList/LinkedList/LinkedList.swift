@@ -6,7 +6,7 @@
 //
 //
 
-public class LinkedList<T: Printable>: Printable {
+public class LinkedList<T: CustomStringConvertible>: CustomStringConvertible {
     var headNode: LinkedListNode<T>?
     
     public init() {

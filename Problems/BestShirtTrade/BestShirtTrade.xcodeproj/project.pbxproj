@@ -153,6 +153,7 @@
 		42D265921ABE248F000929F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Rogelio Gudino";
 				TargetAttributes = {
@@ -400,6 +401,7 @@
 				42D265B61ABE248F000929F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42D265B71ABE248F000929F9 /* Build configuration list for PBXNativeTarget "BestShirtTradeTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +410,7 @@
 				42D265B91ABE248F000929F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

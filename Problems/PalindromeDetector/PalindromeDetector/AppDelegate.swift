@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
 
 extension String {
     func isPalindrome() -> Bool {
-        let length = count(self)
+        let length = self.characters.count
         
         if length == 0 || length == 1 {
             return true
@@ -59,7 +59,7 @@ extension String {
     }
     
     func withoutWhiteSpaces() -> String {
-        return filter(self) { $0 != " " }.reduce("") { $0 + String($1) }
-//        return filter(self) { $0 != " " }.reduce("") { $0 + [ $1 ] }
+        return self.characters.filter { $0 != " " }.reduce("") { $0 + String($1) }
+//        return self.characters.filter { $0 != " " }.reduce("") { $0 + [ $1 ] }
     }
 }

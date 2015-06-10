@@ -6,7 +6,7 @@
 //
 //
 
-public class LinkedListNode<T: Printable>: Printable {
+public class LinkedListNode<T: CustomStringConvertible>: CustomStringConvertible {
     let value: T
     var nextNode: LinkedListNode?
     

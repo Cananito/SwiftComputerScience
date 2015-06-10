@@ -159,6 +159,7 @@
 		42A72E991A887D28000CAE3B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rogelio Gudino";
 				TargetAttributes = {
@@ -405,6 +406,7 @@
 				42A72EBD1A887D28000CAE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42A72EBE1A887D28000CAE3B /* Build configuration list for PBXNativeTarget "TowerOfHanoiTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +415,7 @@
 				42A72EC01A887D28000CAE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

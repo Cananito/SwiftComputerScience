@@ -159,6 +159,7 @@
 		42A72E6A1A885A91000CAE3B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rogelio Gudino";
 				TargetAttributes = {
@@ -405,6 +406,7 @@
 				42A72E8E1A885A91000CAE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42A72E8F1A885A91000CAE3B /* Build configuration list for PBXNativeTarget "FractalsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +415,7 @@
 				42A72E911A885A91000CAE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
