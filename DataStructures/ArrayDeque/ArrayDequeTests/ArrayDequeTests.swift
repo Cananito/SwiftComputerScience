@@ -56,4 +56,33 @@ class ArrayDequeTests: XCTestCase {
         XCTAssert(arrayDeque[1]! == 2)
         XCTAssert(arrayDeque[2]! == 3)
     }
+    
+    func testCircularPrepending() {
+        var arrayDeque = ArrayDeque<Int>()
+        
+        arrayDeque.prependElement(0)
+        XCTAssert(arrayDeque.count() == 1)
+        XCTAssert(arrayDeque[0] != .None)
+        XCTAssert(arrayDeque[0]! == 0)
+        
+        arrayDeque.prependElement(1)
+        XCTAssert(arrayDeque.count() == 2)
+        XCTAssert(arrayDeque[0] != .None)
+        XCTAssert(arrayDeque[0]! == 1)
+        
+        arrayDeque.prependElement(2)
+        XCTAssert(arrayDeque.count() == 3)
+        XCTAssert(arrayDeque[0] != .None)
+        XCTAssert(arrayDeque[0]! == 2)
+        
+        arrayDeque.prependElement(3)
+        XCTAssert(arrayDeque.count() == 4)
+        XCTAssert(arrayDeque[0] != .None)
+        XCTAssert(arrayDeque[0]! == 3)
+        
+        arrayDeque.prependElement(4)
+        XCTAssert(arrayDeque.count() == 5)
+        XCTAssert(arrayDeque[0] != .None)
+        XCTAssert(arrayDeque[0]! == 4)
+    }
 }
