@@ -50,26 +50,26 @@ private class ArrayDequeStorage<T> {
     private var storage: UnsafeMutablePointer<T>
     private var startIndex = 0
     private var endIndex = 0
-    private var space = 4
+    private var capacity = 4
     private var count = 0
     
     private init() {
-        storage = UnsafeMutablePointer<T>.alloc(space)
+        storage = UnsafeMutablePointer<T>.alloc(capacity)
     }
     
     private init(array: [T]) {
         storage = UnsafeMutablePointer<T>.alloc(array.count)
         storage.initializeFrom(array)
         count = array.count
-        space = count
+        capacity = count
         if count != 0 {
             endIndex = count - 1
         }
     }
     
     deinit {
-        storage.destroy(space)
-        storage.dealloc(space)
+        storage.destroy(capacity)
+        storage.dealloc(capacity)
     }
     
     private subscript (index: Int) -> T? {
@@ -93,13 +93,13 @@ private class ArrayDequeStorage<T> {
             return
         }
         
-        let newStorage = UnsafeMutablePointer<T>.alloc(space)
-        (newStorage + 0).initialize(element)
+        let newCapacity = UnsafeMutablePointer<T>.alloc(capacity)
+        (newCapacity + 0).initialize(element)
         for var index = 0; index < count; index++ {
-            (newStorage + (index + 1)).initialize(elementAtIndex(index))
+            (newCapacity + (index + 1)).initialize(elementAtIndex(index))
         }
-        storage.dealloc(space)
-        storage = newStorage
+        storage.dealloc(capacity)
+        storage = newCapacity
         startIndex = 0
         endIndex++
         count++
@@ -108,7 +108,7 @@ private class ArrayDequeStorage<T> {
     private func appendElement(element: T) {
         expandStorageIfNecessary()
         if isEmpty() == false {
-            endIndex = (endIndex + 1) % space
+            endIndex = (endIndex + 1) % capacity
         }
         (storage + endIndex).initialize(element)
         count++
@@ -145,32 +145,32 @@ private class ArrayDequeStorage<T> {
     }
     
     private func elementAtIndex(index: Int) -> T {
-        let adjustedIndex = (index + startIndex) % space
+        let adjustedIndex = (index + startIndex) % capacity
         return (storage + adjustedIndex).memory
     }
     
     private func expandStorageIfNecessary() {
-        if space <= count {
-            adjustStorageToNewSpace(space * 2)
+        if capacity <= count {
+            adjustStorageToNewCapacity(capacity * 2)
         }
     }
     
     private func shrinkStorageIfNecessary() {
-        if (space / 4) >= count {
-            adjustStorageToNewSpace(space / 2)
+        if (capacity / 4) >= count {
+            adjustStorageToNewCapacity(capacity / 2)
         }
     }
     
-    private func adjustStorageToNewSpace(newSpace: Int) {
-        let newStorage = UnsafeMutablePointer<T>.alloc(newSpace)
+    private func adjustStorageToNewCapacity(newCapacity: Int) {
+        let newStorage = UnsafeMutablePointer<T>.alloc(newCapacity)
         
         for var index = 0; index < count; index++ {
             (newStorage + index).initialize(elementAtIndex(index))
         }
         
-        storage.dealloc(space)
+        storage.dealloc(capacity)
         storage = newStorage
-        space = newSpace
+        capacity = newCapacity
         
         startIndex = 0
         if count == 0 {
