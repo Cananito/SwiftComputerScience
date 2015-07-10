@@ -86,22 +86,12 @@ private class ArrayDequeStorage<T> {
     private func prependElement(element: T) {
         expandStorageIfNecessary()
         
-        if startIndex != 0 {
+        if startIndex == 0 {
+            startIndex = capacity - 1
+        } else {
             startIndex--
-            (storage + startIndex).initialize(element)
-            count++
-            return
         }
-        
-        let newCapacity = UnsafeMutablePointer<T>.alloc(capacity)
-        (newCapacity + 0).initialize(element)
-        for var index = 0; index < count; index++ {
-            (newCapacity + (index + 1)).initialize(elementAtIndex(index))
-        }
-        storage.dealloc(capacity)
-        storage = newCapacity
-        startIndex = 0
-        endIndex++
+        (storage + startIndex).initialize(element)
         count++
     }
     
