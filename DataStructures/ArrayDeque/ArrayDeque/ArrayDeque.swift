@@ -109,7 +109,6 @@ private class ArrayDequeStorage<T> {
         expandStorageIfNecessary()
         if isEmpty() == false {
             endIndex = (endIndex + 1) % space
-            print(endIndex)
         }
         (storage + endIndex).initialize(element)
         count++
