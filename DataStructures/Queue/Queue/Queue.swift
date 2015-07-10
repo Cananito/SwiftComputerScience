@@ -7,7 +7,7 @@
 //
 
 public struct Queue<T> {
-    private var array = Array<T>()
+    private var array = [T]()
     
     public init() {
     }
