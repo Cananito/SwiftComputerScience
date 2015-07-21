@@ -85,4 +85,19 @@ class ArrayDequeTests: XCTestCase {
         XCTAssert(arrayDeque[0] != .None)
         XCTAssert(arrayDeque[0]! == 4)
     }
+    
+    func testCopy() {
+        var first = ArrayDeque<Int>()
+        first.appendElement(0)
+        first.appendElement(1)
+        
+        var second = first
+        XCTAssert(second.count() == 2)
+        
+        second.removeLastElement()
+        XCTAssert(first.count() == 2)
+        XCTAssert(second.count() == 1)
+        XCTAssert(second[0] != .None)
+        XCTAssert(second[0] == 0)
+    }
 }

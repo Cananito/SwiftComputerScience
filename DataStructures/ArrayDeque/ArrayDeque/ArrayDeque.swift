@@ -7,14 +7,14 @@
 //
 
 public struct ArrayDeque<T> {
-    // TODO: Copy on write (mutate), otherwise it'll be shared storage when copying
     private var storage = ArrayDequeStorage<T>()
     
     public init() {
+        self.storage = ArrayDequeStorage()
     }
     
     public init(array: [T]) {
-        self.storage = ArrayDequeStorage<T>(array: array)
+        self.storage = ArrayDequeStorage(array: array)
     }
     
     public subscript (index: Int) -> T? {
@@ -30,19 +30,29 @@ public struct ArrayDeque<T> {
     }
     
     public mutating func prependElement(element: T) {
+        makeCopyOfStorageReferenceIfNecessary()
         storage.prependElement(element)
     }
     
     public mutating func appendElement(element: T) {
+        makeCopyOfStorageReferenceIfNecessary()
         storage.appendElement(element)
     }
     
     public mutating func removeFirstElement() -> T? {
+        makeCopyOfStorageReferenceIfNecessary()
         return storage.removeFirstElement()
     }
     
     public mutating func removeLastElement() -> T? {
+        makeCopyOfStorageReferenceIfNecessary()
         return storage.removeLastElement()
+    }
+    
+    private mutating func makeCopyOfStorageReferenceIfNecessary() {
+        if isUniquelyReferencedNonObjC(&storage) == false {
+            storage = ArrayDequeStorage<T>(arrayDequeStorage: storage)
+        }
     }
 }
 
@@ -65,6 +75,15 @@ private class ArrayDequeStorage<T> {
         if count != 0 {
             endIndex = count - 1
         }
+    }
+    
+    private init(arrayDequeStorage: ArrayDequeStorage<T>) {
+        storage = UnsafeMutablePointer<T>.alloc(arrayDequeStorage.count)
+        storage.initializeFrom(arrayDequeStorage.storage, count: arrayDequeStorage.count)
+        startIndex = arrayDequeStorage.startIndex
+        endIndex = arrayDequeStorage.endIndex
+        capacity = arrayDequeStorage.capacity
+        count = arrayDequeStorage.count
     }
     
     deinit {
