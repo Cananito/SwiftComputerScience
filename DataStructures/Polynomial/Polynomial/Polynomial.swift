@@ -41,8 +41,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     public let terms: [Term]
     
     public init(terms: [Term]) {
-        let sortedTerms = addLikeTerms(terms).sort { $0.coefficient > $1.coefficient }
-        self.terms = sortedTerms
+        self.terms = terms
     }
     
     public func termForCoefficient(coefficient: Int) -> Term? {
@@ -55,8 +54,10 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     }
     
     public func derived() -> Polynomial {
+        let terms = self.likeTermsCombined().terms.sort { $0.coefficient > $1.coefficient }
+        
         var derivedTerms = [Term]()
-        for term in self.terms {
+        for term in terms {
             if term.coefficient == 0 {
                 continue
             }
@@ -66,7 +67,17 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
             let newTerm = Term(constant: newConstant, coefficient: newCoefficient)
             derivedTerms.append(newTerm)
         }
+        
         return Polynomial(terms: derivedTerms)
+    }
+    
+    public func likeTermsCombined() -> Polynomial {
+        var combinedTerms = [Term]()
+        for (_, value) in coefficientGroupedTerms(terms) {
+            let term = Term(constant: value.constant, coefficient: value.coefficient)
+            combinedTerms.append(term)
+        }
+        return Polynomial(terms: combinedTerms)
     }
     
     // MARK: CustomStringConvertible
@@ -80,15 +91,6 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     public var debugDescription: String {
         return description
     }
-}
-
-private func addLikeTerms(terms: [Term]) -> [Term] {
-    var simplifiedTerms = [Term]()
-    for (_, value) in coefficientGroupedTerms(terms) {
-        let term = Term(constant: value.constant, coefficient: value.coefficient)
-        simplifiedTerms.append(term)
-    }
-    return simplifiedTerms
 }
 
 private func coefficientGroupedTerms(terms: [Term]) -> CoefficientGroupedTerms {
