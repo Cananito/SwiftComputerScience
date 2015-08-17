@@ -54,7 +54,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     }
     
     public func derived() -> Polynomial {
-        let terms = self.likeTermsCombined().terms.sort { $0.coefficient > $1.coefficient }
+        let terms = self.simplified().terms.sort { $0.coefficient > $1.coefficient }
         
         var derivedTerms = [Term]()
         for term in terms {
@@ -71,13 +71,13 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
         return Polynomial(terms: derivedTerms)
     }
     
-    public func likeTermsCombined() -> Polynomial {
-        var combinedTerms = [Term]()
+    public func simplified() -> Polynomial {
+        var simplifiedTerms = [Term]()
         for (_, value) in coefficientGroupedTerms(terms) {
             let term = Term(constant: value.constant, coefficient: value.coefficient)
-            combinedTerms.append(term)
+            simplifiedTerms.append(term)
         }
-        return Polynomial(terms: combinedTerms)
+        return Polynomial(terms: simplifiedTerms)
     }
     
     // MARK: CustomStringConvertible
