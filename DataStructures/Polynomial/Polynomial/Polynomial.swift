@@ -12,9 +12,9 @@ private typealias CoefficientGroupedTerms = [Coefficient: Term]
 
 public struct Term : CustomStringConvertible, CustomDebugStringConvertible {
     public let constant: Int
-    public let coefficient: Int
+    public let coefficient: Coefficient
     
-    public init(constant: Int, coefficient: Int) {
+    public init(constant: Int, coefficient: Coefficient) {
         self.constant = constant
         self.coefficient = coefficient
     }
