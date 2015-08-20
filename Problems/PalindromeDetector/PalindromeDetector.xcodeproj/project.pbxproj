@@ -11,6 +11,7 @@
 		424D66801ABF408D00D6C819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424D667F1ABF408D00D6C819 /* Images.xcassets */; };
 		424D66831ABF408D00D6C819 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424D66811ABF408D00D6C819 /* MainMenu.xib */; };
 		424D668F1ABF408D00D6C819 /* PalindromeDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D668E1ABF408D00D6C819 /* PalindromeDetectorTests.swift */; };
+		4264A0681B85A26D008EBCD7 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4264A0651B85A214008EBCD7 /* Stack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +21,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 424D66771ABF408D00D6C819;
 			remoteInfo = PalindromeDetector;
+		};
+		4264A0641B85A214008EBCD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 424D664E1ABF38D300D6C819;
+			remoteInfo = Stack;
+		};
+		4264A0661B85A214008EBCD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 424D66591ABF38D300D6C819;
+			remoteInfo = StackTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -32,6 +47,7 @@
 		424D66881ABF408D00D6C819 /* PalindromeDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PalindromeDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		424D668D1ABF408D00D6C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		424D668E1ABF408D00D6C819 /* PalindromeDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeDetectorTests.swift; sourceTree = "<group>"; };
+		4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Stack.xcodeproj; path = ../../DataStructures/Stack/Stack.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4264A0681B85A26D008EBCD7 /* Stack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +72,7 @@
 		424D666F1ABF408D00D6C819 = {
 			isa = PBXGroup;
 			children = (
+				4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */,
 				424D667A1ABF408D00D6C819 /* PalindromeDetector */,
 				424D668B1ABF408D00D6C819 /* PalindromeDetectorTests */,
 				424D66791ABF408D00D6C819 /* Products */,
@@ -104,6 +122,15 @@
 				424D668D1ABF408D00D6C819 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4264A0601B85A214008EBCD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4264A0651B85A214008EBCD7 /* Stack.framework */,
+				4264A0671B85A214008EBCD7 /* StackTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +201,12 @@
 			mainGroup = 424D666F1ABF408D00D6C819;
 			productRefGroup = 424D66791ABF408D00D6C819 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4264A0601B85A214008EBCD7 /* Products */;
+					ProjectRef = 4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				424D66771ABF408D00D6C819 /* PalindromeDetector */,
@@ -181,6 +214,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4264A0651B85A214008EBCD7 /* Stack.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Stack.framework;
+			remoteRef = 4264A0641B85A214008EBCD7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4264A0671B85A214008EBCD7 /* StackTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StackTests.xctest;
+			remoteRef = 4264A0661B85A214008EBCD7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		424D66761ABF408D00D6C819 /* Resources */ = {

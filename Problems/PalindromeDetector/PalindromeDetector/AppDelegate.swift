@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Stack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
@@ -34,7 +35,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
 }
 
 extension String {
+    func withoutWhiteSpaces() -> String {
+        return lazy(self.characters).filter { $0 != " " }.reduce("") { $0 + String($1) }
+    }
+    
     func isPalindrome() -> Bool {
+        return isPalindromeUsingStack()
+    }
+    
+    func isPalindromeUsingRecursion() -> Bool {
         let length = self.characters.count
         
         if length == 0 || length == 1 {
@@ -52,13 +61,34 @@ extension String {
             let range = secondCharacterStringIndex...secondToLastCharacterStringIndex
             let newString = self[range]
             
-            return newString.isPalindrome()
+            return newString.isPalindromeUsingRecursion()
         }
         
         return false
     }
     
-    func withoutWhiteSpaces() -> String {
-        return lazy(self.characters).filter { $0 != " " }.reduce("") { $0 + String($1) }
+    func isPalindromeUsingStack() -> Bool {
+        let characters = Array(self.characters)
+        var stack = Stack(elements: characters)
+        
+        let middleIndex: Int
+        if characters.count % 2 == 0 {
+            middleIndex = (characters.count / 2) - 1
+        } else {
+            middleIndex = characters.count / 2
+        }
+        
+        var index = 0
+        while index < characters.count {
+            if stack.pop() != characters[index] {
+                return false
+            }
+            if index == middleIndex {
+                return true
+            }
+            index++
+        }
+        
+        return true
     }
 }
