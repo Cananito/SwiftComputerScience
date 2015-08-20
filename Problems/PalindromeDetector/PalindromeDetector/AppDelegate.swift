@@ -40,7 +40,21 @@ extension String {
     }
     
     func isPalindrome() -> Bool {
-        return isPalindromeUsingStack()
+        return isPalindromUsingIteration()
+    }
+    
+    func isPalindromUsingIteration() -> Bool {
+        let characters = Array(self.characters)
+        var leftIndex = 0
+        var rightIndex = characters.count - 1
+        while leftIndex < rightIndex {
+            if characters[leftIndex] != characters[rightIndex] {
+                return false
+            }
+            leftIndex++
+            rightIndex--
+        }
+        return true
     }
     
     func isPalindromeUsingRecursion() -> Bool {
