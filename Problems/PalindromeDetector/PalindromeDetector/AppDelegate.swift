@@ -59,7 +59,6 @@ extension String {
     }
     
     func withoutWhiteSpaces() -> String {
-        return self.characters.filter { $0 != " " }.reduce("") { $0 + String($1) }
-//        return self.characters.filter { $0 != " " }.reduce("") { $0 + [ $1 ] }
+        return lazy(self.characters).filter { $0 != " " }.reduce("") { $0 + String($1) }
     }
 }
