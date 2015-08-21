@@ -59,4 +59,30 @@ class LinkedListTests: XCTestCase {
         
         XCTAssert(linkedList.lastNode?.value == 1, "lastNode should be 1")
     }
+    
+    func testDetachingFirstValues() {
+        let linkedList = LinkedList<Int>()
+        linkedList.prependValue(3)
+        linkedList.prependValue(2)
+        linkedList.prependValue(1)
+        
+        XCTAssert(linkedList.detachFirstValue() == 1, "First detached value should be 1")
+        XCTAssert(linkedList.detachFirstValue() == 2, "First detached value should be 2")
+        XCTAssert(linkedList.detachFirstValue() == 3, "First detached value should be 3")
+        print("\(linkedList.firstNode?.value)")
+        XCTAssert(linkedList.detachFirstValue() == nil, "First detached value should be nil")
+    }
+    
+    func testDetachingLastValues() {
+        let linkedList = LinkedList<Int>()
+        linkedList.appendValue(3)
+        linkedList.appendValue(2)
+        linkedList.appendValue(1)
+        
+        XCTAssert(linkedList.detachLastValue() == 1, "First detached value should be 1")
+        XCTAssert(linkedList.detachLastValue() == 2, "First detached value should be 2")
+        XCTAssert(linkedList.detachLastValue() == 3, "First detached value should be 3")
+        print("\(linkedList.lastNode?.value)")
+        XCTAssert(linkedList.detachLastValue() == nil, "First detached value should be nil")
+    }
 }

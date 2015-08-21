@@ -9,6 +9,7 @@
 public class LinkedListNode<T> {
     public let value: T
     public var nextNode: LinkedListNode?
+    public var previousNode: LinkedListNode?
     
     init(value: T) {
         self.value = value
