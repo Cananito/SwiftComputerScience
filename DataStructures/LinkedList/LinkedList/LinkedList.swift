@@ -6,7 +6,7 @@
 //
 //
 
-public class LinkedList<T> {
+public class LinkedList<T>: CustomStringConvertible, CustomDebugStringConvertible {
     public var firstNode: LinkedListNode<T>?
     public var lastNode: LinkedListNode<T>?
     
@@ -62,5 +62,21 @@ public class LinkedList<T> {
         
         oldLastNode?.previousNode = nil
         return oldLastNode?.value
+    }
+    
+    // MARK: CustomStringConvertible
+    public var description: String {
+        if let firstNode = self.firstNode {
+            return firstNode.description
+        }
+        return ""
+    }
+    
+    // MARK: CustomDebugStringConvertible
+    public var debugDescription: String {
+        if let firstNode = self.firstNode {
+            return firstNode.debugDescription
+        }
+        return ""
     }
 }

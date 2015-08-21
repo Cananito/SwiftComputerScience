@@ -29,6 +29,8 @@ class LinkedListTests: XCTestCase {
         linkedList.prependValue(3)
         linkedList.prependValue(2)
         linkedList.prependValue(1)
+        print(linkedList.description)
+        XCTAssert(linkedList.description == "1 -> 2 -> 3", "List with 3 prepended values should print them in reverse order")
         
         var node = linkedList.firstNode
         XCTAssert(node?.value == 1, "firstNode should be 1")
@@ -47,6 +49,7 @@ class LinkedListTests: XCTestCase {
         linkedList.appendValue(3)
         linkedList.appendValue(2)
         linkedList.appendValue(1)
+        XCTAssert(linkedList.description == "3 -> 2 -> 1", "List with 3 appended values should print them in order")
         
         var node = linkedList.firstNode
         XCTAssert(node?.value == 3, "firstNode should be 3")
