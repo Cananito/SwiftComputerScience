@@ -6,7 +6,7 @@
 //
 //
 
-public class LinkedListNode<T: CustomStringConvertible>: CustomStringConvertible {
+public class LinkedListNode<T: CustomDebugStringConvertible>: CustomDebugStringConvertible {
     let value: T
     var nextNode: LinkedListNode?
     
@@ -14,13 +14,13 @@ public class LinkedListNode<T: CustomStringConvertible>: CustomStringConvertible
         self.value = value
     }
     
-    // MARK: Printable
-    public var description: String {
+    // MARK: CustomDebugStringConvertible
+    public var debugDescription: String {
         get {
             if let node = nextNode {
-                return value.description + " -> " + node.description
+                return value.debugDescription + " -> " + node.debugDescription
             }
-            return value.description
+            return value.debugDescription
         }
     }
 }

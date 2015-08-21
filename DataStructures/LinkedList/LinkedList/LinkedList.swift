@@ -6,17 +6,17 @@
 //
 //
 
-public class LinkedList<T: CustomStringConvertible>: CustomStringConvertible {
+public class LinkedList<T: CustomDebugStringConvertible>: CustomDebugStringConvertible {
     var headNode: LinkedListNode<T>?
     
     public init() {
     }
     
-    // MARK: Printable Methods
-    public var description: String {
+    // MARK: CustomDebugStringConvertible
+    public var debugDescription: String {
         get {
             if let node = headNode {
-                return node.description
+                return node.debugDescription
             }
             return ""
         }
