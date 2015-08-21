@@ -6,21 +6,11 @@
 //
 //
 
-public class LinkedListNode<T: CustomDebugStringConvertible>: CustomDebugStringConvertible {
-    let value: T
-    var nextNode: LinkedListNode?
+public class LinkedListNode<T> {
+    public let value: T
+    public var nextNode: LinkedListNode?
     
     init(value: T) {
         self.value = value
-    }
-    
-    // MARK: CustomDebugStringConvertible
-    public var debugDescription: String {
-        get {
-            if let node = nextNode {
-                return value.debugDescription + " -> " + node.debugDescription
-            }
-            return value.debugDescription
-        }
     }
 }
