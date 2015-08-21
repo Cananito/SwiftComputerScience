@@ -12,6 +12,7 @@
 		424D66831ABF408D00D6C819 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424D66811ABF408D00D6C819 /* MainMenu.xib */; };
 		424D668F1ABF408D00D6C819 /* PalindromeDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D668E1ABF408D00D6C819 /* PalindromeDetectorTests.swift */; };
 		4264A0681B85A26D008EBCD7 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4264A0651B85A214008EBCD7 /* Stack.framework */; };
+		4264A0771B86F127008EBCD7 /* LinkedList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4264A0721B86F114008EBCD7 /* LinkedList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,20 @@
 			remoteGlobalIDString = 424D66591ABF38D300D6C819;
 			remoteInfo = StackTests;
 		};
+		4264A0711B86F114008EBCD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4264A06C1B86F114008EBCD7 /* LinkedList.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 42A94CF11A96FC9F0012CC35;
+			remoteInfo = LinkedList;
+		};
+		4264A0731B86F114008EBCD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4264A06C1B86F114008EBCD7 /* LinkedList.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 42A94CFC1A96FC9F0012CC35;
+			remoteInfo = LinkedListTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +63,7 @@
 		424D668D1ABF408D00D6C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		424D668E1ABF408D00D6C819 /* PalindromeDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeDetectorTests.swift; sourceTree = "<group>"; };
 		4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Stack.xcodeproj; path = ../../DataStructures/Stack/Stack.xcodeproj; sourceTree = "<group>"; };
+		4264A06C1B86F114008EBCD7 /* LinkedList.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinkedList.xcodeproj; path = ../../DataStructures/LinkedList/LinkedList.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4264A0771B86F127008EBCD7 /* LinkedList.framework in Frameworks */,
 				4264A0681B85A26D008EBCD7 /* Stack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */,
+				4264A06C1B86F114008EBCD7 /* LinkedList.xcodeproj */,
 				424D667A1ABF408D00D6C819 /* PalindromeDetector */,
 				424D668B1ABF408D00D6C819 /* PalindromeDetectorTests */,
 				424D66791ABF408D00D6C819 /* Products */,
@@ -129,6 +147,15 @@
 			children = (
 				4264A0651B85A214008EBCD7 /* Stack.framework */,
 				4264A0671B85A214008EBCD7 /* StackTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4264A06D1B86F114008EBCD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4264A0721B86F114008EBCD7 /* LinkedList.framework */,
+				4264A0741B86F114008EBCD7 /* LinkedListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +230,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 4264A06D1B86F114008EBCD7 /* Products */;
+					ProjectRef = 4264A06C1B86F114008EBCD7 /* LinkedList.xcodeproj */;
+				},
+				{
 					ProductGroup = 4264A0601B85A214008EBCD7 /* Products */;
 					ProjectRef = 4264A05F1B85A214008EBCD7 /* Stack.xcodeproj */;
 				},
@@ -228,6 +259,20 @@
 			fileType = wrapper.cfbundle;
 			path = StackTests.xctest;
 			remoteRef = 4264A0661B85A214008EBCD7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4264A0721B86F114008EBCD7 /* LinkedList.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LinkedList.framework;
+			remoteRef = 4264A0711B86F114008EBCD7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4264A0741B86F114008EBCD7 /* LinkedListTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LinkedListTests.xctest;
+			remoteRef = 4264A0731B86F114008EBCD7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

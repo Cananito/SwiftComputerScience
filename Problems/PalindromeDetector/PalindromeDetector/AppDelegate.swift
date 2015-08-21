@@ -8,6 +8,7 @@
 
 import Cocoa
 import Stack
+import LinkedList
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
@@ -101,6 +102,25 @@ extension String {
                 return true
             }
             index++
+        }
+        
+        return true
+    }
+    
+    func isPalindromeUsingLinkedList() -> Bool {
+        let characters = Array(self.characters)
+        let linkedList = LinkedList<Character>()
+        
+        for character in characters {
+            linkedList.appendValue(character)
+        }
+        
+        while (linkedList.lastNode != nil) {
+            if linkedList.firstNode?.value != linkedList.lastNode?.value {
+                return false
+            }
+            linkedList.detachFirstValue()
+            linkedList.detachLastValue()
         }
         
         return true
