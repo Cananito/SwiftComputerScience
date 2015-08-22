@@ -100,4 +100,72 @@ class ArrayDequeTests: XCTestCase {
         XCTAssert(second[0] != .None)
         XCTAssert(second[0] == 0)
     }
+    
+    func testDoublePrependAndRemoveLast() {
+        var arrayDeque = ArrayDeque<Int>()
+        arrayDeque.prependElement(2)
+        arrayDeque.prependElement(1)
+        
+        var element = arrayDeque.removeLastElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 2)
+        
+        element = arrayDeque.removeLastElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 1)
+        
+        element = arrayDeque.removeLastElement()
+        XCTAssert(element == .None)
+    }
+    
+    func testDoublePrependAndRemoveFirst() {
+        var arrayDeque = ArrayDeque<Int>()
+        arrayDeque.prependElement(2)
+        arrayDeque.prependElement(1)
+        
+        var element = arrayDeque.removeFirstElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 1)
+        
+        element = arrayDeque.removeFirstElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 2)
+        
+        element = arrayDeque.removeFirstElement()
+        XCTAssert(element == .None)
+    }
+    
+    func testDoubleAppendAndRemoveFirst() {
+        var arrayDeque = ArrayDeque<Int>()
+        arrayDeque.appendElement(1)
+        arrayDeque.appendElement(2)
+        
+        var element = arrayDeque.removeFirstElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 1)
+        
+        element = arrayDeque.removeFirstElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 2)
+        
+        element = arrayDeque.removeFirstElement()
+        XCTAssert(element == .None)
+    }
+    
+    func testDoubleAppendAndRemoveLast() {
+        var arrayDeque = ArrayDeque<Int>()
+        arrayDeque.appendElement(1)
+        arrayDeque.appendElement(2)
+        
+        var element = arrayDeque.removeLastElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 2)
+        
+        element = arrayDeque.removeLastElement()
+        XCTAssert(element != .None)
+        XCTAssert(element! == 1)
+        
+        element = arrayDeque.removeLastElement()
+        XCTAssert(element == .None)
+    }
 }

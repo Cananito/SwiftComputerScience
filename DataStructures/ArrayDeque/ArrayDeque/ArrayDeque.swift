@@ -104,12 +104,7 @@ private class ArrayDequeStorage<T> {
     
     private func prependElement(element: T) {
         expandStorageIfNecessary()
-        
-        if startIndex == 0 {
-            startIndex = capacity - 1
-        } else {
-            startIndex--
-        }
+        decrementStartIndex()
         (storage + startIndex).initialize(element)
         count++
     }
@@ -117,7 +112,7 @@ private class ArrayDequeStorage<T> {
     private func appendElement(element: T) {
         expandStorageIfNecessary()
         if isEmpty() == false {
-            endIndex = (endIndex + 1) % capacity
+            incrementEndIndex()
         }
         (storage + endIndex).initialize(element)
         count++
@@ -129,8 +124,8 @@ private class ArrayDequeStorage<T> {
         }
         
         let element = (storage + startIndex).move()
-        startIndex++
         count--
+        incrementStartIndex()
         
         shrinkStorageIfNecessary()
         
@@ -143,10 +138,8 @@ private class ArrayDequeStorage<T> {
         }
         
         let element = (storage + endIndex).move()
-        if endIndex != 0 {
-            endIndex--
-        }
         count--
+        decrementEndIndex()
         
         shrinkStorageIfNecessary()
         
@@ -156,6 +149,54 @@ private class ArrayDequeStorage<T> {
     private func elementAtIndex(index: Int) -> T {
         let adjustedIndex = (index + startIndex) % capacity
         return (storage + adjustedIndex).memory
+    }
+    
+    private func incrementStartIndex() {
+        let shouldMatchOtherIndex = isEmpty() && endIndex == startIndex
+        
+        startIndex = (startIndex + 1) % capacity
+        
+        if shouldMatchOtherIndex {
+            endIndex = startIndex
+        }
+    }
+    
+    private func decrementStartIndex() {
+        let shouldMatchOtherIndex = isEmpty() && endIndex == startIndex
+        
+        if startIndex == 0 {
+            startIndex = capacity - 1
+        } else {
+            startIndex--
+        }
+        
+        if shouldMatchOtherIndex {
+            endIndex = startIndex
+        }
+    }
+    
+    private func incrementEndIndex() {
+        let shouldMatchOtherIndex = isEmpty() && startIndex == endIndex
+        
+        endIndex = (endIndex + 1) % capacity
+        
+        if shouldMatchOtherIndex {
+            startIndex = endIndex
+        }
+    }
+    
+    private func decrementEndIndex() {
+        let shouldMatchOtherIndex = isEmpty() && startIndex == endIndex
+        
+        if endIndex == 0 {
+            endIndex = capacity - 1
+        } else {
+            endIndex--
+        }
+        
+        if shouldMatchOtherIndex {
+            startIndex = endIndex
+        }
     }
     
     private func expandStorageIfNecessary() {
