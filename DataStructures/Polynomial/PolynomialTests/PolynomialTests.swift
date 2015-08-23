@@ -25,11 +25,14 @@ class PolynomialTests: XCTestCase {
             Term(constant: 1, coefficient: 0)
             ])
         let derivedPolynomial = polynomial.derived()
-        
-        print(polynomial.description)
         XCTAssert(polynomial.description == "5x^2, 3x, 1", "Polynomial's string representation.")
-        
-        print(derivedPolynomial.description)
         XCTAssert(derivedPolynomial.description == "10x, 3", "Derived polynomial's string representation.")
+        
+        let negativeExponentPolynomial = Polynomial(terms: [
+            Term(constant: 10, coefficient: -3)
+            ])
+        let derivedNegativeExponentPolynomial = negativeExponentPolynomial.derived()
+        XCTAssert(negativeExponentPolynomial.description == "10x^-3", "Polynomial's string representation.")
+        XCTAssert(derivedNegativeExponentPolynomial.description == "-30x^-4", "Derived polynomial's string representation.")
     }
 }
