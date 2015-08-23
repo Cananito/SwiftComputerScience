@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
             self.showLoadingUI()
             
             NSOperationQueue().addOperationWithBlock { () -> Void in
-                let words = split(string.characters, isSeparator: { $0 == "\n" }).map { String($0) }
+                let words = string.characters.split(isSeparator: { $0 == "\n" }).map { String($0) }
                 self.currentClusterArray = clusterArrayOfWords(words)
                 
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
