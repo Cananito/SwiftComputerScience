@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
 
 extension String {
     func withoutWhiteSpaces() -> String {
-        return lazy(self.characters).filter { $0 != " " }.reduce("") { $0 + String($1) }
+        return self.characters.lazy.filter { $0 != " " }.reduce("") { $0 + String($1) }
     }
     
     func isPalindrome() -> Bool {
@@ -65,14 +65,14 @@ extension String {
             return true
         }
         
-        let firstCharacter = self[advance(self.startIndex, 0)]
-        let lastCharacter = self[advance(self.startIndex, length - 1)]
+        let firstCharacter = self[self.startIndex.advancedBy(0)]
+        let lastCharacter = self[self.startIndex.advancedBy(length - 1)]
         let matchingEnds = firstCharacter == lastCharacter
         if matchingEnds && length == 2 {
             return true
         } else if matchingEnds {
-            let secondCharacterStringIndex = advance(self.startIndex, 1)
-            let secondToLastCharacterStringIndex = advance(self.startIndex, length - 2)
+            let secondCharacterStringIndex = self.startIndex.advancedBy(1)
+            let secondToLastCharacterStringIndex = self.startIndex.advancedBy(length - 2)
             let range = secondCharacterStringIndex...secondToLastCharacterStringIndex
             let newString = self[range]
             
@@ -124,5 +124,11 @@ extension String {
         }
         
         return true
+    }
+    
+    func isPalindromeUsingArrayDeque() -> Bool {
+        // 1. Fill up the deque.
+        // 2. Grab (remove) and compare first and last values.
+        return false
     }
 }

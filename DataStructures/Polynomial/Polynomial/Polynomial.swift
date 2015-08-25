@@ -83,7 +83,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     // MARK: CustomStringConvertible
     
     public var description: String {
-        return ", ".join(terms.map { $0.description })
+        return terms.map { $0.description }.joinWithSeparator(", ")
     }
     
     // MARK: CustomDebugStringConvertible

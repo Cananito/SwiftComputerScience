@@ -46,7 +46,7 @@ class ArrayDequeTests: XCTestCase {
     }
     
     func testInitializeWithArray() {
-        var arrayDeque = ArrayDeque<Int>(array: [1, 2, 3])
+        let arrayDeque = ArrayDeque<Int>(array: [1, 2, 3])
         XCTAssert(arrayDeque.count() == 3)
         
         XCTAssert(arrayDeque[0] != .None)

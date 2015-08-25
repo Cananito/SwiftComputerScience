@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     
     // MARK: NSTableViewDelegate Methods
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let index = advance(self.currentClusterArray.startIndex, row)
+        let index = self.currentClusterArray.startIndex.advancedBy(row)
         let key = self.currentClusterArray.keys[index]
         
         var numberOfOccurrences = 0
