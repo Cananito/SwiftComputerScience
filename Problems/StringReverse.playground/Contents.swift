@@ -75,7 +75,6 @@ extension String {
         var leftIndex = self.startIndex
         var rightIndex = self.endIndex.advancedBy(-1)
         while leftIndex.distanceTo(rightIndex) > 0 {
-            print(leftIndex.distanceTo(rightIndex))
             let leftChar = self[leftIndex]
             let rightChar = self[rightIndex]
             self.replaceRange(Range(start: leftIndex, end: leftIndex.advancedBy(1)), with: String(rightChar))
