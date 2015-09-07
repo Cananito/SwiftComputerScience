@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42A10AE81B9D02C4005C7BE9 /* BinaryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A10AE71B9D02C4005C7BE9 /* BinaryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42A10AEF1B9D02C4005C7BE9 /* BinaryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A10AE41B9D02C4005C7BE9 /* BinaryTree.framework */; settings = {ASSET_TAGS = (); }; };
+		42A10AF41B9D02C4005C7BE9 /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A10AF31B9D02C4005C7BE9 /* BinaryTreeTests.swift */; };
+		42A10AFF1B9D02D8005C7BE9 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A10AFE1B9D02D8005C7BE9 /* BinaryTree.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42A10AF01B9D02C4005C7BE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42A10ADB1B9D02C4005C7BE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42A10AE31B9D02C4005C7BE9;
+			remoteInfo = BinaryTree;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42A10AE41B9D02C4005C7BE9 /* BinaryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BinaryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A10AE71B9D02C4005C7BE9 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		42A10AE91B9D02C4005C7BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A10AEE1B9D02C4005C7BE9 /* BinaryTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinaryTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A10AF31B9D02C4005C7BE9 /* BinaryTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeTests.swift; sourceTree = "<group>"; };
+		42A10AF51B9D02C4005C7BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A10AFE1B9D02D8005C7BE9 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		42A10B141B9D23BA005C7BE9 /* BinaryTreeNextNodeSample.graffle */ = {isa = PBXFileReference; lastKnownFileType = file; path = BinaryTreeNextNodeSample.graffle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42A10AE01B9D02C4005C7BE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10AEB1B9D02C4005C7BE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A10AEF1B9D02C4005C7BE9 /* BinaryTree.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42A10ADA1B9D02C4005C7BE9 = {
+			isa = PBXGroup;
+			children = (
+				42A10AE61B9D02C4005C7BE9 /* BinaryTree */,
+				42A10AF21B9D02C4005C7BE9 /* BinaryTreeTests */,
+				42A10AE51B9D02C4005C7BE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42A10AE51B9D02C4005C7BE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42A10AE41B9D02C4005C7BE9 /* BinaryTree.framework */,
+				42A10AEE1B9D02C4005C7BE9 /* BinaryTreeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42A10AE61B9D02C4005C7BE9 /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				42A10AFE1B9D02D8005C7BE9 /* BinaryTree.swift */,
+				42A10AE71B9D02C4005C7BE9 /* BinaryTree.h */,
+				42A10AE91B9D02C4005C7BE9 /* Info.plist */,
+			);
+			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		42A10AF21B9D02C4005C7BE9 /* BinaryTreeTests */ = {
+			isa = PBXGroup;
+			children = (
+				42A10B141B9D23BA005C7BE9 /* BinaryTreeNextNodeSample.graffle */,
+				42A10AF31B9D02C4005C7BE9 /* BinaryTreeTests.swift */,
+				42A10AF51B9D02C4005C7BE9 /* Info.plist */,
+			);
+			path = BinaryTreeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		42A10AE11B9D02C4005C7BE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A10AE81B9D02C4005C7BE9 /* BinaryTree.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		42A10AE31B9D02C4005C7BE9 /* BinaryTree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A10AF81B9D02C4005C7BE9 /* Build configuration list for PBXNativeTarget "BinaryTree" */;
+			buildPhases = (
+				42A10ADF1B9D02C4005C7BE9 /* Sources */,
+				42A10AE01B9D02C4005C7BE9 /* Frameworks */,
+				42A10AE11B9D02C4005C7BE9 /* Headers */,
+				42A10AE21B9D02C4005C7BE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinaryTree;
+			productName = BinaryTree;
+			productReference = 42A10AE41B9D02C4005C7BE9 /* BinaryTree.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		42A10AED1B9D02C4005C7BE9 /* BinaryTreeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A10AFB1B9D02C4005C7BE9 /* Build configuration list for PBXNativeTarget "BinaryTreeTests" */;
+			buildPhases = (
+				42A10AEA1B9D02C4005C7BE9 /* Sources */,
+				42A10AEB1B9D02C4005C7BE9 /* Frameworks */,
+				42A10AEC1B9D02C4005C7BE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A10AF11B9D02C4005C7BE9 /* PBXTargetDependency */,
+			);
+			name = BinaryTreeTests;
+			productName = BinaryTreeTests;
+			productReference = 42A10AEE1B9D02C4005C7BE9 /* BinaryTreeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42A10ADB1B9D02C4005C7BE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Rogelio Gudino";
+				TargetAttributes = {
+					42A10AE31B9D02C4005C7BE9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					42A10AED1B9D02C4005C7BE9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 42A10ADE1B9D02C4005C7BE9 /* Build configuration list for PBXProject "BinaryTree" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42A10ADA1B9D02C4005C7BE9;
+			productRefGroup = 42A10AE51B9D02C4005C7BE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42A10AE31B9D02C4005C7BE9 /* BinaryTree */,
+				42A10AED1B9D02C4005C7BE9 /* BinaryTreeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42A10AE21B9D02C4005C7BE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10AEC1B9D02C4005C7BE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42A10ADF1B9D02C4005C7BE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A10AFF1B9D02D8005C7BE9 /* BinaryTree.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10AEA1B9D02C4005C7BE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A10AF41B9D02C4005C7BE9 /* BinaryTreeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A10AF11B9D02C4005C7BE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42A10AE31B9D02C4005C7BE9 /* BinaryTree */;
+			targetProxy = 42A10AF01B9D02C4005C7BE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		42A10AF61B9D02C4005C7BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		42A10AF71B9D02C4005C7BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		42A10AF91B9D02C4005C7BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BinaryTree/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.BinaryTree;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42A10AFA1B9D02C4005C7BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BinaryTree/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.BinaryTree;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		42A10AFC1B9D02C4005C7BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BinaryTreeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.BinaryTreeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42A10AFD1B9D02C4005C7BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BinaryTreeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.BinaryTreeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42A10ADE1B9D02C4005C7BE9 /* Build configuration list for PBXProject "BinaryTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A10AF61B9D02C4005C7BE9 /* Debug */,
+				42A10AF71B9D02C4005C7BE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A10AF81B9D02C4005C7BE9 /* Build configuration list for PBXNativeTarget "BinaryTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A10AF91B9D02C4005C7BE9 /* Debug */,
+				42A10AFA1B9D02C4005C7BE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42A10AFB1B9D02C4005C7BE9 /* Build configuration list for PBXNativeTarget "BinaryTreeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A10AFC1B9D02C4005C7BE9 /* Debug */,
+				42A10AFD1B9D02C4005C7BE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42A10ADB1B9D02C4005C7BE9 /* Project object */;
+}
