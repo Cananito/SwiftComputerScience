@@ -16,6 +16,10 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         self.value = value
     }
     
+    public func enumerate(body: (BinaryTreeNode) -> ()) {
+        enumerateInOrder(body)
+    }
+    
     public func enumerateInOrder(body: (BinaryTreeNode) -> ()) {
         if let leftNode = self.leftNode {
             leftNode.enumerateInOrder(body)
@@ -23,6 +27,43 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         body(self)
         if let rightNode = self.rightNode {
             rightNode.enumerateInOrder(body)
+        }
+    }
+    
+    public func enumeratePreOrder(body: (BinaryTreeNode) -> ()) {
+        body(self)
+        if let leftNode = self.leftNode {
+            leftNode.enumeratePreOrder(body)
+        }
+        if let rightNode = self.rightNode {
+            rightNode.enumeratePreOrder(body)
+        }
+    }
+    
+    public func enumeratePostOrder(body: (BinaryTreeNode) -> ()) {
+        if let leftNode = self.leftNode {
+            leftNode.enumeratePostOrder(body)
+        }
+        if let rightNode = self.rightNode {
+            rightNode.enumeratePostOrder(body)
+        }
+        body(self)
+    }
+    
+    public func enumerateBreadthFirst(body: (BinaryTreeNode) -> ()) {
+        var queue = [BinaryTreeNode]()
+        queue.append(self)
+        
+        while queue.isEmpty == false {
+            let current = queue.first!
+            if let left = current.leftNode {
+                queue.append(left)
+            }
+            if let right = current.rightNode {
+                queue.append(right)
+            }
+            body(current)
+            queue.removeFirst()
         }
     }
     
