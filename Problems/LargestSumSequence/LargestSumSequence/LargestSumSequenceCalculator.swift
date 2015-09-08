@@ -8,7 +8,7 @@
 
 func largestSumSequence(array: [Int]) -> [Int] {
     var result = [Int]()
-    var max = Int.min
+    var largest = Int.min
     var current = 0
     var start = 0
     var end = array.count - 1
@@ -19,8 +19,8 @@ func largestSumSequence(array: [Int]) -> [Int] {
             start = i
         }
         current += array[i]
-        if max < current {
-            max = current
+        if current > largest {
+            largest = current
             end = i
             result = Array(array[start...end])
         }
@@ -29,22 +29,20 @@ func largestSumSequence(array: [Int]) -> [Int] {
 }
 
 func largestSum(array: [Int]) -> Int {
-    if array.count == 0 {
-        return 0
-    }
-    
-    var max = Int.min
+    var largest = Int.min
     var current = 0
-    for var i = 0; i < array.count; i++ {
+    
+    for number in array {
         if current < 0 {
             current = 0
         }
-        current += array[i]
-        if max < current {
-            max = current
+        current += number
+        if current > largest {
+            largest = current
         }
     }
-    return max
+    
+    return largest
 }
 
 func largestSumSequenceSlow(array: [Int]) -> [Int] {

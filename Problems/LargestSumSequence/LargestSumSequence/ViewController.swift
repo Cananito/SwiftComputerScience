@@ -8,17 +8,6 @@
 
 import Cocoa
 
-/*
-Sample input:
-[2, 10, -5, 8, 2]
-[2, 10, -50, 8, 2]
-[0, 10, 0, -8, 2]
-[-2, -1, -10, -8, -1]
-[2, -1, 1, -8, -1]
-[12, -10, -1, 8, -1]
-[-1, -10, -3, -8, -7]
-*/
-
 class ViewController: NSViewController {
     @IBOutlet weak var currentArrayLabel: NSTextField!
     @IBOutlet weak var resultArrayLabel: NSTextField!

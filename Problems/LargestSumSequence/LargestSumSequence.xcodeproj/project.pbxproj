@@ -12,7 +12,18 @@
 		4264A0B01B899FFC008EBCD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4264A0AF1B899FFC008EBCD7 /* Assets.xcassets */; };
 		4264A0B31B899FFC008EBCD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4264A0B11B899FFC008EBCD7 /* Main.storyboard */; };
 		4264A0BB1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264A0BA1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift */; };
+		42A10B1C1B9E2949005C7BE9 /* LargestSumSequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A10B1B1B9E2949005C7BE9 /* LargestSumSequenceTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42A10B1E1B9E2949005C7BE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4264A0A01B899FFC008EBCD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4264A0A71B899FFC008EBCD7;
+			remoteInfo = LargestSumSequence;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4264A0A81B899FFC008EBCD7 /* LargestSumSequence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LargestSumSequence.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,20 @@
 		4264A0B21B899FFC008EBCD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4264A0B41B899FFC008EBCD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4264A0BA1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargestSumSequenceCalculator.swift; sourceTree = "<group>"; };
+		42A10B191B9E2949005C7BE9 /* LargestSumSequenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LargestSumSequenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A10B1B1B9E2949005C7BE9 /* LargestSumSequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargestSumSequenceTests.swift; sourceTree = "<group>"; };
+		42A10B1D1B9E2949005C7BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4264A0A51B899FFC008EBCD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10B161B9E2949005C7BE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				4264A0AA1B899FFC008EBCD7 /* LargestSumSequence */,
+				42A10B1A1B9E2949005C7BE9 /* LargestSumSequenceTests */,
 				4264A0A91B899FFC008EBCD7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				4264A0A81B899FFC008EBCD7 /* LargestSumSequence.app */,
+				42A10B191B9E2949005C7BE9 /* LargestSumSequenceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +85,15 @@
 				4264A0B41B899FFC008EBCD7 /* Info.plist */,
 			);
 			path = LargestSumSequence;
+			sourceTree = "<group>";
+		};
+		42A10B1A1B9E2949005C7BE9 /* LargestSumSequenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				42A10B1B1B9E2949005C7BE9 /* LargestSumSequenceTests.swift */,
+				42A10B1D1B9E2949005C7BE9 /* Info.plist */,
+			);
+			path = LargestSumSequenceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +116,24 @@
 			productReference = 4264A0A81B899FFC008EBCD7 /* LargestSumSequence.app */;
 			productType = "com.apple.product-type.application";
 		};
+		42A10B181B9E2949005C7BE9 /* LargestSumSequenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A10B221B9E2949005C7BE9 /* Build configuration list for PBXNativeTarget "LargestSumSequenceTests" */;
+			buildPhases = (
+				42A10B151B9E2949005C7BE9 /* Sources */,
+				42A10B161B9E2949005C7BE9 /* Frameworks */,
+				42A10B171B9E2949005C7BE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A10B1F1B9E2949005C7BE9 /* PBXTargetDependency */,
+			);
+			name = LargestSumSequenceTests;
+			productName = LargestSumSequenceTests;
+			productReference = 42A10B191B9E2949005C7BE9 /* LargestSumSequenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +145,10 @@
 				TargetAttributes = {
 					4264A0A71B899FFC008EBCD7 = {
 						CreatedOnToolsVersion = 7.0;
+					};
+					42A10B181B9E2949005C7BE9 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 4264A0A71B899FFC008EBCD7;
 					};
 				};
 			};
@@ -112,6 +166,7 @@
 			projectRoot = "";
 			targets = (
 				4264A0A71B899FFC008EBCD7 /* LargestSumSequence */,
+				42A10B181B9E2949005C7BE9 /* LargestSumSequenceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +178,13 @@
 			files = (
 				4264A0B01B899FFC008EBCD7 /* Assets.xcassets in Resources */,
 				4264A0B31B899FFC008EBCD7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10B171B9E2949005C7BE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +201,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42A10B151B9E2949005C7BE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A10B1C1B9E2949005C7BE9 /* LargestSumSequenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A10B1F1B9E2949005C7BE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4264A0A71B899FFC008EBCD7 /* LargestSumSequence */;
+			targetProxy = 42A10B1E1B9E2949005C7BE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4264A0B11B899FFC008EBCD7 /* Main.storyboard */ = {
@@ -257,6 +335,32 @@
 			};
 			name = Release;
 		};
+		42A10B201B9E2949005C7BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LargestSumSequenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.LargestSumSequenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LargestSumSequence.app/Contents/MacOS/LargestSumSequence";
+			};
+			name = Debug;
+		};
+		42A10B211B9E2949005C7BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LargestSumSequenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.LargestSumSequenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LargestSumSequence.app/Contents/MacOS/LargestSumSequence";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -274,6 +378,15 @@
 			buildConfigurations = (
 				4264A0B81B899FFC008EBCD7 /* Debug */,
 				4264A0B91B899FFC008EBCD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A10B221B9E2949005C7BE9 /* Build configuration list for PBXNativeTarget "LargestSumSequenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A10B201B9E2949005C7BE9 /* Debug */,
+				42A10B211B9E2949005C7BE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
