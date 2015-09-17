@@ -27,7 +27,7 @@ class FractalView: NSView {
     }
     
     internal func drawFractal(rect: NSRect) {
-        println("Subclasses must override!")
+        Swift.print("Subclasses must override!")
     }
     
     internal func randomColor() -> NSColor {

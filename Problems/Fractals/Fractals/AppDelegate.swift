@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func changeFractal(sender: NSMatrix!) {
-        let cell: NSCell = sender.selectedCell() as! NSCell
+        guard let cell = sender.selectedCell() else { return }
         if cell.title == "Triangle" {
             changeToFractalView(fractalView: self.triangleFractalView)
         } else if cell.title == "Mondrian" {
@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func changeToFractalView(#fractalView: FractalView) {
+    func changeToFractalView(fractalView fractalView: FractalView) {
         self.currentFractalView?.removeFromSuperview()
         self.currentFractalView = fractalView
         self.fractalContainerView.addSubview(self.currentFractalView!)

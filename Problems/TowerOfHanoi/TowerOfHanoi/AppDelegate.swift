@@ -22,8 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let disk = Disk(identifier: i)
             disks.append(disk)
         }
-        self.originalDisksArray = disks.reverse()
-        
+        self.originalDisksArray = Array(disks.reverse())
         self.backgroundOperationQueue = NSOperationQueue()
     }
     
@@ -32,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func buttonWasClicked(sender: AnyObject!) {
-        let cell: NSCell = sender.selectedCell() as! NSCell
+        guard let cell: NSCell = sender.selectedCell() else { return }
         if cell.title == "Solve" {
             cell.title = "Finish"
             self.resetTower()
@@ -51,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.drawingView.towerOfHanoi = towerOfHanoi
     }
     
-    private func solveTower(#animated: Bool) {
+    private func solveTower(animated animated: Bool) {
         var newTowerOfHanoi = self.drawingView.towerOfHanoi
         
         if animated {
@@ -65,12 +64,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    private func moveSingleDisk(inout #sourcePole: [Disk], inout destinationPole: [Disk]) {
+    private func moveSingleDisk(inout sourcePole sourcePole: [Disk], inout destinationPole: [Disk]) {
         let disk = sourcePole.removeAtIndex(0)
         destinationPole.insert(disk, atIndex: 0)
     }
     
-    private func moveAnimatedTower(inout #tower: TowerOfHanoi, numberOfDisks: Int, inout sourcePole: [Disk], inout destinationPole: [Disk], inout temporaryPole: [Disk]) {
+    private func moveAnimatedTower(inout tower tower: TowerOfHanoi, numberOfDisks: Int, inout sourcePole: [Disk], inout destinationPole: [Disk], inout temporaryPole: [Disk]) {
         if (numberOfDisks > 0) {
             self.moveAnimatedTower(tower: &tower, numberOfDisks: numberOfDisks - 1, sourcePole: &sourcePole, destinationPole: &temporaryPole, temporaryPole: &destinationPole)
             self.moveSingleDisk(sourcePole: &sourcePole, destinationPole: &destinationPole)
@@ -85,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    private func moveTower(inout #tower: TowerOfHanoi, numberOfDisks: Int, inout sourcePole: [Disk], inout destinationPole: [Disk], inout temporaryPole: [Disk]) {
+    private func moveTower(inout tower tower: TowerOfHanoi, numberOfDisks: Int, inout sourcePole: [Disk], inout destinationPole: [Disk], inout temporaryPole: [Disk]) {
         if (numberOfDisks > 0) {
             self.moveTower(tower: &tower, numberOfDisks: numberOfDisks - 1, sourcePole: &sourcePole, destinationPole: &temporaryPole, temporaryPole: &destinationPole)
             self.moveSingleDisk(sourcePole: &sourcePole, destinationPole: &destinationPole)
@@ -96,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func isCurrentOperationCancelled() -> Bool {
         if let currentQueue = NSOperationQueue.currentQueue() {
             if currentQueue.operationCount > 0 {
-                let operation: NSOperation = currentQueue.operations[0] as! NSOperation
+                let operation: NSOperation = currentQueue.operations[0] as NSOperation
                 return operation.cancelled
             }
         }

@@ -27,7 +27,7 @@ private func alphabetizeWord(word: String) -> String {
         return word
     }
     
-    let charactersArray = sorted(word.lowercaseString)
-    let alphabetizedWord = reduce(charactersArray, "") { $0 + String($1) }
+    let charactersArray = word.lowercaseString.characters.sort()
+    let alphabetizedWord = charactersArray.reduce("") { $0 + String($1) }
     return alphabetizedWord
 }

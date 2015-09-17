@@ -6,21 +6,28 @@
 //
 //
 
-public class LinkedListNode<T: Printable>: Printable {
-    let value: T
-    var nextNode: LinkedListNode?
+public class LinkedListNode<T>: CustomStringConvertible, CustomDebugStringConvertible {
+    public let value: T
+    public var nextNode: LinkedListNode?
+    public var previousNode: LinkedListNode?
     
     init(value: T) {
         self.value = value
     }
     
-    // MARK: Printable
+    // MARK: CustomStringConvertible
     public var description: String {
-        get {
-            if let node = nextNode {
-                return value.description + " -> " + node.description
-            }
-            return value.description
+        if let nextNode = self.nextNode {
+            return "\(self.value) -> \(nextNode.description)"
         }
+        return "\(self.value)"
+    }
+    
+    // MARK: CustomDebugStringConvertible
+    public var debugDescription: String {
+        if let nextNode = self.nextNode {
+            return "\(self.value) -> \(nextNode.debugDescription)"
+        }
+        return "\(self.value)"
     }
 }

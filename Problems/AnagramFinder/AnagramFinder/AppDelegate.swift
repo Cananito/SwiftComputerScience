@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
             self.showLoadingUI()
             
             NSOperationQueue().addOperationWithBlock { () -> Void in
-                let words = split(string, isSeparator: { $0 == "\n" })
+                let words = string.characters.split(isSeparator: { $0 == "\n" }).map { String($0) }
                 self.currentClusterArray = clusterArrayOfWords(words)
                 
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
@@ -42,17 +42,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     
     // MARK: NSTableViewDataSource Methods
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return count(self.currentClusterArray.keys)
+        return self.currentClusterArray.keys.count
     }
     
     // MARK: NSTableViewDelegate Methods
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let index = advance(self.currentClusterArray.startIndex, row)
+        let index = self.currentClusterArray.startIndex.advancedBy(row)
         let key = self.currentClusterArray.keys[index]
         
         var numberOfOccurrences = 0
         if let words = self.currentClusterArray[key] {
-            numberOfOccurrences = count(words)
+            numberOfOccurrences = words.count
         }
         
         let tableCellView = tableView.makeViewWithIdentifier("AnagramCell", owner: self) as? NSTableCellView

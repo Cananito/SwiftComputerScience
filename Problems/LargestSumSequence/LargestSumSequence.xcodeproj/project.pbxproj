@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4264A0AC1B899FFC008EBCD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264A0AB1B899FFC008EBCD7 /* AppDelegate.swift */; };
+		4264A0AE1B899FFC008EBCD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264A0AD1B899FFC008EBCD7 /* ViewController.swift */; };
+		4264A0B01B899FFC008EBCD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4264A0AF1B899FFC008EBCD7 /* Assets.xcassets */; };
+		4264A0B31B899FFC008EBCD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4264A0B11B899FFC008EBCD7 /* Main.storyboard */; };
+		4264A0BB1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264A0BA1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift */; };
+		42A10B1C1B9E2949005C7BE9 /* LargestSumSequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A10B1B1B9E2949005C7BE9 /* LargestSumSequenceTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42A10B1E1B9E2949005C7BE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4264A0A01B899FFC008EBCD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4264A0A71B899FFC008EBCD7;
+			remoteInfo = LargestSumSequence;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4264A0A81B899FFC008EBCD7 /* LargestSumSequence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LargestSumSequence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4264A0AB1B899FFC008EBCD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4264A0AD1B899FFC008EBCD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4264A0AF1B899FFC008EBCD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4264A0B21B899FFC008EBCD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4264A0B41B899FFC008EBCD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4264A0BA1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargestSumSequenceCalculator.swift; sourceTree = "<group>"; };
+		42A10B191B9E2949005C7BE9 /* LargestSumSequenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LargestSumSequenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A10B1B1B9E2949005C7BE9 /* LargestSumSequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargestSumSequenceTests.swift; sourceTree = "<group>"; };
+		42A10B1D1B9E2949005C7BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4264A0A51B899FFC008EBCD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10B161B9E2949005C7BE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4264A09F1B899FFC008EBCD7 = {
+			isa = PBXGroup;
+			children = (
+				4264A0AA1B899FFC008EBCD7 /* LargestSumSequence */,
+				42A10B1A1B9E2949005C7BE9 /* LargestSumSequenceTests */,
+				4264A0A91B899FFC008EBCD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4264A0A91B899FFC008EBCD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4264A0A81B899FFC008EBCD7 /* LargestSumSequence.app */,
+				42A10B191B9E2949005C7BE9 /* LargestSumSequenceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4264A0AA1B899FFC008EBCD7 /* LargestSumSequence */ = {
+			isa = PBXGroup;
+			children = (
+				4264A0AB1B899FFC008EBCD7 /* AppDelegate.swift */,
+				4264A0AD1B899FFC008EBCD7 /* ViewController.swift */,
+				4264A0BA1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift */,
+				4264A0AF1B899FFC008EBCD7 /* Assets.xcassets */,
+				4264A0B11B899FFC008EBCD7 /* Main.storyboard */,
+				4264A0B41B899FFC008EBCD7 /* Info.plist */,
+			);
+			path = LargestSumSequence;
+			sourceTree = "<group>";
+		};
+		42A10B1A1B9E2949005C7BE9 /* LargestSumSequenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				42A10B1B1B9E2949005C7BE9 /* LargestSumSequenceTests.swift */,
+				42A10B1D1B9E2949005C7BE9 /* Info.plist */,
+			);
+			path = LargestSumSequenceTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4264A0A71B899FFC008EBCD7 /* LargestSumSequence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4264A0B71B899FFC008EBCD7 /* Build configuration list for PBXNativeTarget "LargestSumSequence" */;
+			buildPhases = (
+				4264A0A41B899FFC008EBCD7 /* Sources */,
+				4264A0A51B899FFC008EBCD7 /* Frameworks */,
+				4264A0A61B899FFC008EBCD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LargestSumSequence;
+			productName = LargestSumSequence;
+			productReference = 4264A0A81B899FFC008EBCD7 /* LargestSumSequence.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42A10B181B9E2949005C7BE9 /* LargestSumSequenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A10B221B9E2949005C7BE9 /* Build configuration list for PBXNativeTarget "LargestSumSequenceTests" */;
+			buildPhases = (
+				42A10B151B9E2949005C7BE9 /* Sources */,
+				42A10B161B9E2949005C7BE9 /* Frameworks */,
+				42A10B171B9E2949005C7BE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A10B1F1B9E2949005C7BE9 /* PBXTargetDependency */,
+			);
+			name = LargestSumSequenceTests;
+			productName = LargestSumSequenceTests;
+			productReference = 42A10B191B9E2949005C7BE9 /* LargestSumSequenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4264A0A01B899FFC008EBCD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Rogelio Gudino";
+				TargetAttributes = {
+					4264A0A71B899FFC008EBCD7 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					42A10B181B9E2949005C7BE9 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 4264A0A71B899FFC008EBCD7;
+					};
+				};
+			};
+			buildConfigurationList = 4264A0A31B899FFC008EBCD7 /* Build configuration list for PBXProject "LargestSumSequence" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4264A09F1B899FFC008EBCD7;
+			productRefGroup = 4264A0A91B899FFC008EBCD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4264A0A71B899FFC008EBCD7 /* LargestSumSequence */,
+				42A10B181B9E2949005C7BE9 /* LargestSumSequenceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4264A0A61B899FFC008EBCD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4264A0B01B899FFC008EBCD7 /* Assets.xcassets in Resources */,
+				4264A0B31B899FFC008EBCD7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10B171B9E2949005C7BE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4264A0A41B899FFC008EBCD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4264A0AE1B899FFC008EBCD7 /* ViewController.swift in Sources */,
+				4264A0AC1B899FFC008EBCD7 /* AppDelegate.swift in Sources */,
+				4264A0BB1B89A02D008EBCD7 /* LargestSumSequenceCalculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A10B151B9E2949005C7BE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A10B1C1B9E2949005C7BE9 /* LargestSumSequenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A10B1F1B9E2949005C7BE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4264A0A71B899FFC008EBCD7 /* LargestSumSequence */;
+			targetProxy = 42A10B1E1B9E2949005C7BE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4264A0B11B899FFC008EBCD7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4264A0B21B899FFC008EBCD7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4264A0B51B899FFC008EBCD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4264A0B61B899FFC008EBCD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4264A0B81B899FFC008EBCD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LargestSumSequence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.LargestSumSequence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4264A0B91B899FFC008EBCD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LargestSumSequence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.LargestSumSequence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		42A10B201B9E2949005C7BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LargestSumSequenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.LargestSumSequenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LargestSumSequence.app/Contents/MacOS/LargestSumSequence";
+			};
+			name = Debug;
+		};
+		42A10B211B9E2949005C7BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LargestSumSequenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cananito.LargestSumSequenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LargestSumSequence.app/Contents/MacOS/LargestSumSequence";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4264A0A31B899FFC008EBCD7 /* Build configuration list for PBXProject "LargestSumSequence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4264A0B51B899FFC008EBCD7 /* Debug */,
+				4264A0B61B899FFC008EBCD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4264A0B71B899FFC008EBCD7 /* Build configuration list for PBXNativeTarget "LargestSumSequence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4264A0B81B899FFC008EBCD7 /* Debug */,
+				4264A0B91B899FFC008EBCD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A10B221B9E2949005C7BE9 /* Build configuration list for PBXNativeTarget "LargestSumSequenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A10B201B9E2949005C7BE9 /* Debug */,
+				42A10B211B9E2949005C7BE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4264A0A01B899FFC008EBCD7 /* Project object */;
+}

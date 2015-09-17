@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Stack
+import LinkedList
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
@@ -34,32 +36,99 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
 }
 
 extension String {
+    func withoutWhiteSpaces() -> String {
+        return self.characters.lazy.filter { $0 != " " }.reduce("") { $0 + String($1) }
+    }
+    
     func isPalindrome() -> Bool {
-        let length = count(self)
+        return isPalindromUsingIteration()
+    }
+    
+    func isPalindromUsingIteration() -> Bool {
+        let characters = Array(self.characters)
+        var leftIndex = 0
+        var rightIndex = characters.count - 1
+        while leftIndex < rightIndex {
+            if characters[leftIndex] != characters[rightIndex] {
+                return false
+            }
+            leftIndex++
+            rightIndex--
+        }
+        return true
+    }
+    
+    func isPalindromeUsingRecursion() -> Bool {
+        let length = self.characters.count
         
         if length == 0 || length == 1 {
             return true
         }
         
-        let firstCharacter = self[advance(self.startIndex, 0)]
-        let lastCharacter = self[advance(self.startIndex, length - 1)]
+        let firstCharacter = self[self.startIndex.advancedBy(0)]
+        let lastCharacter = self[self.startIndex.advancedBy(length - 1)]
         let matchingEnds = firstCharacter == lastCharacter
         if matchingEnds && length == 2 {
             return true
         } else if matchingEnds {
-            let secondCharacterStringIndex = advance(self.startIndex, 1)
-            let secondToLastCharacterStringIndex = advance(self.startIndex, length - 2)
+            let secondCharacterStringIndex = self.startIndex.advancedBy(1)
+            let secondToLastCharacterStringIndex = self.startIndex.advancedBy(length - 2)
             let range = secondCharacterStringIndex...secondToLastCharacterStringIndex
             let newString = self[range]
             
-            return newString.isPalindrome()
+            return newString.isPalindromeUsingRecursion()
         }
         
         return false
     }
     
-    func withoutWhiteSpaces() -> String {
-        return filter(self) { $0 != " " }.reduce("") { $0 + String($1) }
-//        return filter(self) { $0 != " " }.reduce("") { $0 + [ $1 ] }
+    func isPalindromeUsingStack() -> Bool {
+        let characters = Array(self.characters)
+        var stack = Stack(elements: characters)
+        
+        let middleIndex: Int
+        if characters.count % 2 == 0 {
+            middleIndex = (characters.count / 2) - 1
+        } else {
+            middleIndex = characters.count / 2
+        }
+        
+        var index = 0
+        while index < characters.count {
+            if stack.pop() != characters[index] {
+                return false
+            }
+            if index == middleIndex {
+                return true
+            }
+            index++
+        }
+        
+        return true
+    }
+    
+    func isPalindromeUsingLinkedList() -> Bool {
+        let characters = Array(self.characters)
+        let linkedList = LinkedList<Character>()
+        
+        for character in characters {
+            linkedList.appendValue(character)
+        }
+        
+        while (linkedList.lastNode != nil) {
+            if linkedList.firstNode?.value != linkedList.lastNode?.value {
+                return false
+            }
+            linkedList.detachFirstValue()
+            linkedList.detachLastValue()
+        }
+        
+        return true
+    }
+    
+    func isPalindromeUsingArrayDeque() -> Bool {
+        // 1. Fill up the deque.
+        // 2. Grab (remove) and compare first and last values.
+        return false
     }
 }

@@ -32,8 +32,6 @@ class MondrianFractalView: FractalView {
                 self.splitVertical(rect)
             case .Nothing:
                 break
-            default:
-                break
             }
         }
     }

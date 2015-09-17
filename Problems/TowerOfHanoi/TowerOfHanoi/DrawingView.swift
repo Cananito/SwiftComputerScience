@@ -102,7 +102,7 @@ class DrawingView: NSView {
         self.drawPoleDisks(disks: reverseThirdPoleDisks, forPoleRect: self.thirdPoleRect)
     }
     
-    private func drawPoleDisks(#disks: [Disk], forPoleRect poleRect: NSRect) {
+    private func drawPoleDisks<S: SequenceType where S.Generator.Element == Disk>(disks disks: S, forPoleRect poleRect: NSRect) {
         let diskHeight = poleRect.size.height * 0.05
         let diskVerticalPadding: CGFloat = 2.0
         var currentY = poleRect.origin.y + diskHeight + diskVerticalPadding
