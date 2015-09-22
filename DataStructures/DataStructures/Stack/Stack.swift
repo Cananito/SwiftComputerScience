@@ -7,28 +7,39 @@
 //
 
 public struct Stack<T> {
-    private var array = Array<T>()
+    private var storage = ArrayDeque<T>()
+    private var reversed = false
     
     public init() {
     }
     
     public init(elements: [T]) {
-        self.array = elements
+        storage = ArrayDeque(array: elements)
     }
     
     public func count() -> Int {
-        return self.array.count
+        return storage.count()
     }
     
     public func peek() -> T? {
-        return self.array.last
+        if reversed {
+            return storage[0]
+        }
+        return storage.last()
     }
     
     public mutating func push(object: T) {
-        self.array.append(object)
+        if reversed {
+            storage.prepend(object)
+        } else {
+            storage.append(object)
+        }
     }
     
-    public mutating func pop() -> T {
-        return self.array.removeLast()
+    public mutating func pop() -> T? {
+        if reversed {
+            return storage.removeFirst()
+        }
+        return storage.removeLast()
     }
 }
