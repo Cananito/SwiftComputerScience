@@ -42,4 +42,8 @@ public struct Stack<T> {
         }
         return storage.removeLast()
     }
+    
+    public mutating func reverse() {
+        reversed = !reversed
+    }
 }
