@@ -22,13 +22,13 @@ class ArrayDequeTests: XCTestCase {
         var arrayDeque = ArrayDeque<Int>()
         XCTAssert(arrayDeque.count() == 0)
         
-        arrayDeque.appendElement(1)
+        arrayDeque.append(1)
         XCTAssert(arrayDeque.count() == 1)
         
-        arrayDeque.appendElement(2)
+        arrayDeque.append(2)
         XCTAssert(arrayDeque.count() == 2)
         
-        arrayDeque.prependElement(0)
+        arrayDeque.prepend(0)
         XCTAssert(arrayDeque.count() == 3)
         
         XCTAssert(arrayDeque[0] != .None)
@@ -38,10 +38,10 @@ class ArrayDequeTests: XCTestCase {
         XCTAssert(arrayDeque[1]! == 1)
         XCTAssert(arrayDeque[2]! == 2)
         
-        XCTAssert(arrayDeque.removeFirstElement()! == 0)
+        XCTAssert(arrayDeque.removeFirst()! == 0)
         XCTAssert(arrayDeque.count() == 2)
         
-        XCTAssert(arrayDeque.removeLastElement()! == 2)
+        XCTAssert(arrayDeque.removeLast()! == 2)
         XCTAssert(arrayDeque.count() == 1)
     }
     
@@ -60,27 +60,27 @@ class ArrayDequeTests: XCTestCase {
     func testCircularPrepending() {
         var arrayDeque = ArrayDeque<Int>()
         
-        arrayDeque.prependElement(0)
+        arrayDeque.prepend(0)
         XCTAssert(arrayDeque.count() == 1)
         XCTAssert(arrayDeque[0] != .None)
         XCTAssert(arrayDeque[0]! == 0)
         
-        arrayDeque.prependElement(1)
+        arrayDeque.prepend(1)
         XCTAssert(arrayDeque.count() == 2)
         XCTAssert(arrayDeque[0] != .None)
         XCTAssert(arrayDeque[0]! == 1)
         
-        arrayDeque.prependElement(2)
+        arrayDeque.prepend(2)
         XCTAssert(arrayDeque.count() == 3)
         XCTAssert(arrayDeque[0] != .None)
         XCTAssert(arrayDeque[0]! == 2)
         
-        arrayDeque.prependElement(3)
+        arrayDeque.prepend(3)
         XCTAssert(arrayDeque.count() == 4)
         XCTAssert(arrayDeque[0] != .None)
         XCTAssert(arrayDeque[0]! == 3)
         
-        arrayDeque.prependElement(4)
+        arrayDeque.prepend(4)
         XCTAssert(arrayDeque.count() == 5)
         XCTAssert(arrayDeque[0] != .None)
         XCTAssert(arrayDeque[0]! == 4)
@@ -88,13 +88,13 @@ class ArrayDequeTests: XCTestCase {
     
     func testCopy() {
         var first = ArrayDeque<Int>()
-        first.appendElement(0)
-        first.appendElement(1)
+        first.append(0)
+        first.append(1)
         
         var second = first
         XCTAssert(second.count() == 2)
         
-        second.removeLastElement()
+        second.removeLast()
         XCTAssert(first.count() == 2)
         XCTAssert(second.count() == 1)
         XCTAssert(second[0] != .None)
@@ -103,69 +103,69 @@ class ArrayDequeTests: XCTestCase {
     
     func testDoublePrependAndRemoveLast() {
         var arrayDeque = ArrayDeque<Int>()
-        arrayDeque.prependElement(2)
-        arrayDeque.prependElement(1)
+        arrayDeque.prepend(2)
+        arrayDeque.prepend(1)
         
-        var element = arrayDeque.removeLastElement()
+        var element = arrayDeque.removeLast()
         XCTAssert(element != .None)
         XCTAssert(element! == 2)
         
-        element = arrayDeque.removeLastElement()
+        element = arrayDeque.removeLast()
         XCTAssert(element != .None)
         XCTAssert(element! == 1)
         
-        element = arrayDeque.removeLastElement()
+        element = arrayDeque.removeLast()
         XCTAssert(element == .None)
     }
     
     func testDoublePrependAndRemoveFirst() {
         var arrayDeque = ArrayDeque<Int>()
-        arrayDeque.prependElement(2)
-        arrayDeque.prependElement(1)
+        arrayDeque.prepend(2)
+        arrayDeque.prepend(1)
         
-        var element = arrayDeque.removeFirstElement()
+        var element = arrayDeque.removeFirst()
         XCTAssert(element != .None)
         XCTAssert(element! == 1)
         
-        element = arrayDeque.removeFirstElement()
+        element = arrayDeque.removeFirst()
         XCTAssert(element != .None)
         XCTAssert(element! == 2)
         
-        element = arrayDeque.removeFirstElement()
+        element = arrayDeque.removeFirst()
         XCTAssert(element == .None)
     }
     
     func testDoubleAppendAndRemoveFirst() {
         var arrayDeque = ArrayDeque<Int>()
-        arrayDeque.appendElement(1)
-        arrayDeque.appendElement(2)
+        arrayDeque.append(1)
+        arrayDeque.append(2)
         
-        var element = arrayDeque.removeFirstElement()
+        var element = arrayDeque.removeFirst()
         XCTAssert(element != .None)
         XCTAssert(element! == 1)
         
-        element = arrayDeque.removeFirstElement()
+        element = arrayDeque.removeFirst()
         XCTAssert(element != .None)
         XCTAssert(element! == 2)
         
-        element = arrayDeque.removeFirstElement()
+        element = arrayDeque.removeFirst()
         XCTAssert(element == .None)
     }
     
     func testDoubleAppendAndRemoveLast() {
         var arrayDeque = ArrayDeque<Int>()
-        arrayDeque.appendElement(1)
-        arrayDeque.appendElement(2)
+        arrayDeque.append(1)
+        arrayDeque.append(2)
         
-        var element = arrayDeque.removeLastElement()
+        var element = arrayDeque.removeLast()
         XCTAssert(element != .None)
         XCTAssert(element! == 2)
         
-        element = arrayDeque.removeLastElement()
+        element = arrayDeque.removeLast()
         XCTAssert(element != .None)
         XCTAssert(element! == 1)
         
-        element = arrayDeque.removeLastElement()
+        element = arrayDeque.removeLast()
         XCTAssert(element == .None)
     }
 }

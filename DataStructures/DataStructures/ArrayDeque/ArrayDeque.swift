@@ -29,24 +29,29 @@ public struct ArrayDeque<T> {
         return storage.isEmpty()
     }
     
-    public mutating func prependElement(element: T) {
-        makeCopyOfStorageReferenceIfNecessary()
-        storage.prependElement(element)
+    public func last() -> T? {
+        let index = count() - 1
+        return storage[index]
     }
     
-    public mutating func appendElement(element: T) {
+    public mutating func prepend(element: T) {
         makeCopyOfStorageReferenceIfNecessary()
-        storage.appendElement(element)
+        storage.prepend(element)
     }
     
-    public mutating func removeFirstElement() -> T? {
+    public mutating func append(element: T) {
         makeCopyOfStorageReferenceIfNecessary()
-        return storage.removeFirstElement()
+        storage.append(element)
     }
     
-    public mutating func removeLastElement() -> T? {
+    public mutating func removeFirst() -> T? {
         makeCopyOfStorageReferenceIfNecessary()
-        return storage.removeLastElement()
+        return storage.removeFirst()
+    }
+    
+    public mutating func removeLast() -> T? {
+        makeCopyOfStorageReferenceIfNecessary()
+        return storage.removeLast()
     }
     
     private mutating func makeCopyOfStorageReferenceIfNecessary() {
@@ -102,14 +107,14 @@ private class ArrayDequeStorage<T> {
         return count == 0
     }
     
-    private func prependElement(element: T) {
+    private func prepend(element: T) {
         expandStorageIfNecessary()
         decrementStartIndex()
         (storage + startIndex).initialize(element)
         count++
     }
     
-    private func appendElement(element: T) {
+    private func append(element: T) {
         expandStorageIfNecessary()
         if isEmpty() == false {
             incrementEndIndex()
@@ -118,7 +123,7 @@ private class ArrayDequeStorage<T> {
         count++
     }
     
-    private func removeFirstElement() -> T? {
+    private func removeFirst() -> T? {
         if isEmpty() {
             return nil
         }
@@ -132,7 +137,7 @@ private class ArrayDequeStorage<T> {
         return element
     }
     
-    private func removeLastElement() -> T? {
+    private func removeLast() -> T? {
         if isEmpty() {
             return nil
         }
