@@ -6,7 +6,7 @@
 //
 //
 
-public class LinkedListNode<T>: CustomStringConvertible, CustomDebugStringConvertible {
+public class LinkedListNode<T: Hashable>: CustomStringConvertible, CustomDebugStringConvertible {
     public let value: T
     public var nextNode: LinkedListNode?
     public var previousNode: LinkedListNode?

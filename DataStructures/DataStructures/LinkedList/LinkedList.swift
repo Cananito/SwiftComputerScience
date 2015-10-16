@@ -6,7 +6,7 @@
 //
 //
 
-public class LinkedList<T>: CustomStringConvertible, CustomDebugStringConvertible {
+public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugStringConvertible {
     public var firstNode: LinkedListNode<T>?
     public var lastNode: LinkedListNode<T>?
     
@@ -62,6 +62,53 @@ public class LinkedList<T>: CustomStringConvertible, CustomDebugStringConvertibl
         
         oldLastNode?.previousNode = nil
         return oldLastNode?.value
+    }
+    
+    public func deleteDuplicates() {
+        deleteDuplicatesWithLinearTime()
+    }
+    
+    public func deleteDuplicatesWithConstantMemory() {
+        var current: LinkedListNode? = self.firstNode
+        while current != nil {
+            var temp: LinkedListNode? = current?.nextNode
+            while temp != nil {
+                if (current?.value == temp?.value) {
+                    if temp === self.lastNode {
+                        self.lastNode = temp?.previousNode
+                        self.lastNode?.previousNode = temp?.previousNode?.previousNode
+                    }
+                    temp?.previousNode?.nextNode = temp?.nextNode
+                    temp?.nextNode?.previousNode = temp?.previousNode
+                    temp?.nextNode = nil
+                    temp?.previousNode = nil
+                    temp = temp?.previousNode?.nextNode
+                } else {
+                    temp = temp?.nextNode
+                }
+            }
+            current = current?.nextNode
+        }
+    }
+    
+    public func deleteDuplicatesWithLinearTime() {
+        var current: LinkedListNode? = self.firstNode
+        var previous: LinkedListNode<T>?
+        var set = Set<T>()
+        while current != nil {
+            if set.contains(current!.value) {
+                if current === self.lastNode {
+                    self.lastNode = current?.previousNode
+                    self.lastNode?.previousNode = current?.previousNode?.previousNode
+                }
+                previous?.nextNode = current?.nextNode
+                previous?.nextNode?.previousNode = previous
+            } else {
+                set.insert(current!.value)
+                previous = current
+            }
+            current = current?.nextNode
+        }
     }
     
     // MARK: CustomStringConvertible

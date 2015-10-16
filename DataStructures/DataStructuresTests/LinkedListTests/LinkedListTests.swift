@@ -70,10 +70,10 @@ class LinkedListTests: XCTestCase {
         linkedList.prependValue(1)
         
         XCTAssert(linkedList.detachFirstValue() == 1, "First detached value should be 1")
-        XCTAssert(linkedList.detachFirstValue() == 2, "First detached value should be 2")
-        XCTAssert(linkedList.detachFirstValue() == 3, "First detached value should be 3")
+        XCTAssert(linkedList.detachFirstValue() == 2, "Second detached value should be 2")
+        XCTAssert(linkedList.detachFirstValue() == 3, "Third detached value should be 3")
         print("\(linkedList.firstNode?.value)")
-        XCTAssert(linkedList.detachFirstValue() == nil, "First detached value should be nil")
+        XCTAssert(linkedList.detachFirstValue() == nil, "Fourth detached value should be nil")
     }
     
     func testDetachingLastValues() {
@@ -83,9 +83,44 @@ class LinkedListTests: XCTestCase {
         linkedList.appendValue(1)
         
         XCTAssert(linkedList.detachLastValue() == 1, "First detached value should be 1")
+        XCTAssert(linkedList.detachLastValue() == 2, "Second detached value should be 2")
+        XCTAssert(linkedList.detachLastValue() == 3, "Third detached value should be 3")
+        XCTAssert(linkedList.detachLastValue() == nil, "Fourth detached value should be nil")
+    }
+    
+    func testDeleteDuplicatesWithConstantMemory() {
+        let linkedList = LinkedList<Int>()
+        linkedList.appendValue(3)
+        linkedList.appendValue(4)
+        linkedList.appendValue(3)
+        linkedList.appendValue(1)
+        linkedList.appendValue(4)
+        linkedList.appendValue(2)
+        linkedList.appendValue(2)
+        linkedList.deleteDuplicatesWithConstantMemory()
+        
         XCTAssert(linkedList.detachLastValue() == 2, "First detached value should be 2")
-        XCTAssert(linkedList.detachLastValue() == 3, "First detached value should be 3")
-        print("\(linkedList.lastNode?.value)")
-        XCTAssert(linkedList.detachLastValue() == nil, "First detached value should be nil")
+        XCTAssert(linkedList.detachLastValue() == 1, "Second detached value should be 1")
+        XCTAssert(linkedList.detachLastValue() == 4, "Third detached value should be 4")
+        XCTAssert(linkedList.detachLastValue() == 3, "Fourth detached value should be 3")
+        XCTAssert(linkedList.detachLastValue() == nil, "Fifth detached value should be nil")
+    }
+    
+    func testDeleteDuplicatesWithLinearTime() {
+        let linkedList = LinkedList<Int>()
+        linkedList.appendValue(3)
+        linkedList.appendValue(4)
+        linkedList.appendValue(3)
+        linkedList.appendValue(1)
+        linkedList.appendValue(4)
+        linkedList.appendValue(2)
+        linkedList.appendValue(2)
+        linkedList.deleteDuplicatesWithLinearTime()
+        
+        XCTAssert(linkedList.detachLastValue() == 2, "First detached value should be 2")
+        XCTAssert(linkedList.detachLastValue() == 1, "Second detached value should be 1")
+        XCTAssert(linkedList.detachLastValue() == 4, "Third detached value should be 4")
+        XCTAssert(linkedList.detachLastValue() == 3, "Fourth detached value should be 3")
+        XCTAssert(linkedList.detachLastValue() == nil, "Fifth detached value should be nil")
     }
 }
