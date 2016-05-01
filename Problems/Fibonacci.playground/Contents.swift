@@ -11,10 +11,13 @@ func iterativeFibonacci(position: Int) -> Int {
     if position == 0 {
         return 0
     }
+    if position < 2 {
+        return 1
+    }
     var result = 1
     var first = 0
     var second = 1
-    for (var index = 2; index <= position; index++) {
+    for _ in 2...position {
         result = first + second
         first = second
         second = result
