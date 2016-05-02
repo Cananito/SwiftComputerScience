@@ -13,7 +13,7 @@ func largestSumSequence(array: [Int]) -> [Int] {
     var start = 0
     var end = array.count - 1
     
-    for var i = 0; i < array.count; i++ {
+    for i in 0 ..< array.count {
         if current < 0 {
             current = 0
             start = i
@@ -54,16 +54,16 @@ func largestSumSequenceSlow(array: [Int]) -> [Int] {
     while start < array.count {
         end = array.count
         while end > start {
-            let range = Range(start: start, end: end)
+            let range = start ..< end
             let subArray = Array(array[range])
             let tempSum = subArray.reduce(0) { $0 + $1 }
             if tempSum > sum {
                 sum = tempSum
                 result = subArray
             }
-            end--
+            end -= 1
         }
-        start++
+        start += 1
     }
     
     return result
@@ -77,15 +77,15 @@ func largestSumSlow(array: [Int]) -> Int {
     while start < array.count {
         end = array.count
         while end > start {
-            let range = Range(start: start, end: end)
+            let range = start ..< end
             let subArray = Array(array[range])
             let sum = subArray.reduce(0) { $0 + $1 }
             if sum > result {
                 result = sum
             }
-            end--
+            end -= 1
         }
-        start++
+        start += 1
     }
     
     return result
