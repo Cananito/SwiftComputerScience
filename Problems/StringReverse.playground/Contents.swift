@@ -64,8 +64,8 @@ extension String {
             let rightC = r[rightIndex]
             r[leftIndex] = rightC
             r[rightIndex] = leftC
-            leftIndex++
-            rightIndex--
+            leftIndex += 1
+            rightIndex -= 1
         }
         
         return String(r)
@@ -77,8 +77,8 @@ extension String {
         while leftIndex.distanceTo(rightIndex) > 0 {
             let leftChar = self[leftIndex]
             let rightChar = self[rightIndex]
-            self.replaceRange(Range(start: leftIndex, end: leftIndex.advancedBy(1)), with: String(rightChar))
-            self.replaceRange(Range(start: rightIndex, end: rightIndex.advancedBy(1)), with: String(leftChar))
+            self.replaceRange(leftIndex ..< leftIndex.advancedBy(1), with: String(rightChar))
+            self.replaceRange(rightIndex ..< rightIndex.advancedBy(1), with: String(leftChar))
             leftIndex = leftIndex.advancedBy(1)
             rightIndex = rightIndex.advancedBy(-1)
         }
