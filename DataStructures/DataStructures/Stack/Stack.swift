@@ -7,10 +7,11 @@
 //
 
 public struct Stack<T> {
-    private var storage = ArrayDeque<T>()
+    private var storage: ArrayDeque<T>
     private var reversed = false
     
     public init() {
+        storage = ArrayDeque()
     }
     
     public init(elements: [T]) {

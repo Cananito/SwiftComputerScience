@@ -7,7 +7,7 @@
 //
 
 public struct ArrayDeque<T> {
-    private var storage = ArrayDequeStorage<T>()
+    private var storage: ArrayDequeStorage<T>
     
     public init() {
         self.storage = ArrayDequeStorage()
