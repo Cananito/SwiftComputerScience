@@ -17,7 +17,7 @@ func iterativeFibonacci(position: Int) -> Int {
     var result = 1
     var first = 0
     var second = 1
-    for _ in 2...position {
+    for _ in 2 ... position {
         result = first + second
         first = second
         second = result
