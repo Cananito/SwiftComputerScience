@@ -70,7 +70,7 @@ class DrawingView: NSView {
         let diskWidthDecrements = (self.firstPoleRect.size.width - smallestDiskWidth) / CGFloat(self.towerOfHanoi.totalDiskCount())
         var currentWidth = self.firstPoleRect.size.width
         
-        for var index = 0; index < self.towerOfHanoi.totalDiskCount(); index++ {
+        for _ in 0 ..< self.towerOfHanoi.totalDiskCount() {
             self.diskWidths.append(currentWidth)
             currentWidth -= diskWidthDecrements
         }

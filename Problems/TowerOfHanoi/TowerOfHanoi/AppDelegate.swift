@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     override init() {
         var disks = [Disk]()
-        for (var i = 1; i < 6; i++) {
+        for i in 1 ..< 6 {
             let disk = Disk(identifier: i)
             disks.append(disk)
         }
