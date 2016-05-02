@@ -43,7 +43,7 @@ public struct RLEGenerator: GeneratorType {
             return nil
         }
         let element = rle[currentIndex + 1]
-        currentCount--
+        currentCount -= 1
         advanceToNextNonZeroIfNecessary()
         return element
     }
