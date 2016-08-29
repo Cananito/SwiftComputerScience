@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import DataStructures
+import DataStructures
 
 class TrieTests: XCTestCase {
     func testTrie() {

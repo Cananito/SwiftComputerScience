@@ -7,6 +7,7 @@
 //
 
 import XCTest
+// TODO: Move algorithm to Algorithms folder and get rid of `@testable`.
 @testable import LargestSumSequence
 
 class LargestSumSequenceTests: XCTestCase {
