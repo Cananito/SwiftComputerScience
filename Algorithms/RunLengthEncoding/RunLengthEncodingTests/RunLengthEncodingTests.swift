@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RunLengthEncoding
+import RunLengthEncoding
 
 class RunLengthEncodingTests: XCTestCase {
     func testRLEGenerator() {
