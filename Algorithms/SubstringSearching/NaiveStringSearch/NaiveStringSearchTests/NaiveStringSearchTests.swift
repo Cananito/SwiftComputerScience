@@ -7,22 +7,22 @@
 //
 
 import XCTest
-@testable import NaiveStringSearch
+import NaiveStringSearch
 
 class NaiveStringSearchTests: XCTestCase {
     func testReturnsEmptyArray() {
-        let substring = "World"
-        let input = "Hello Universe!"
+        let pattern = "World"
+        let string = "Hello Universe!"
         
-        let ranges = naiveStringSearch(substring, input: input)
+        let ranges = naiveStringSearch(pattern, string: string)
         XCTAssert(ranges.count == 0)
     }
     
     func testReturnsOneRange() {
-        let substring = "World"
-        let input = "Hello Wor World!"
+        let pattern = "World"
+        let string = "Hello Wor World!"
         
-        let ranges = naiveStringSearch(substring, input: input)
+        let ranges = naiveStringSearch(pattern, string: string)
         XCTAssert(ranges.count == 1)
         
         let range = ranges[0]
@@ -30,10 +30,10 @@ class NaiveStringSearchTests: XCTestCase {
     }
     
     func testReturnsThreeRanges() {
-        let substring = "World"
-        let input = "World, Hello Wor WorldWorld"
+        let pattern = "World"
+        let string = "World, Hello Wor WorldWorld"
         
-        let ranges = naiveStringSearch(substring, input: input)
+        let ranges = naiveStringSearch(pattern, string: string)
         XCTAssert(ranges.count == 3)
         
         let firstRange = ranges[0]
