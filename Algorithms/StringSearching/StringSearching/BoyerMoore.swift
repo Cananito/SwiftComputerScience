@@ -16,6 +16,7 @@ private func badCharacterRuleTableForPattern(pattern: String) -> [Character: Int
 }
 
 private func goodSuffixRuleTableForPattern(pattern: String) -> [Character: Int] {
+    // TODO: Implement
     return [Character: Int]()
 }
 
@@ -40,6 +41,7 @@ public struct BoyerMoorePattern {
     }
     
     internal func goodSuffixRuleShift(character: Character) -> Int {
+        // TODO: Implement
         return 0
     }
 }
