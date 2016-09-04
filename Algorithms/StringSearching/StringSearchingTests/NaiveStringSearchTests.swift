@@ -1,13 +1,13 @@
 //
 //  NaiveStringSearchTests.swift
-//  NaiveStringSearchTests
+//  StringSearchingTests
 //
 //  Created by Rogelio Gudino on 8/28/16.
 //  Copyright © 2016 Rogelio Gudino. All rights reserved.
 //
 
 import XCTest
-import NaiveStringSearch
+import StringSearching
 
 class NaiveStringSearchTests: XCTestCase {
     func testReturnsEmptyArray() {
@@ -63,5 +63,15 @@ class NaiveStringSearchTests: XCTestCase {
         string = "Wo"
         patternRanges = naiveStringSearch(pattern, string: string)
         XCTAssert(patternRanges.count == 0)
+    }
+    
+    func testSpeedPerformanceSmall() {
+        let loremIpsumPath = NSBundle(forClass: NaiveStringSearchTests.self).pathForResource("LoremIpsum-Small", ofType: "txt")!
+        let string = (try! NSString(contentsOfFile: loremIpsumPath, encoding: NSUTF8StringEncoding)) as String
+        let pattern = "Maecenas"
+        self.measureBlock {
+            let patternRanges = naiveStringSearch(pattern, string: string)
+            XCTAssert(patternRanges.count == 3)
+        }
     }
 }

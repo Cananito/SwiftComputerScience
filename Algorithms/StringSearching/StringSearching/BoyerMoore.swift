@@ -1,6 +1,6 @@
 //
 //  BoyerMoore.swift
-//  BoyerMoore
+//  StringSearching
 //
 //  Created by Rogelio Gudino on 8/28/16.
 //  Copyright © 2016 Rogelio Gudino. All rights reserved.
@@ -15,17 +15,21 @@ private func badCharacterRuleTableForPattern(pattern: String) -> [Character: Int
     return table
 }
 
-public typealias Document = String
+private func goodSuffixRuleTableForPattern(pattern: String) -> [Character: Int] {
+    return [Character: Int]()
+}
 
-public struct Pattern {
+public struct BoyerMoorePattern {
     public let string: String
     private let characterCount: Int
     private let badCharacterRuleTable: [Character: Int]
+    private let goodSuffixRuleTable: [Character: Int]
     
     public init(string: String) {
         self.string = string
         self.characterCount = string.characters.count
         self.badCharacterRuleTable = badCharacterRuleTableForPattern(string)
+        self.goodSuffixRuleTable = goodSuffixRuleTableForPattern(string)
     }
     
     internal func badCharacterRuleShift(character: Character) -> Int {
@@ -34,9 +38,13 @@ public struct Pattern {
         }
         return self.characterCount
     }
+    
+    internal func goodSuffixRuleShift(character: Character) -> Int {
+        return 0
+    }
 }
 
-public func boyerMooreStringSearch(pattern: Pattern, document: Document) -> [Range<Int>] {
+public func boyerMooreStringSearch(pattern: BoyerMoorePattern, document: String) -> [Range<Int>] {
     if pattern.string.characters.count < 1 || document.characters.count < 1 {
         return []
     }
@@ -63,7 +71,8 @@ public func boyerMooreStringSearch(pattern: Pattern, document: Document) -> [Ran
             
             if documentCharacter != patternCharacter {
                 let badCharacterShift = pattern.badCharacterRuleShift(documentCharacter)
-                shift = max(badCharacterShift, shift)
+                let goodSuffixShift = pattern.goodSuffixRuleShift(documentCharacter)
+                shift = max(max(badCharacterShift, goodSuffixShift), shift)
                 match = false
                 break
             }

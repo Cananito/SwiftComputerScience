@@ -1,17 +1,17 @@
 //
 //  BoyerMooreTests.swift
-//  BoyerMooreTests
+//  StringSearchingTests
 //
 //  Created by Rogelio Gudino on 8/28/16.
 //  Copyright © 2016 Rogelio Gudino. All rights reserved.
 //
 
 import XCTest
-import BoyerMoore
+import StringSearching
 
 class BoyerMooreTests: XCTestCase {
     func testReturnsEmptyArray() {
-        let pattern = Pattern(string: "World")
+        let pattern = BoyerMoorePattern(string: "World")
         let document = "Hello Universe!"
         
         let ranges = boyerMooreStringSearch(pattern, document: document)
@@ -19,7 +19,7 @@ class BoyerMooreTests: XCTestCase {
     }
     
     func testReturnsOneRange() {
-        let pattern = Pattern(string: "World")
+        let pattern = BoyerMoorePattern(string: "World")
         let document = "Hello Wor World!"
         
         let ranges = boyerMooreStringSearch(pattern, document: document)
@@ -30,7 +30,7 @@ class BoyerMooreTests: XCTestCase {
     }
     
     func testReturnsThreeRanges() {
-        let pattern = Pattern(string: "World")
+        let pattern = BoyerMoorePattern(string: "World")
         let document = "World, Hello Wor WorldWorld"
         
         let ranges = boyerMooreStringSearch(pattern, document: document)
@@ -47,19 +47,19 @@ class BoyerMooreTests: XCTestCase {
     }
     
     func testMiscCases() {
-        var pattern = Pattern(string: "needle")
+        var pattern = BoyerMoorePattern(string: "needle")
         var document = "Find a needle in a haystack"
         var patternRanges = boyerMooreStringSearch(pattern, document: document)
         XCTAssert(patternRanges.count == 1)
         XCTAssert(patternRanges[0] == 7..<13)
         
-        pattern = Pattern(string: "orl")
+        pattern = BoyerMoorePattern(string: "orl")
         document = "Hello World!"
         patternRanges = boyerMooreStringSearch(pattern, document: document)
         XCTAssert(patternRanges.count == 1)
         XCTAssert(patternRanges[0] == 7..<10)
         
-        pattern = Pattern(string: "World")
+        pattern = BoyerMoorePattern(string: "World")
         document = "Wo"
         patternRanges = boyerMooreStringSearch(pattern, document: document)
         XCTAssert(patternRanges.count == 0)
