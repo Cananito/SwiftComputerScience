@@ -66,7 +66,7 @@ class BoyerMooreHorspoolTests: XCTestCase {
     }
     
     func testSpeedPerformanceSmall() {
-        let loremIpsumPath = NSBundle(forClass: NaiveStringSearchTests.self).pathForResource("LoremIpsum-Small", ofType: "txt")!
+        let loremIpsumPath = NSBundle(forClass: BoyerMooreHorspoolTests.self).pathForResource("LoremIpsum-Small", ofType: "txt")!
         let document = (try! NSString(contentsOfFile: loremIpsumPath, encoding: NSUTF8StringEncoding)) as String
         let pattern = BoyerMooreHorspoolPattern(string: "Maecenas")
         self.measureBlock {
@@ -76,7 +76,7 @@ class BoyerMooreHorspoolTests: XCTestCase {
     }
     
     func testSpeedPerformanceBig() {
-        let loremIpsumPath = NSBundle(forClass: NaiveStringSearchTests.self).pathForResource("LoremIpsum-Big", ofType: "txt")!
+        let loremIpsumPath = NSBundle(forClass: BoyerMooreHorspoolTests.self).pathForResource("LoremIpsum-Big", ofType: "txt")!
         let document = (try! NSString(contentsOfFile: loremIpsumPath, encoding: NSUTF8StringEncoding)) as String
         let pattern = BoyerMooreHorspoolPattern(string: "inceptos himenaeos.")
         self.measureBlock {
