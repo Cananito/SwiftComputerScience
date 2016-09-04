@@ -45,4 +45,23 @@ class NaiveStringSearchTests: XCTestCase {
         let thirdRange = ranges[2]
         XCTAssert(thirdRange == 22..<27)
     }
+    
+    func testMiscCases() {
+        var pattern = "needle"
+        var string = "Find a needle in a haystack"
+        var patternRanges = naiveStringSearch(pattern, string: string)
+        XCTAssert(patternRanges.count == 1)
+        XCTAssert(patternRanges[0] == 7..<13)
+        
+        pattern = "orl"
+        string = "Hello World!"
+        patternRanges = naiveStringSearch(pattern, string: string)
+        XCTAssert(patternRanges.count == 1)
+        XCTAssert(patternRanges[0] == 7..<10)
+        
+        pattern = "World"
+        string = "Wo"
+        patternRanges = naiveStringSearch(pattern, string: string)
+        XCTAssert(patternRanges.count == 0)
+    }
 }
