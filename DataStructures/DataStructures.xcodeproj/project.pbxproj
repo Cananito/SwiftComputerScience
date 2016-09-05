@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		421224311BB0DD0C002738F4 /* ArrayDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224251BB0DD0C002738F4 /* ArrayDeque.swift */; settings = {ASSET_TAGS = (); }; };
-		421224321BB0DD0C002738F4 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224271BB0DD0C002738F4 /* BinaryTree.swift */; settings = {ASSET_TAGS = (); }; };
-		421224331BB0DD0C002738F4 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224291BB0DD0C002738F4 /* LinkedList.swift */; settings = {ASSET_TAGS = (); }; };
-		421224341BB0DD0C002738F4 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212242A1BB0DD0C002738F4 /* LinkedListNode.swift */; settings = {ASSET_TAGS = (); }; };
-		421224351BB0DD0C002738F4 /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212242C1BB0DD0C002738F4 /* Polynomial.swift */; settings = {ASSET_TAGS = (); }; };
-		421224361BB0DD0C002738F4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212242E1BB0DD0C002738F4 /* Queue.swift */; settings = {ASSET_TAGS = (); }; };
-		421224371BB0DD0C002738F4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224301BB0DD0C002738F4 /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
-		421224451BB0DD2A002738F4 /* ArrayDequeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224391BB0DD2A002738F4 /* ArrayDequeTests.swift */; settings = {ASSET_TAGS = (); }; };
-		421224461BB0DD2A002738F4 /* BinaryTreeNextNodeSample.graffle in Resources */ = {isa = PBXBuildFile; fileRef = 4212243B1BB0DD2A002738F4 /* BinaryTreeNextNodeSample.graffle */; settings = {ASSET_TAGS = (); }; };
-		421224471BB0DD2A002738F4 /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212243C1BB0DD2A002738F4 /* BinaryTreeTests.swift */; settings = {ASSET_TAGS = (); }; };
-		421224481BB0DD2A002738F4 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212243E1BB0DD2A002738F4 /* LinkedListTests.swift */; settings = {ASSET_TAGS = (); }; };
-		421224491BB0DD2A002738F4 /* PolynomialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224401BB0DD2A002738F4 /* PolynomialTests.swift */; settings = {ASSET_TAGS = (); }; };
-		4212244A1BB0DD2A002738F4 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224421BB0DD2A002738F4 /* QueueTests.swift */; settings = {ASSET_TAGS = (); }; };
-		4212244B1BB0DD2A002738F4 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224441BB0DD2A002738F4 /* StackTests.swift */; settings = {ASSET_TAGS = (); }; };
+		421224311BB0DD0C002738F4 /* ArrayDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224251BB0DD0C002738F4 /* ArrayDeque.swift */; };
+		421224321BB0DD0C002738F4 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224271BB0DD0C002738F4 /* BinaryTree.swift */; };
+		421224331BB0DD0C002738F4 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224291BB0DD0C002738F4 /* LinkedList.swift */; };
+		421224341BB0DD0C002738F4 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212242A1BB0DD0C002738F4 /* LinkedListNode.swift */; };
+		421224351BB0DD0C002738F4 /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212242C1BB0DD0C002738F4 /* Polynomial.swift */; };
+		421224361BB0DD0C002738F4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212242E1BB0DD0C002738F4 /* Queue.swift */; };
+		421224371BB0DD0C002738F4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224301BB0DD0C002738F4 /* Stack.swift */; };
+		421224451BB0DD2A002738F4 /* ArrayDequeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224391BB0DD2A002738F4 /* ArrayDequeTests.swift */; };
+		421224461BB0DD2A002738F4 /* BinaryTreeNextNodeSample.graffle in Resources */ = {isa = PBXBuildFile; fileRef = 4212243B1BB0DD2A002738F4 /* BinaryTreeNextNodeSample.graffle */; };
+		421224471BB0DD2A002738F4 /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212243C1BB0DD2A002738F4 /* BinaryTreeTests.swift */; };
+		421224481BB0DD2A002738F4 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212243E1BB0DD2A002738F4 /* LinkedListTests.swift */; };
+		421224491BB0DD2A002738F4 /* PolynomialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224401BB0DD2A002738F4 /* PolynomialTests.swift */; };
+		4212244A1BB0DD2A002738F4 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224421BB0DD2A002738F4 /* QueueTests.swift */; };
+		4212244B1BB0DD2A002738F4 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421224441BB0DD2A002738F4 /* StackTests.swift */; };
 		422CF42C1BAFB0CE002976CA /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 422CF42B1BAFB0CE002976CA /* DataStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		422CF4331BAFB0CE002976CA /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422CF4281BAFB0CE002976CA /* DataStructures.framework */; settings = {ASSET_TAGS = (); }; };
+		422CF4331BAFB0CE002976CA /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422CF4281BAFB0CE002976CA /* DataStructures.framework */; };
 		422CF4381BAFB0CE002976CA /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422CF4371BAFB0CE002976CA /* DataStructuresTests.swift */; };
-		42F6DE011BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; settings = {ASSET_TAGS = (); }; };
-		42F6DE021BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; settings = {ASSET_TAGS = (); }; };
-		42F6DE051BC203790075BADD /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE041BC203790075BADD /* TrieTests.swift */; settings = {ASSET_TAGS = (); }; };
-		42F6DE0A1BC22DEF0075BADD /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE091BC22DEF0075BADD /* TrieNode.swift */; settings = {ASSET_TAGS = (); }; };
-		42F6DE0B1BC22DEF0075BADD /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE091BC22DEF0075BADD /* TrieNode.swift */; settings = {ASSET_TAGS = (); }; };
+		42F6DE011BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; };
+		42F6DE021BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; };
+		42F6DE051BC203790075BADD /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE041BC203790075BADD /* TrieTests.swift */; };
+		42F6DE0A1BC22DEF0075BADD /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE091BC22DEF0075BADD /* TrieNode.swift */; };
+		42F6DE0B1BC22DEF0075BADD /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE091BC22DEF0075BADD /* TrieNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

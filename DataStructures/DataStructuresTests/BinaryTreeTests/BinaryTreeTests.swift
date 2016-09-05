@@ -1,6 +1,6 @@
 //
 //  BinaryTreeTests.swift
-//  BinaryTreeTests
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 9/6/15.
 //  Copyright © 2015 Rogelio Gudino. All rights reserved.

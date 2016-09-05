@@ -1,6 +1,6 @@
 //
 //  LinkedListTests.swift
-//  LinkedListTests
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 2/19/15.
 //  Copyright (c) 2015 Rogelio Gudino. All rights reserved.

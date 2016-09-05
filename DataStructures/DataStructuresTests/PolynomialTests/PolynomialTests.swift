@@ -1,6 +1,6 @@
 //
 //  PolynomialTests.swift
-//  PolynomialTests
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 8/16/15.
 //  Copyright © 2015 Rogelio Gudino. All rights reserved.
