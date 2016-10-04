@@ -1,4 +1,6 @@
 
+// TODO: Convert into a framework with unit tests and use the DataStructures’ Stack.
+
 public struct Stack<T> {
     private var array = Array<T>()
     
@@ -31,7 +33,7 @@ extension String {
         var s = Stack<Character>()
         let chars = self.characters
         for c in chars {
-            s.push(c)
+            s.push(object: c)
         }
         var r = [Character]()
         while s.peek() != nil {
@@ -73,14 +75,14 @@ extension String {
     
     mutating func reverse() {
         var leftIndex = self.startIndex
-        var rightIndex = self.endIndex.advancedBy(-1)
-        while leftIndex.distanceTo(rightIndex) > 0 {
+        var rightIndex = self.index(self.endIndex, offsetBy: -1)
+        while leftIndex < rightIndex {
             let leftChar = self[leftIndex]
             let rightChar = self[rightIndex]
-            self.replaceRange(leftIndex ..< leftIndex.advancedBy(1), with: String(rightChar))
-            self.replaceRange(rightIndex ..< rightIndex.advancedBy(1), with: String(leftChar))
-            leftIndex = leftIndex.advancedBy(1)
-            rightIndex = rightIndex.advancedBy(-1)
+            self.replaceSubrange(leftIndex ..< self.index(leftIndex, offsetBy: 1), with: String(rightChar))
+            self.replaceSubrange(rightIndex ..< self.index(rightIndex, offsetBy: 1), with: String(leftChar))
+            leftIndex = self.index(leftIndex, offsetBy: 1)
+            rightIndex = self.index(rightIndex, offsetBy: -1)
         }
     }
 }
