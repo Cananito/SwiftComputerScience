@@ -12,11 +12,11 @@
 // 3. Take care of data validation.
 public typealias RLE = [Int]
 
-enum RLEError: ErrorType {
-    case InvalidRLE(message: String)
+enum RLEError: Error {
+    case invalidRLE(message: String)
 }
 
-public struct RLEGenerator: GeneratorType {
+public struct RLEGenerator: IteratorProtocol {
     public typealias Element = Int
     
     private let rle: RLE
@@ -25,7 +25,7 @@ public struct RLEGenerator: GeneratorType {
     
     public init(rle: RLE) throws {
         if rle.count % 2 != 0 {
-            throw RLEError.InvalidRLE(message: "Contents of RLE must be even, given count: \(rle.count).")
+            throw RLEError.invalidRLE(message: "Contents of RLE must be even, given count: \(rle.count).")
         }
         self.rle = rle
         advanceToNextNonZeroIfNecessary()
