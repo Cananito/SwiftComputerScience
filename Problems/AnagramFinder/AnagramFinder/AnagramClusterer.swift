@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Rogelio Gudino. All rights reserved.
 //
 
-func clusterArrayOfWords(words: [String]) -> [String: [String]] {
+public func clusterArrayOfWords(_ words: [String]) -> [String: [String]] {
     var wordsClusterDictionary = [String: [String]]()
     
     for word in words {
@@ -22,12 +22,12 @@ func clusterArrayOfWords(words: [String]) -> [String: [String]] {
     return wordsClusterDictionary
 }
 
-private func alphabetizeWord(word: String) -> String {
+private func alphabetizeWord(_ word: String) -> String {
     if (word.isEmpty == true) {
         return word
     }
     
-    let charactersArray = word.lowercaseString.characters.sort()
+    let charactersArray = word.lowercased().characters.sorted()
     let alphabetizedWord = charactersArray.reduce("") { $0 + String($1) }
     return alphabetizedWord
 }

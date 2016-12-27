@@ -23,31 +23,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     }
     var currentClusterArray = [String: [String]]()
     
-    // MARK: Action Methods
-    @IBAction func findAnagrams(sender: AnyObject!) {
-        if let string = self.textView.string as String? {
-            self.showLoadingUI()
-            
-            NSOperationQueue().addOperationWithBlock { () -> Void in
-                let words = string.characters.split(isSeparator: { $0 == "\n" }).map { String($0) }
-                self.currentClusterArray = clusterArrayOfWords(words)
-                
-                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                    self.hideLoadingUI()
-                    self.anagramsTableView.reloadData()
-                })
-            }
-        }
+    // MARK: NSApplicationDelegate
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    }
+    
+    // MARK: NSWindowDelegate
+    func windowDidBecomeKey(_ notification: Notification) {
     }
     
     // MARK: NSTableViewDataSource Methods
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         return self.currentClusterArray.keys.count
     }
     
     // MARK: NSTableViewDelegate Methods
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let index = self.currentClusterArray.startIndex.advancedBy(row)
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let index = self.currentClusterArray.index(self.currentClusterArray.startIndex, offsetBy: row)
         let key = self.currentClusterArray.keys[index]
         
         var numberOfOccurrences = 0
@@ -55,30 +46,47 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
             numberOfOccurrences = words.count
         }
         
-        let tableCellView = tableView.makeViewWithIdentifier("AnagramCell", owner: self) as? NSTableCellView
+        let tableCellView = tableView.make(withIdentifier: "AnagramCell", owner: self) as? NSTableCellView
         tableCellView?.textField?.stringValue = "\(key): \(numberOfOccurrences)"
         
         return tableCellView
     }
     
-    func tableView(tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: NSIndexSet) -> NSIndexSet {
-        return NSIndexSet()
+    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
+        return IndexSet()
+    }
+    
+    // MARK: Action Methods
+    @IBAction func findAnagrams(_ sender: AnyObject!) {
+        if let string = self.textView.string as String? {
+            self.showLoadingUI()
+            
+            OperationQueue().addOperation { () -> Void in
+                let words = string.characters.split(whereSeparator: { $0 == "\n" }).map { String($0) }
+                self.currentClusterArray = clusterArrayOfWords(words)
+                
+                OperationQueue.main.addOperation({ () -> Void in
+                    self.hideLoadingUI()
+                    self.anagramsTableView.reloadData()
+                })
+            }
+        }
     }
     
     // MARK: Private Methods
     private func showLoadingUI() {
-        self.textScrollView.hidden = true
-        self.anagramsTableView.hidden = true
-        self.anagramsTableViewScrollContainer.hidden = true
-        self.findAnagramsButton.enabled = false
+        self.textScrollView.isHidden = true
+        self.anagramsTableView.isHidden = true
+        self.anagramsTableViewScrollContainer.isHidden = true
+        self.findAnagramsButton.isEnabled = false
         self.progressIndicator.startAnimation(self)
     }
     
     private func hideLoadingUI() {
-        self.textScrollView.hidden = false
-        self.anagramsTableView.hidden = false
-        self.anagramsTableViewScrollContainer.hidden = false
-        self.findAnagramsButton.enabled = true
+        self.textScrollView.isHidden = false
+        self.anagramsTableView.isHidden = false
+        self.anagramsTableViewScrollContainer.isHidden = false
+        self.findAnagramsButton.isEnabled = true
         self.progressIndicator.stopAnimation(self)
     }
 }
