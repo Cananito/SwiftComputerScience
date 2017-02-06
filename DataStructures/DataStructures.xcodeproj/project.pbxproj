@@ -24,6 +24,9 @@
 		422CF42C1BAFB0CE002976CA /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 422CF42B1BAFB0CE002976CA /* DataStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		422CF4331BAFB0CE002976CA /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422CF4281BAFB0CE002976CA /* DataStructures.framework */; };
 		422CF4381BAFB0CE002976CA /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422CF4371BAFB0CE002976CA /* DataStructuresTests.swift */; };
+		4252863C1E48255C0000AD73 /* CountedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252863B1E48255C0000AD73 /* CountedSet.swift */; };
+		4252863D1E48255C0000AD73 /* CountedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252863B1E48255C0000AD73 /* CountedSet.swift */; };
+		4252863F1E4827C30000AD73 /* CountedSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252863E1E4827C30000AD73 /* CountedSetTests.swift */; };
 		42F6DE011BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; };
 		42F6DE021BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; };
 		42F6DE051BC203790075BADD /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE041BC203790075BADD /* TrieTests.swift */; };
@@ -62,6 +65,8 @@
 		422CF4321BAFB0CE002976CA /* DataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422CF4371BAFB0CE002976CA /* DataStructuresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresTests.swift; sourceTree = "<group>"; };
 		422CF4391BAFB0CE002976CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4252863B1E48255C0000AD73 /* CountedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedSet.swift; sourceTree = "<group>"; };
+		4252863E1E4827C30000AD73 /* CountedSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedSetTests.swift; sourceTree = "<group>"; };
 		42F6DE001BC203570075BADD /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		42F6DE041BC203790075BADD /* TrieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieTests.swift; sourceTree = "<group>"; };
 		42F6DE091BC22DEF0075BADD /* TrieNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 			children = (
 				421224241BB0DD0C002738F4 /* ArrayDeque */,
 				421224261BB0DD0C002738F4 /* BinaryTree */,
+				425286391E4825330000AD73 /* CountedSet */,
 				421224281BB0DD0C002738F4 /* LinkedList */,
 				4212242B1BB0DD0C002738F4 /* Polynomial */,
 				4212242D1BB0DD0C002738F4 /* Queue */,
@@ -223,6 +229,7 @@
 			children = (
 				421224381BB0DD2A002738F4 /* ArrayDequeTests */,
 				4212243A1BB0DD2A002738F4 /* BinaryTreeTests */,
+				4252863A1E4825450000AD73 /* CountedSetTests */,
 				4212243D1BB0DD2A002738F4 /* LinkedListTests */,
 				4212243F1BB0DD2A002738F4 /* PolynomialTests */,
 				421224411BB0DD2A002738F4 /* QueueTests */,
@@ -232,6 +239,22 @@
 				422CF4391BAFB0CE002976CA /* Info.plist */,
 			);
 			path = DataStructuresTests;
+			sourceTree = "<group>";
+		};
+		425286391E4825330000AD73 /* CountedSet */ = {
+			isa = PBXGroup;
+			children = (
+				4252863B1E48255C0000AD73 /* CountedSet.swift */,
+			);
+			path = CountedSet;
+			sourceTree = "<group>";
+		};
+		4252863A1E4825450000AD73 /* CountedSetTests */ = {
+			isa = PBXGroup;
+			children = (
+				4252863E1E4827C30000AD73 /* CountedSetTests.swift */,
+			);
+			path = CountedSetTests;
 			sourceTree = "<group>";
 		};
 		42F6DDFF1BC203480075BADD /* Trie */ = {
@@ -364,6 +387,7 @@
 				421224341BB0DD0C002738F4 /* LinkedListNode.swift in Sources */,
 				42F6DE0A1BC22DEF0075BADD /* TrieNode.swift in Sources */,
 				42F6DE011BC203570075BADD /* Trie.swift in Sources */,
+				4252863C1E48255C0000AD73 /* CountedSet.swift in Sources */,
 				421224361BB0DD0C002738F4 /* Queue.swift in Sources */,
 				421224371BB0DD0C002738F4 /* Stack.swift in Sources */,
 				421224351BB0DD0C002738F4 /* Polynomial.swift in Sources */,
@@ -378,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F6DE051BC203790075BADD /* TrieTests.swift in Sources */,
+				4252863F1E4827C30000AD73 /* CountedSetTests.swift in Sources */,
 				421224471BB0DD2A002738F4 /* BinaryTreeTests.swift in Sources */,
 				42F6DE021BC203570075BADD /* Trie.swift in Sources */,
 				4212244A1BB0DD2A002738F4 /* QueueTests.swift in Sources */,
@@ -385,6 +410,7 @@
 				4212244B1BB0DD2A002738F4 /* StackTests.swift in Sources */,
 				421224481BB0DD2A002738F4 /* LinkedListTests.swift in Sources */,
 				42F6DE0B1BC22DEF0075BADD /* TrieNode.swift in Sources */,
+				4252863D1E48255C0000AD73 /* CountedSet.swift in Sources */,
 				422CF4381BAFB0CE002976CA /* DataStructuresTests.swift in Sources */,
 				421224491BB0DD2A002738F4 /* PolynomialTests.swift in Sources */,
 			);
