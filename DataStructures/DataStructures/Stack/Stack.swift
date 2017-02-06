@@ -1,9 +1,9 @@
 //
 //  Stack.swift
-//  Stack
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 7/20/14.
-//  Copyright (c) 2014 Cananito. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 public struct Stack<T> {

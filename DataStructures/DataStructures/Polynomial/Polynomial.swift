@@ -1,9 +1,9 @@
 //
 //  Polynomial.swift
-//  PolynomialDerivative
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 8/16/15.
-//  Copyright © 2015 Rogelio Gudino. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 

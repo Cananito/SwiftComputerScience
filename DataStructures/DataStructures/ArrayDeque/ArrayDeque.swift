@@ -1,9 +1,9 @@
 //
 //  ArrayDeque.swift
-//  ArrayDeque
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 7/9/15.
-//  Copyright © 2015 Rogelio Gudino. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 public struct ArrayDeque<T> {

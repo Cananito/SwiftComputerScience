@@ -1,9 +1,9 @@
 //
 //  LinkedListNode.swift
-//  LinkedList
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 2/13/15.
-//
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 public class LinkedListNode<T: Hashable>: CustomStringConvertible, CustomDebugStringConvertible {

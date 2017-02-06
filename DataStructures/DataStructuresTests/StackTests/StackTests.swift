@@ -3,7 +3,7 @@
 //  DataStructures
 //
 //  Created by Rogelio Gudino on 3/22/15.
-//  Copyright (c) 2015 Rogelio Gudino. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 import XCTest

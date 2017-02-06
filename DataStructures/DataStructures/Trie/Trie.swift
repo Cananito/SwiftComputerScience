@@ -3,7 +3,7 @@
 //  DataStructures
 //
 //  Created by Rogelio Gudino on 10/4/15.
-//  Copyright © 2015 Rogelio Gudino. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 public struct Trie<T> {

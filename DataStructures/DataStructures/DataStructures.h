@@ -3,7 +3,7 @@
 //  DataStructures
 //
 //  Created by Rogelio Gudino on 9/20/15.
-//  Copyright © 2015 Rogelio Gudino. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

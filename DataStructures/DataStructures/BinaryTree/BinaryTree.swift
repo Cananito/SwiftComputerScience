@@ -1,9 +1,9 @@
 //
 //  BinaryTree.swift
-//  BinaryTree
+//  DataStructures
 //
 //  Created by Rogelio Gudino on 9/6/15.
-//  Copyright © 2015 Rogelio Gudino. All rights reserved.
+//  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
 public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConvertible {
