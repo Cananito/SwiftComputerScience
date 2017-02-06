@@ -34,12 +34,12 @@ public struct ArrayDeque<T> {
         return storage[index]
     }
     
-    public mutating func prepend(element: T) {
+    public mutating func prepend(_ element: T) {
         makeCopyOfStorageReferenceIfNecessary()
         storage.prepend(element)
     }
     
-    public mutating func append(element: T) {
+    public mutating func append(_ element: T) {
         makeCopyOfStorageReferenceIfNecessary()
         storage.append(element)
     }
@@ -55,26 +55,26 @@ public struct ArrayDeque<T> {
     }
     
     private mutating func makeCopyOfStorageReferenceIfNecessary() {
-        if isUniquelyReferencedNonObjC(&storage) == false {
+        if isKnownUniquelyReferenced(&storage) == false {
             storage = ArrayDequeStorage<T>(arrayDequeStorage: storage)
         }
     }
 }
 
-private class ArrayDequeStorage<T> {
+fileprivate class ArrayDequeStorage<T> {
     private var storage: UnsafeMutablePointer<T>
     private var startIndex = 0
     private var endIndex = 0
     private var capacity = 4
-    private var count = 0
+    fileprivate var count = 0
     
-    private init() {
-        storage = UnsafeMutablePointer<T>.alloc(capacity)
+    fileprivate init() {
+        storage = UnsafeMutablePointer<T>.allocate(capacity: capacity)
     }
     
-    private init(array: [T]) {
-        storage = UnsafeMutablePointer<T>.alloc(array.count)
-        storage.initializeFrom(array)
+    fileprivate init(array: [T]) {
+        storage = UnsafeMutablePointer<T>.allocate(capacity: array.count)
+        storage.initialize(from: array)
         count = array.count
         capacity = count
         if count != 0 {
@@ -82,9 +82,9 @@ private class ArrayDequeStorage<T> {
         }
     }
     
-    private init(arrayDequeStorage: ArrayDequeStorage<T>) {
-        storage = UnsafeMutablePointer<T>.alloc(arrayDequeStorage.count)
-        storage.initializeFrom(arrayDequeStorage.storage, count: arrayDequeStorage.count)
+    fileprivate init(arrayDequeStorage: ArrayDequeStorage<T>) {
+        storage = UnsafeMutablePointer<T>.allocate(capacity: arrayDequeStorage.count)
+        storage.initialize(from: arrayDequeStorage.storage, count: arrayDequeStorage.count)
         startIndex = arrayDequeStorage.startIndex
         endIndex = arrayDequeStorage.endIndex
         capacity = arrayDequeStorage.capacity
@@ -92,44 +92,44 @@ private class ArrayDequeStorage<T> {
     }
     
     deinit {
-        storage.destroy(capacity)
-        storage.dealloc(capacity)
+        storage.deinitialize(count: capacity)
+        storage.deallocate(capacity: capacity)
     }
     
-    private subscript (index: Int) -> T? {
+    fileprivate subscript (index: Int) -> T? {
         if index > (count - 1) {
             return nil
         }
         return elementAtIndex(index)
     }
     
-    private func isEmpty() -> Bool {
+    fileprivate func isEmpty() -> Bool {
         return count == 0
     }
     
-    private func prepend(element: T) {
+    fileprivate func prepend(_ element: T) {
         expandStorageIfNecessary()
         decrementStartIndex()
-        (storage + startIndex).initialize(element)
-        count++
+        (storage + startIndex).initialize(to: element)
+        count += 1
     }
     
-    private func append(element: T) {
+    fileprivate func append(_ element: T) {
         expandStorageIfNecessary()
         if isEmpty() == false {
             incrementEndIndex()
         }
-        (storage + endIndex).initialize(element)
-        count++
+        (storage + endIndex).initialize(to: element)
+        count += 1
     }
     
-    private func removeFirst() -> T? {
+    fileprivate func removeFirst() -> T? {
         if isEmpty() {
             return nil
         }
         
         let element = (storage + startIndex).move()
-        count--
+        count -= 1
         incrementStartIndex()
         
         shrinkStorageIfNecessary()
@@ -137,13 +137,13 @@ private class ArrayDequeStorage<T> {
         return element
     }
     
-    private func removeLast() -> T? {
+    fileprivate func removeLast() -> T? {
         if isEmpty() {
             return nil
         }
         
         let element = (storage + endIndex).move()
-        count--
+        count -= 1
         decrementEndIndex()
         
         shrinkStorageIfNecessary()
@@ -151,9 +151,9 @@ private class ArrayDequeStorage<T> {
         return element
     }
     
-    private func elementAtIndex(index: Int) -> T {
+    private func elementAtIndex(_ index: Int) -> T {
         let adjustedIndex = (index + startIndex) % capacity
-        return (storage + adjustedIndex).memory
+        return (storage + adjustedIndex).pointee
     }
     
     private func incrementStartIndex() {
@@ -172,7 +172,7 @@ private class ArrayDequeStorage<T> {
         if startIndex == 0 {
             startIndex = capacity - 1
         } else {
-            startIndex--
+            startIndex -= 1
         }
         
         if shouldMatchOtherIndex {
@@ -196,7 +196,7 @@ private class ArrayDequeStorage<T> {
         if endIndex == 0 {
             endIndex = capacity - 1
         } else {
-            endIndex--
+            endIndex -= 1
         }
         
         if shouldMatchOtherIndex {
@@ -216,14 +216,14 @@ private class ArrayDequeStorage<T> {
         }
     }
     
-    private func adjustStorageToNewCapacity(newCapacity: Int) {
-        let newStorage = UnsafeMutablePointer<T>.alloc(newCapacity)
+    private func adjustStorageToNewCapacity(_ newCapacity: Int) {
+        let newStorage = UnsafeMutablePointer<T>.allocate(capacity: newCapacity)
         
-        for var index = 0; index < count; index++ {
-            (newStorage + index).initialize(elementAtIndex(index))
+        for index in 0 ..< count {
+            (newStorage + index).initialize(to: elementAtIndex(index))
         }
         
-        storage.dealloc(capacity)
+        storage.deallocate(capacity: capacity)
         storage = newStorage
         capacity = newCapacity
         

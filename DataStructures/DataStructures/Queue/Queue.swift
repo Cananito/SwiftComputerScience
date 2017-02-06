@@ -24,7 +24,7 @@ public struct Queue<T> {
         return self.array[0]
     }
     
-    public mutating func add(element: T) {
+    public mutating func add(_ element: T) {
         self.array.append(element)
     }
     
@@ -32,7 +32,7 @@ public struct Queue<T> {
         if self.array.count < 1 {
             return nil
         }
-        let element = array.removeAtIndex(0)
+        let element = array.remove(at: 0)
         return element
     }
 }

@@ -11,13 +11,13 @@ public struct Trie<T> {
     
     private var rootNode = TrieNode<T>(key: nil, value: nil)
     
-    public func valueForKey(key: Key) -> T? {
+    public func valueForKey(_ key: Key) -> T? {
         if key.isEmpty {
             return nil
         }
         
         var currentNode = rootNode
-        for (_, character) in key.characters.enumerate() {
+        for (_, character) in key.characters.enumerated() {
             if let node = currentNode.childNodeWithKey(character) {
                 currentNode = node
             } else {
@@ -28,13 +28,13 @@ public struct Trie<T> {
         return currentNode.value
     }
     
-    public mutating func setValue(value: T, key: Key) {
+    public mutating func setValue(_ value: T, key: Key) {
         if key.isEmpty {
             return
         }
         
         var currentNode = rootNode
-        for (_, character) in key.characters.enumerate() {
+        for (_, character) in key.characters.enumerated() {
             if let node = currentNode.childNodeWithKey(character) {
                 currentNode = node
             } else {
@@ -45,13 +45,13 @@ public struct Trie<T> {
         currentNode.value = value
     }
     
-    public mutating func removeValueForKey(key: Key) -> T? {
+    public mutating func removeValueForKey(_ key: Key) -> T? {
         if key.isEmpty {
             return nil
         }
         
         var currentNode = rootNode
-        for (_, character) in key.characters.enumerate() {
+        for (_, character) in key.characters.enumerated() {
             if let node = currentNode.childNodeWithKey(character) {
                 currentNode = node
             } else {

@@ -19,16 +19,16 @@ public class TrieNode<T> {
         self.value = value
     }
     
-    internal func childNodeWithKey(key: Key) -> TrieNode<T>? {
+    internal func childNodeWithKey(_ key: Key) -> TrieNode<T>? {
         for node in children {
-            if let nodeKey = node.key where nodeKey == key {
+            if let nodeKey = node.key, nodeKey == key {
                 return node
             }
         }
         return nil
     }
     
-    internal func addChildNodeWithKey(key: Key) -> TrieNode<T> {
+    internal func addChildNodeWithKey(_ key: Key) -> TrieNode<T> {
         if let existingNode = childNodeWithKey(key) {
             return existingNode
         } else {
@@ -43,8 +43,8 @@ public class TrieNode<T> {
         if value != nil || children.count > 0 {
             return
         }
-        if let index = parent?.children.indexOf({ return $0 === self }) {
-            parent?.children.removeAtIndex(index)
+        if let index = parent?.children.index(where: { return $0 === self }) {
+            parent?.children.remove(at: index)
         }
         parent?.trim()
         parent = nil

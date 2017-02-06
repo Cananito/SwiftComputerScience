@@ -14,7 +14,7 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
     }
     
     // MARK: Public Methods
-    public func appendValue(value: T) {
+    public func appendValue(_ value: T) {
         let newNode = LinkedListNode(value: value)
         newNode.previousNode = self.lastNode
         self.lastNode?.nextNode = newNode
@@ -24,7 +24,7 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
         }
     }
     
-    public func prependValue(value: T) {
+    public func prependValue(_ value: T) {
         let newNode = LinkedListNode(value: value)
         newNode.nextNode = self.firstNode
         self.firstNode?.previousNode = newNode

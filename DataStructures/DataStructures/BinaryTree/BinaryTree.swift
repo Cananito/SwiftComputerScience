@@ -16,11 +16,11 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         self.value = value
     }
     
-    public func enumerate(body: (BinaryTreeNode) -> ()) {
+    public func enumerate(_ body: (BinaryTreeNode) -> ()) {
         enumerateInOrder(body)
     }
     
-    public func enumerateInOrder(body: (BinaryTreeNode) -> ()) {
+    public func enumerateInOrder(_ body: (BinaryTreeNode) -> ()) {
         if let leftNode = self.leftNode {
             leftNode.enumerateInOrder(body)
         }
@@ -30,7 +30,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         }
     }
     
-    public func enumeratePreOrder(body: (BinaryTreeNode) -> ()) {
+    public func enumeratePreOrder(_ body: (BinaryTreeNode) -> ()) {
         body(self)
         if let leftNode = self.leftNode {
             leftNode.enumeratePreOrder(body)
@@ -40,7 +40,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         }
     }
     
-    public func enumeratePostOrder(body: (BinaryTreeNode) -> ()) {
+    public func enumeratePostOrder(_ body: (BinaryTreeNode) -> ()) {
         if let leftNode = self.leftNode {
             leftNode.enumeratePostOrder(body)
         }
@@ -50,7 +50,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         body(self)
     }
     
-    public func enumerateBreadthFirst(body: (BinaryTreeNode) -> ()) {
+    public func enumerateBreadthFirst(_ body: (BinaryTreeNode) -> ()) {
         var queue = [BinaryTreeNode]()
         queue.append(self)
         
@@ -80,7 +80,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         var currentNode = self
         while currentNode.parentNode != nil {
             let parent = currentNode.parentNode!
-            if let left = parent.leftNode where left === currentNode {
+            if let left = parent.leftNode, left === currentNode {
                 return parent
             }
             currentNode = parent

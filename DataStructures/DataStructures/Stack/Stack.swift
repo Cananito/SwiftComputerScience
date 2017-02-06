@@ -29,7 +29,7 @@ public struct Stack<T> {
         return storage.last()
     }
     
-    public mutating func push(object: T) {
+    public mutating func push(_ object: T) {
         if reversed {
             storage.prepend(object)
         } else {

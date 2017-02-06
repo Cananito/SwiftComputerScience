@@ -44,7 +44,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
         self.terms = terms
     }
     
-    public func termForCoefficient(coefficient: Int) -> Term? {
+    public func termForCoefficient(_ coefficient: Int) -> Term? {
         for term in terms {
             if term.coefficient == coefficient {
                 return term
@@ -54,7 +54,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     }
     
     public func derived() -> Polynomial {
-        let terms = self.simplified().terms.sort { $0.coefficient > $1.coefficient }
+        let terms = self.simplified().terms.sorted { $0.coefficient > $1.coefficient }
         
         var derivedTerms = [Term]()
         for term in terms {
@@ -83,7 +83,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     // MARK: CustomStringConvertible
     
     public var description: String {
-        return terms.map { $0.description }.joinWithSeparator(", ")
+        return terms.map { $0.description }.joined(separator: ", ")
     }
     
     // MARK: CustomDebugStringConvertible
@@ -93,7 +93,7 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
     }
 }
 
-private func coefficientGroupedTerms(terms: [Term]) -> CoefficientGroupedTerms {
+private func coefficientGroupedTerms(_ terms: [Term]) -> CoefficientGroupedTerms {
     var coefficientGroupedTerms = CoefficientGroupedTerms()
     for term in terms {
         if let existingTerm = coefficientGroupedTerms[term.coefficient] {
