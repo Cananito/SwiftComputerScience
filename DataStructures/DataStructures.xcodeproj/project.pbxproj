@@ -27,6 +27,11 @@
 		4252863C1E48255C0000AD73 /* CountedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252863B1E48255C0000AD73 /* CountedSet.swift */; };
 		4252863D1E48255C0000AD73 /* CountedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252863B1E48255C0000AD73 /* CountedSet.swift */; };
 		4252863F1E4827C30000AD73 /* CountedSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252863E1E4827C30000AD73 /* CountedSetTests.swift */; };
+		42B392CF1E7E18EC001B137C /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B392CE1E7E18EC001B137C /* PriorityQueue.swift */; };
+		42B392D31E7E1B85001B137C /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B392D21E7E1B85001B137C /* Heap.swift */; };
+		42B392D41E7E1B85001B137C /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B392D21E7E1B85001B137C /* Heap.swift */; };
+		42B392D71E7E1BB8001B137C /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B392D61E7E1BB8001B137C /* HeapTests.swift */; };
+		42B392DA1E7E35AE001B137C /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B392CE1E7E18EC001B137C /* PriorityQueue.swift */; };
 		42F6DE011BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; };
 		42F6DE021BC203570075BADD /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE001BC203570075BADD /* Trie.swift */; };
 		42F6DE051BC203790075BADD /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6DE041BC203790075BADD /* TrieTests.swift */; };
@@ -67,6 +72,9 @@
 		422CF4391BAFB0CE002976CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4252863B1E48255C0000AD73 /* CountedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedSet.swift; sourceTree = "<group>"; };
 		4252863E1E4827C30000AD73 /* CountedSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedSetTests.swift; sourceTree = "<group>"; };
+		42B392CE1E7E18EC001B137C /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		42B392D21E7E1B85001B137C /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		42B392D61E7E1BB8001B137C /* HeapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		42F6DE001BC203570075BADD /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		42F6DE041BC203790075BADD /* TrieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieTests.swift; sourceTree = "<group>"; };
 		42F6DE091BC22DEF0075BADD /* TrieNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
@@ -213,8 +221,10 @@
 				421224241BB0DD0C002738F4 /* ArrayDeque */,
 				421224261BB0DD0C002738F4 /* BinaryTree */,
 				425286391E4825330000AD73 /* CountedSet */,
+				42B392D01E7E1B5F001B137C /* Heap */,
 				421224281BB0DD0C002738F4 /* LinkedList */,
 				4212242B1BB0DD0C002738F4 /* Polynomial */,
+				42B392CD1E7E18DA001B137C /* PriorityQueue */,
 				4212242D1BB0DD0C002738F4 /* Queue */,
 				4212242F1BB0DD0C002738F4 /* Stack */,
 				42F6DDFF1BC203480075BADD /* Trie */,
@@ -230,6 +240,7 @@
 				421224381BB0DD2A002738F4 /* ArrayDequeTests */,
 				4212243A1BB0DD2A002738F4 /* BinaryTreeTests */,
 				4252863A1E4825450000AD73 /* CountedSetTests */,
+				42B392D51E7E1BA8001B137C /* HeapTests */,
 				4212243D1BB0DD2A002738F4 /* LinkedListTests */,
 				4212243F1BB0DD2A002738F4 /* PolynomialTests */,
 				421224411BB0DD2A002738F4 /* QueueTests */,
@@ -255,6 +266,30 @@
 				4252863E1E4827C30000AD73 /* CountedSetTests.swift */,
 			);
 			path = CountedSetTests;
+			sourceTree = "<group>";
+		};
+		42B392CD1E7E18DA001B137C /* PriorityQueue */ = {
+			isa = PBXGroup;
+			children = (
+				42B392CE1E7E18EC001B137C /* PriorityQueue.swift */,
+			);
+			path = PriorityQueue;
+			sourceTree = "<group>";
+		};
+		42B392D01E7E1B5F001B137C /* Heap */ = {
+			isa = PBXGroup;
+			children = (
+				42B392D21E7E1B85001B137C /* Heap.swift */,
+			);
+			path = Heap;
+			sourceTree = "<group>";
+		};
+		42B392D51E7E1BA8001B137C /* HeapTests */ = {
+			isa = PBXGroup;
+			children = (
+				42B392D61E7E1BB8001B137C /* HeapTests.swift */,
+			);
+			path = HeapTests;
 			sourceTree = "<group>";
 		};
 		42F6DDFF1BC203480075BADD /* Trie */ = {
@@ -387,9 +422,11 @@
 				421224341BB0DD0C002738F4 /* LinkedListNode.swift in Sources */,
 				42F6DE0A1BC22DEF0075BADD /* TrieNode.swift in Sources */,
 				42F6DE011BC203570075BADD /* Trie.swift in Sources */,
+				42B392D31E7E1B85001B137C /* Heap.swift in Sources */,
 				4252863C1E48255C0000AD73 /* CountedSet.swift in Sources */,
 				421224361BB0DD0C002738F4 /* Queue.swift in Sources */,
 				421224371BB0DD0C002738F4 /* Stack.swift in Sources */,
+				42B392CF1E7E18EC001B137C /* PriorityQueue.swift in Sources */,
 				421224351BB0DD0C002738F4 /* Polynomial.swift in Sources */,
 				421224331BB0DD0C002738F4 /* LinkedList.swift in Sources */,
 				421224321BB0DD0C002738F4 /* BinaryTree.swift in Sources */,
@@ -402,7 +439,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F6DE051BC203790075BADD /* TrieTests.swift in Sources */,
+				42B392D41E7E1B85001B137C /* Heap.swift in Sources */,
+				42B392DA1E7E35AE001B137C /* PriorityQueue.swift in Sources */,
 				4252863F1E4827C30000AD73 /* CountedSetTests.swift in Sources */,
+				42B392D71E7E1BB8001B137C /* HeapTests.swift in Sources */,
 				421224471BB0DD2A002738F4 /* BinaryTreeTests.swift in Sources */,
 				42F6DE021BC203570075BADD /* Trie.swift in Sources */,
 				4212244A1BB0DD2A002738F4 /* QueueTests.swift in Sources */,
