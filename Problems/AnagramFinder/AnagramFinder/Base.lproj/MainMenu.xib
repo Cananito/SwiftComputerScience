@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -17,6 +18,7 @@
                 <outlet property="anagramsTableView" destination="8lk-Ht-qTG" id="13r-73-l9c"/>
                 <outlet property="anagramsTableViewScrollContainer" destination="bc2-9A-2uB" id="Eix-Qi-6Iz"/>
                 <outlet property="findAnagramsButton" destination="y6h-lC-WSV" id="pjx-w7-zpa"/>
+                <outlet property="populateWithEnglishDictionaryButton" destination="HzZ-Ug-ymG" id="KcI-Fg-Qa7"/>
                 <outlet property="progressIndicator" destination="eip-yx-Nfv" id="Nfg-Er-pX6"/>
                 <outlet property="textScrollView" destination="MgO-gu-avh" id="i6L-tw-CHg"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -681,20 +683,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="510" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="eip-yx-Nfv">
-                        <rect key="frame" x="247" y="172" width="16" height="16"/>
-                    </progressIndicator>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HzZ-Ug-ymG">
+                        <rect key="frame" x="44" y="312" width="280" height="32"/>
+                        <buttonCell key="cell" type="push" title="Populate With English Dictionary Words" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bH1-yB-0R2">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="populateWithEnglishDictionary:" target="Voe-Tx-rLC" id="8zV-Rn-In5"/>
+                        </connections>
+                    </button>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgO-gu-avh">
-                        <rect key="frame" x="20" y="20" width="343" height="320"/>
+                        <rect key="frame" x="20" y="20" width="343" height="279"/>
                         <clipView key="contentView" id="lJu-iy-LmE">
-                            <rect key="frame" x="1" y="1" width="326" height="318"/>
+                            <rect key="frame" x="1" y="1" width="326" height="277"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Q7g-JQ-WXa">
-                                    <rect key="frame" x="0.0" y="0.0" width="326" height="318"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="326" height="277"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="326" height="318"/>
+                                    <size key="minSize" width="326" height="277"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </textView>
@@ -706,7 +715,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="AMP-I6-hVO">
-                            <rect key="frame" x="327" y="1" width="15" height="318"/>
+                            <rect key="frame" x="327" y="1" width="15" height="277"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -740,7 +749,7 @@
                                                     <rect key="frame" x="1" y="1" width="114" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField identifier="AnagramCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ood-mk-i45">
+                                                        <textField identifier="AnagramCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ood-mk-i45">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="QMs-GW-oCO">
@@ -787,19 +796,24 @@
                             <action selector="findAnagrams:" target="Voe-Tx-rLC" id="gyb-GU-Xkx"/>
                         </connections>
                     </button>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="eip-yx-Nfv">
+                        <rect key="frame" x="247" y="172" width="16" height="16"/>
+                    </progressIndicator>
                 </subviews>
                 <constraints>
                     <constraint firstItem="MgO-gu-avh" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="44w-Nc-3uP"/>
                     <constraint firstAttribute="bottom" secondItem="bc2-9A-2uB" secondAttribute="bottom" constant="20" id="5d5-Kk-zz8"/>
-                    <constraint firstItem="MgO-gu-avh" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="ATK-S2-aum"/>
                     <constraint firstAttribute="bottom" secondItem="MgO-gu-avh" secondAttribute="bottom" constant="20" id="CSX-ok-HJI"/>
                     <constraint firstItem="y6h-lC-WSV" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="DdG-Bh-pcv"/>
+                    <constraint firstItem="HzZ-Ug-ymG" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="NYA-xb-Tfq"/>
                     <constraint firstAttribute="trailing" secondItem="y6h-lC-WSV" secondAttribute="trailing" constant="20" id="ZBW-QY-n4G"/>
+                    <constraint firstItem="HzZ-Ug-ymG" firstAttribute="centerX" secondItem="Q7g-JQ-WXa" secondAttribute="centerX" id="bJK-BF-TIJ"/>
                     <constraint firstItem="bc2-9A-2uB" firstAttribute="top" secondItem="y6h-lC-WSV" secondAttribute="bottom" constant="20" id="eYh-sR-PcA"/>
                     <constraint firstItem="bc2-9A-2uB" firstAttribute="leading" secondItem="MgO-gu-avh" secondAttribute="trailing" constant="8" id="mhW-t2-NGn"/>
                     <constraint firstAttribute="centerY" secondItem="eip-yx-Nfv" secondAttribute="centerY" id="nGa-jy-9zV"/>
                     <constraint firstItem="bc2-9A-2uB" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" multiplier="0.2333" id="neF-ON-I7F"/>
                     <constraint firstAttribute="trailing" secondItem="bc2-9A-2uB" secondAttribute="trailing" constant="20" id="xwN-dR-WWm"/>
+                    <constraint firstItem="MgO-gu-avh" firstAttribute="top" secondItem="HzZ-Ug-ymG" secondAttribute="bottom" constant="20" id="yBm-QD-wJo"/>
                     <constraint firstAttribute="centerX" secondItem="eip-yx-Nfv" secondAttribute="centerX" id="ySu-Tq-mJ7"/>
                 </constraints>
             </view>

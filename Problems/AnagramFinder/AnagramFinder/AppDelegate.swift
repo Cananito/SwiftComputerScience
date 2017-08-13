@@ -9,19 +9,23 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet weak var populateWithEnglishDictionaryButton: NSButton!
     @IBOutlet weak var textScrollView: NSScrollView!
     @IBOutlet weak var findAnagramsButton: NSButton!
     @IBOutlet weak var anagramsTableViewScrollContainer: NSScrollView!
     @IBOutlet weak var anagramsTableView: NSTableView!
-    var textView: NSTextView! {
+    private var textView: NSTextView! {
         get {
             return self.textScrollView.contentView.documentView as! NSTextView
         }
     }
-    var currentClusterArray = [String: [String]]()
+    
+    private var anagramCluster = [String: [String]]()
+    private var sortedAnagramClusterKeys = [String]()
+    private let privateQueue = DispatchQueue(label: "com.cananito.private-queue")
     
     // MARK: NSApplicationDelegate
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -33,16 +37,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     
     // MARK: NSTableViewDataSource Methods
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.currentClusterArray.keys.count
+        return self.sortedAnagramClusterKeys.count
     }
     
     // MARK: NSTableViewDelegate Methods
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let index = self.currentClusterArray.index(self.currentClusterArray.startIndex, offsetBy: row)
-        let key = self.currentClusterArray.keys[index]
+        let key = self.sortedAnagramClusterKeys[row]
         
         var numberOfOccurrences = 0
-        if let words = self.currentClusterArray[key] {
+        if let words = self.anagramCluster[key] {
             numberOfOccurrences = words.count
         }
         
@@ -61,20 +64,34 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
         if let string = self.textView.string as String? {
             self.showLoadingUI()
             
-            OperationQueue().addOperation { () -> Void in
+            self.privateQueue.async {
                 let words = string.characters.split(whereSeparator: { $0 == "\n" }).map { String($0) }
-                self.currentClusterArray = clusterArrayOfWords(words)
+                self.anagramCluster = clusterArrayOfWords(words)
+                self.sortedAnagramClusterKeys = self.anagramCluster.keys.sorted()
                 
-                OperationQueue.main.addOperation({ () -> Void in
+                DispatchQueue.main.async {
                     self.hideLoadingUI()
                     self.anagramsTableView.reloadData()
-                })
+                }
+            }
+        }
+    }
+    
+    @IBAction func populateWithEnglishDictionary(_ sender: AnyObject!) {
+        self.showLoadingUI()
+        self.privateQueue.async {
+            let wordsPath = "/bin/cat"
+            let wordsString = outputStringFromLaunchPath(wordsPath, arguments: ["/usr/share/dict/words"])
+            DispatchQueue.main.async {
+                self.hideLoadingUI()
+                self.textView.string = wordsString
             }
         }
     }
     
     // MARK: Private Methods
     private func showLoadingUI() {
+        self.populateWithEnglishDictionaryButton.isHidden = true
         self.textScrollView.isHidden = true
         self.anagramsTableView.isHidden = true
         self.anagramsTableViewScrollContainer.isHidden = true
@@ -83,6 +100,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource, NSTab
     }
     
     private func hideLoadingUI() {
+        self.populateWithEnglishDictionaryButton.isHidden = false
         self.textScrollView.isHidden = false
         self.anagramsTableView.isHidden = false
         self.anagramsTableViewScrollContainer.isHidden = false
