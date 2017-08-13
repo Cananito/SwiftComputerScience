@@ -1,13 +1,13 @@
 
 extension Array where Element: Comparable {
-    public func binarySearch(value: Element) -> Element? {
+    public func binarySearch(_ value: Element) -> Element? {
         if self.count == 0 {
             return nil
         }
         return self.binarySearch(value, startIndex: 0, endIndex: (self.count - 1))
     }
     
-    private func binarySearch(value: Element, startIndex: Int, endIndex: Int) -> Element? {
+    private func binarySearch(_ value: Element, startIndex: Int, endIndex: Int) -> Element? {
         let middleIndex = ((endIndex - startIndex) / 2) + startIndex
         let element = self[middleIndex]
         
