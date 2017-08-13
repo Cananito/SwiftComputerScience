@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4264A0C11B8A40E1008EBCD7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264A0C01B8A40E1008EBCD7 /* Utilities.swift */; };
 		428F82201A9050000089515C /* AnagramClusterer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428F821F1A9050000089515C /* AnagramClusterer.swift */; };
 		42CC66BC1A8FEC2D000B2A97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC66BB1A8FEC2D000B2A97 /* AppDelegate.swift */; };
 		42CC66BE1A8FEC2D000B2A97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42CC66BD1A8FEC2D000B2A97 /* Images.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4264A0C01B8A40E1008EBCD7 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		428F821F1A9050000089515C /* AnagramClusterer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnagramClusterer.swift; sourceTree = "<group>"; };
 		42CC66B61A8FEC2D000B2A97 /* AnagramFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnagramFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CC66BA1A8FEC2D000B2A97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				42CC66BB1A8FEC2D000B2A97 /* AppDelegate.swift */,
 				428F821F1A9050000089515C /* AnagramClusterer.swift */,
+				4264A0C01B8A40E1008EBCD7 /* Utilities.swift */,
 				42CC66BD1A8FEC2D000B2A97 /* Images.xcassets */,
 				42CC66BF1A8FEC2D000B2A97 /* MainMenu.xib */,
 				42CC66B91A8FEC2D000B2A97 /* Supporting Files */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4264A0C11B8A40E1008EBCD7 /* Utilities.swift in Sources */,
 				42CC66BC1A8FEC2D000B2A97 /* AppDelegate.swift in Sources */,
 				428F82201A9050000089515C /* AnagramClusterer.swift in Sources */,
 			);
