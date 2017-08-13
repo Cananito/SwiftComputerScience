@@ -683,6 +683,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="510" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="eip-yx-Nfv">
+                        <rect key="frame" x="247" y="172" width="16" height="16"/>
+                    </progressIndicator>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HzZ-Ug-ymG">
                         <rect key="frame" x="44" y="312" width="280" height="32"/>
                         <buttonCell key="cell" type="push" title="Populate With English Dictionary Words" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bH1-yB-0R2">
@@ -695,7 +698,7 @@
                     </button>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgO-gu-avh">
                         <rect key="frame" x="20" y="20" width="343" height="279"/>
-                        <clipView key="contentView" id="lJu-iy-LmE">
+                        <clipView key="contentView" copiesOnScroll="NO" id="lJu-iy-LmE">
                             <rect key="frame" x="1" y="1" width="326" height="277"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -721,7 +724,7 @@
                     </scrollView>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-9A-2uB">
                         <rect key="frame" x="371" y="20" width="119" height="279"/>
-                        <clipView key="contentView" id="hbv-fE-dfq">
+                        <clipView key="contentView" copiesOnScroll="NO" id="hbv-fE-dfq">
                             <rect key="frame" x="1" y="0.0" width="117" height="278"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -796,9 +799,6 @@
                             <action selector="findAnagrams:" target="Voe-Tx-rLC" id="gyb-GU-Xkx"/>
                         </connections>
                     </button>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="eip-yx-Nfv">
-                        <rect key="frame" x="247" y="172" width="16" height="16"/>
-                    </progressIndicator>
                 </subviews>
                 <constraints>
                     <constraint firstItem="MgO-gu-avh" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="44w-Nc-3uP"/>

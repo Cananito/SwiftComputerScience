@@ -91,20 +91,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSTableVie
     
     // MARK: Private Methods
     private func showLoadingUI() {
-        self.populateWithEnglishDictionaryButton.isHidden = true
-        self.textScrollView.isHidden = true
-        self.anagramsTableView.isHidden = true
-        self.anagramsTableViewScrollContainer.isHidden = true
+        self.populateWithEnglishDictionaryButton.isEnabled = false
         self.findAnagramsButton.isEnabled = false
+        
+        self.textView.isSelectable = false
+        self.textView.isEditable = false
+        self.textView.alphaValue = 0.25
+        
+        self.anagramsTableView.isEnabled = false
+        self.anagramsTableView.alphaValue = 0.25
+        
         self.progressIndicator.startAnimation(self)
     }
     
     private func hideLoadingUI() {
-        self.populateWithEnglishDictionaryButton.isHidden = false
-        self.textScrollView.isHidden = false
-        self.anagramsTableView.isHidden = false
-        self.anagramsTableViewScrollContainer.isHidden = false
+        self.populateWithEnglishDictionaryButton.isEnabled = true
         self.findAnagramsButton.isEnabled = true
+        
+        self.textView.isSelectable = true
+        self.textView.isEditable = true
+        self.textView.alphaValue = 1.0
+        
+        self.anagramsTableView.isEnabled = true
+        self.anagramsTableView.alphaValue = 1.0
+        
         self.progressIndicator.stopAnimation(self)
     }
 }
