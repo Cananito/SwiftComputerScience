@@ -8,17 +8,17 @@
 
 import Foundation
 
-public func outputStringFromLaunchPath(launchPath: String, arguments: Array<String>) -> String {
-    let task = NSTask()
+public func outputStringFromLaunchPath(_ launchPath: String, arguments: Array<String>) -> String {
+    let task = Process()
     
     task.launchPath = launchPath
     task.arguments = arguments
     
-    let pipe = NSPipe()
+    let pipe = Pipe()
     task.standardOutput = pipe
     let fileHandle = pipe.fileHandleForReading
     
     task.launch()
     let outputData = fileHandle.readDataToEndOfFile()
-    return NSString(data: outputData, encoding: NSUTF8StringEncoding) as! String
+    return NSString(data: outputData, encoding: String.Encoding.utf8.rawValue)! as String
 }
