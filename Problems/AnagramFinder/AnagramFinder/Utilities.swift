@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: Move this out to it’s own Utilities static library or framework.
 public func outputStringFromLaunchPath(_ launchPath: String, arguments: Array<String>) -> String {
     let task = Process()
     
