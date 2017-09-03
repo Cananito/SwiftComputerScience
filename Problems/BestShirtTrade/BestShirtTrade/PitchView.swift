@@ -10,110 +10,110 @@ import AppKit;
 
 @IBDesignable class PitchView: NSView {
     private enum PitchSide {
-        case Left, Right
+        case left, right
     }
     
     private enum CornerPosition {
-        case TopLeft, TopRight, BottomRight, BottomLeft
+        case topLeft, topRight, bottomRight, bottomLeft
     }
     
     let backgroundColor = NSColor(calibratedRed: 0.0, green: 0.8, blue: 0.2, alpha: 1.0)
-    let outlineColor = NSColor.whiteColor()
+    let outlineColor = NSColor.white
     let strokeWidth = CGFloat(2.0)
     let pitchPadding = CGFloat(14.0)
     let spotDiameter = CGFloat(6.0)
     
-    override func drawRect(dirtyRect: NSRect) {
-        let context = NSGraphicsContext.currentContext()?.CGContext
+    override func draw(_ dirtyRect: NSRect) {
+        let context = NSGraphicsContext.current()?.cgContext
         if context == nil {
             return
         }
         
-        CGContextSetFillColorWithColor(context, backgroundColor.CGColor)
-        CGContextFillRect(context, NSRectToCGRect(dirtyRect))
+        context?.setFillColor(backgroundColor.cgColor)
+        context?.fill(NSRectToCGRect(dirtyRect))
         
-        CGContextSetFillColorWithColor(context, outlineColor.CGColor)
-        CGContextSetStrokeColorWithColor(context, outlineColor.CGColor)
-        CGContextSetLineWidth(context, strokeWidth)
+        context?.setFillColor(outlineColor.cgColor)
+        context?.setStrokeColor(outlineColor.cgColor)
+        context?.setLineWidth(strokeWidth)
         
-        CGContextStrokeRect(context, touchAndGoalLinesRect(dirtyRect))
-        CGContextStrokeRect(context, halfWayLineRect(dirtyRect))
-        CGContextFillEllipseInRect(context, centreSpotRect(dirtyRect))
-        CGContextStrokeEllipseInRect(context, centreCircleRect(dirtyRect))
+        context?.stroke(touchAndGoalLinesRect(dirtyRect))
+        context?.stroke(halfWayLineRect(dirtyRect))
+        context?.fillEllipse(in: centreSpotRect(dirtyRect))
+        context?.strokeEllipse(in: centreCircleRect(dirtyRect))
         
-        CGContextStrokeRect(context, sixYardBoxRect(dirtyRect, side: .Left))
-        CGContextStrokeRect(context, sixYardBoxRect(dirtyRect, side: .Right))
+        context?.stroke(sixYardBoxRect(dirtyRect, side: .left))
+        context?.stroke(sixYardBoxRect(dirtyRect, side: .right))
         
-        CGContextStrokeRect(context, eightTeenYardBoxRect(dirtyRect, side: .Left))
-        CGContextStrokeRect(context, eightTeenYardBoxRect(dirtyRect, side: .Right))
+        context?.stroke(eightTeenYardBoxRect(dirtyRect, side: .left))
+        context?.stroke(eightTeenYardBoxRect(dirtyRect, side: .right))
         
-        CGContextStrokeRect(context, goalBoxRect(dirtyRect, side: .Left))
-        CGContextStrokeRect(context, goalBoxRect(dirtyRect, side: .Right))
+        context?.stroke(goalBoxRect(dirtyRect, side: .left))
+        context?.stroke(goalBoxRect(dirtyRect, side: .right))
         
-        CGContextFillEllipseInRect(context, penaltySpotRect(dirtyRect, side: .Left))
-        CGContextFillEllipseInRect(context, penaltySpotRect(dirtyRect, side: .Right))
+        context?.fillEllipse(in: penaltySpotRect(dirtyRect, side: .left))
+        context?.fillEllipse(in: penaltySpotRect(dirtyRect, side: .right))
         
-        CGContextAddPath(context, cornerArcPath(dirtyRect, cornerPosition: .TopLeft))
-        CGContextStrokePath(context)
-        CGContextAddPath(context, cornerArcPath(dirtyRect, cornerPosition: .TopRight))
-        CGContextStrokePath(context)
-        CGContextAddPath(context, cornerArcPath(dirtyRect, cornerPosition: .BottomRight))
-        CGContextStrokePath(context)
-        CGContextAddPath(context, cornerArcPath(dirtyRect, cornerPosition: .BottomLeft))
-        CGContextStrokePath(context)
+        context?.addPath(cornerArcPath(dirtyRect, cornerPosition: .topLeft))
+        context?.strokePath()
+        context?.addPath(cornerArcPath(dirtyRect, cornerPosition: .topRight))
+        context?.strokePath()
+        context?.addPath(cornerArcPath(dirtyRect, cornerPosition: .bottomRight))
+        context?.strokePath()
+        context?.addPath(cornerArcPath(dirtyRect, cornerPosition: .bottomLeft))
+        context?.strokePath()
         
-        CGContextAddPath(context, penaltyArcPath(dirtyRect, side: .Left))
-        CGContextStrokePath(context)
-        CGContextAddPath(context, penaltyArcPath(dirtyRect, side: .Right))
-        CGContextStrokePath(context)
+        context?.addPath(penaltyArcPath(dirtyRect, side: .left))
+        context?.strokePath()
+        context?.addPath(penaltyArcPath(dirtyRect, side: .right))
+        context?.strokePath()
     }
     
     // MARK: Components
     
-    private func touchAndGoalLinesRect(containerRect: NSRect) -> CGRect {
-        return CGRectInset(containerRect, pitchPadding, pitchPadding)
+    private func touchAndGoalLinesRect(_ containerRect: NSRect) -> CGRect {
+        return containerRect.insetBy(dx: pitchPadding, dy: pitchPadding)
     }
     
-    private func halfWayLineRect(containerRect: NSRect) -> CGRect {
+    private func halfWayLineRect(_ containerRect: NSRect) -> CGRect {
         let width = CGFloat(1.0)
-        let x = (CGRectGetWidth(containerRect) / 2.0) - (width / 2.0)
-        let y = CGRectGetMinY(containerRect) + pitchPadding
-        let middleLineHeight = CGRectGetHeight(containerRect) - (pitchPadding * 2.0)
+        let x = (containerRect.width / 2.0) - (width / 2.0)
+        let y = containerRect.minY + pitchPadding
+        let middleLineHeight = containerRect.height - (pitchPadding * 2.0)
         let middleLineOriginPoint = CGPoint(x: x, y: y)
         let middleLineSize = CGSize(width: width, height: middleLineHeight)
         return CGRect(origin: middleLineOriginPoint, size: middleLineSize)
     }
     
-    private func centreSpotRect(containerRect: NSRect) -> CGRect {
+    private func centreSpotRect(_ containerRect: NSRect) -> CGRect {
         return centeredCircleRect(containerRect, diameter: spotDiameter)
     }
     
-    private func centreCircleRect(containerRect: NSRect) -> CGRect {
-        let diameter = CGRectGetWidth(containerRect) * 0.2
+    private func centreCircleRect(_ containerRect: NSRect) -> CGRect {
+        let diameter = containerRect.width * 0.2
         return centeredCircleRect(containerRect, diameter: diameter)
     }
     
-    private func sixYardBoxRect(containerRect: NSRect, side: PitchSide) -> CGRect {
+    private func sixYardBoxRect(_ containerRect: NSRect, side: PitchSide) -> CGRect {
         return boxRect(containerRect, side: side, widthMultiplier: 0.06, heightMultiplier: 0.2)
     }
     
-    private func eightTeenYardBoxRect(containerRect: NSRect, side: PitchSide) -> CGRect {
+    private func eightTeenYardBoxRect(_ containerRect: NSRect, side: PitchSide) -> CGRect {
         return boxRect(containerRect, side: side, widthMultiplier: 0.18, heightMultiplier: 0.44)
     }
     
-    private func goalBoxRect(containerRect: NSRect, side: PitchSide) -> CGRect {
+    private func goalBoxRect(_ containerRect: NSRect, side: PitchSide) -> CGRect {
         return boxRect(containerRect, side: side, widthMultiplier: -0.01, heightMultiplier: 0.08)
     }
     
-    private func penaltySpotRect(containerRect: NSRect, side: PitchSide) -> CGRect {
+    private func penaltySpotRect(_ containerRect: NSRect, side: PitchSide) -> CGRect {
         let radius = spotDiameter / 2.0
-        let distanceFromGoal = (CGRectGetWidth(containerRect) * 0.12)
+        let distanceFromGoal = (containerRect.width * 0.12)
         let x: CGFloat
         switch side {
-        case .Left:
+        case .left:
             x = pitchPadding + distanceFromGoal - radius
-        case .Right:
-            x = CGRectGetWidth(containerRect) - pitchPadding - distanceFromGoal - radius
+        case .right:
+            x = containerRect.width - pitchPadding - distanceFromGoal - radius
         }
         
         var centeredRect = centeredCircleRect(containerRect, diameter: spotDiameter)
@@ -121,75 +121,75 @@ import AppKit;
         return centeredRect
     }
     
-    private func cornerArcPath(containerRect: NSRect, cornerPosition: CornerPosition) -> CGPathRef {
-        let diameter = CGRectGetWidth(containerRect) * 0.02
+    private func cornerArcPath(_ containerRect: NSRect, cornerPosition: CornerPosition) -> CGPath {
+        let diameter = containerRect.width * 0.02
         let radius = diameter / 2.0
         let x: CGFloat
         let y: CGFloat
         let startAngle: CGFloat
         
-        let path = CGPathCreateMutable()
+        let path = CGMutablePath()
         switch cornerPosition {
-        case .TopLeft:
-            x = CGRectGetMinX(containerRect) + pitchPadding
-            y = CGRectGetMaxY(containerRect) - pitchPadding
-            startAngle = CGFloat(M_PI * 1.5)
-        case .TopRight:
-            x = CGRectGetMaxX(containerRect) - pitchPadding
-            y = CGRectGetMaxY(containerRect) - pitchPadding
-            startAngle = CGFloat(M_PI * 1.0)
-        case .BottomRight:
-            x = CGRectGetMaxX(containerRect) - pitchPadding
-            y = CGRectGetMinY(containerRect) + pitchPadding
-            startAngle = CGFloat(M_PI * 0.5)
-        case .BottomLeft:
-            x = CGRectGetMinX(containerRect) + pitchPadding
-            y = CGRectGetMinY(containerRect) + pitchPadding
-            startAngle = CGFloat(M_PI * 2.0)
+        case .topLeft:
+            x = containerRect.minX + pitchPadding
+            y = containerRect.maxY - pitchPadding
+            startAngle = CGFloat(Double.pi * 1.5)
+        case .topRight:
+            x = containerRect.maxX - pitchPadding
+            y = containerRect.maxY - pitchPadding
+            startAngle = CGFloat(Double.pi * 1.0)
+        case .bottomRight:
+            x = containerRect.maxX - pitchPadding
+            y = containerRect.minY + pitchPadding
+            startAngle = CGFloat(Double.pi * 0.5)
+        case .bottomLeft:
+            x = containerRect.minX + pitchPadding
+            y = containerRect.minY + pitchPadding
+            startAngle = CGFloat(Double.pi * 2.0)
         }
+        let endAngle = startAngle + CGFloat(Double.pi * 0.5)
+        let center = CGPoint(x: x, y: y)
         
-        let endAngle = startAngle + CGFloat(M_PI * 0.5)
-        CGPathAddArc(path, nil, x, y, radius, startAngle, endAngle, false)
+        path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
         return path
     }
     
-    private func penaltyArcPath(containerRect: NSRect, side: PitchSide) -> CGPathRef {
+    private func penaltyArcPath(_ containerRect: NSRect, side: PitchSide) -> CGPath {
         let spotRect = penaltySpotRect(containerRect, side: side)
-        let centerX = CGRectGetMidX(spotRect)
-        let centerY = CGRectGetMidY(spotRect)
-        let diameter = CGRectGetWidth(containerRect) * 0.2
+        let center = CGPoint(x: spotRect.midX, y: spotRect.midY)
+        let diameter = containerRect.width * 0.2
         let radius = diameter / 2.0
         
-        let path = CGPathCreateMutable()
+        let path = CGMutablePath()
         switch side {
-        case .Left:
-            CGPathAddArc(path, nil, centerX, centerY, radius, 1.0, -1.0, true)
-        case .Right:
-            CGPathAddArc(path, nil, centerX, centerY, radius, CGFloat(1.0 + M_PI), CGFloat(-1.0 + M_PI), true)
+        case .left:
+            path.addArc(center: center, radius: radius, startAngle: 1.0, endAngle: -1.0, clockwise: true)
+        case .right:
+            path.addArc(center: center, radius: radius, startAngle: CGFloat(1.0 + Double.pi), endAngle: CGFloat(-1.0 + Double.pi), clockwise: true)
         }
         return path
     }
     
     // MARK: Reused
     
-    private func boxRect(containerRect: NSRect, side: PitchSide, widthMultiplier: CGFloat, heightMultiplier: CGFloat) -> CGRect {
-        let width = (CGRectGetWidth(containerRect) - (pitchPadding * 2.0)) * widthMultiplier
-        let height = (CGRectGetHeight(containerRect) - (pitchPadding * 2.0)) * heightMultiplier
-        let y = (CGRectGetHeight(containerRect) / 2.0) - (height / 2.0)
+    private func boxRect(_ containerRect: NSRect, side: PitchSide, widthMultiplier: CGFloat, heightMultiplier: CGFloat) -> CGRect {
+        let width = (containerRect.width - (pitchPadding * 2.0)) * widthMultiplier
+        let height = (containerRect.height - (pitchPadding * 2.0)) * heightMultiplier
+        let y = (containerRect.height / 2.0) - (height / 2.0)
         let x: CGFloat
         switch side {
-        case .Left:
+        case .left:
             x = pitchPadding
-        case .Right:
-            x = CGRectGetWidth(containerRect) - pitchPadding - width
+        case .right:
+            x = containerRect.width - pitchPadding - width
         }
         return CGRect(x: x, y: y, width: width, height: height)
     }
     
-    private func centeredCircleRect(containerRect: NSRect, diameter: CGFloat) -> CGRect {
+    private func centeredCircleRect(_ containerRect: NSRect, diameter: CGFloat) -> CGRect {
         let radius = diameter / 2.0
-        let x = (CGRectGetWidth(containerRect) / 2.0) - radius
-        let y = (CGRectGetHeight(containerRect) / 2.0) - radius
+        let x = (containerRect.width / 2.0) - radius
+        let y = (containerRect.height / 2.0) - radius
         return CGRect(x: x, y: y, width: diameter, height: diameter)
     }
 }
