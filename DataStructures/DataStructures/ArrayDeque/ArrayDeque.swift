@@ -17,7 +17,7 @@ public struct ArrayDeque<T> {
         self.storage = ArrayDequeStorage(array: array)
     }
     
-    public subscript (index: Int) -> T? {
+    public subscript(index: Int) -> T? {
         return storage[index]
     }
     
@@ -96,7 +96,7 @@ fileprivate class ArrayDequeStorage<T> {
         storage.deallocate(capacity: capacity)
     }
     
-    fileprivate subscript (index: Int) -> T? {
+    fileprivate subscript(index: Int) -> T? {
         if index > (count - 1) {
             return nil
         }
