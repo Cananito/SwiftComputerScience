@@ -33,7 +33,7 @@ public struct ExpiringDictionary<Key: Hashable, Value> {
     }
     
     public mutating func insert(key: Key, value: Value, expirationTimeInterval: TimeInterval) {
-        // Always updating and inserting to get proper clean-up via `cleanUp()`. Otherwise if invalid time intervals are skipped, the heap will become corrupt.
+        // Always updating and inserting to get proper clean-up via `cleanUp()`. Otherwise if invalid time intervals are skipped, the heap will become stale with outdated entries.
         
         valueTimeIntervals[key] = ValueTimeInterval(value: value, expirationTimeInterval: expirationTimeInterval)
         // Heap will have possible duplicate keys. `cleanUp()` accounts for this.
