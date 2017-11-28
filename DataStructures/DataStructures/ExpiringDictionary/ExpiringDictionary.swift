@@ -46,12 +46,12 @@ public struct ExpiringDictionary<Key: Hashable, Value> {
         return valueWithCleanUp(forKey: key)
     }
     
-    public mutating func valueWithCleanUp(forKey key: Key) -> Value? {
+    private mutating func valueWithCleanUp(forKey key: Key) -> Value? {
         cleanUp()
         return valueTimeIntervals[key]?.value
     }
     
-    public mutating func valueWithoutCleanUp(forKey key: Key) -> Value? {
+    private mutating func valueWithoutCleanUp(forKey key: Key) -> Value? {
         guard let entry = valueTimeIntervals[key] else {
             return nil
         }
