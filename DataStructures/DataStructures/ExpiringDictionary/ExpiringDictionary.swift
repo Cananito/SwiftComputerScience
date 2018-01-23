@@ -19,7 +19,7 @@ public struct ExpiringDictionary<Key: Hashable, Value> {
             return lhs.expirationTimeInterval < rhs.expirationTimeInterval
         }
         static func ==(lhs: KeyTimeInterval, rhs: KeyTimeInterval) -> Bool {
-            return lhs.expirationTimeInterval < rhs.expirationTimeInterval
+            return lhs.expirationTimeInterval == rhs.expirationTimeInterval
         }
         let key: Key
         let expirationTimeInterval: TimeInterval
