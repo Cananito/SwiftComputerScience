@@ -10,16 +10,16 @@ public func iterativeFibonacci(position: Int) -> Int {
     if position == 0 {
         return 0
     }
-    if position < 2 {
+    if position == 1 || position == 2 {
         return 1
     }
-    var result = 1
-    var first = 0
-    var second = 1
-    for _ in 2 ... position {
-        result = first + second
-        first = second
-        second = result
+    var twoBefore = 1
+    var oneBefore = 1
+    var result = 0
+    for _ in 3 ... position {
+        result = oneBefore + twoBefore
+        twoBefore = oneBefore
+        oneBefore = result
     }
     return result
 }
@@ -36,12 +36,13 @@ public func memoizedRecursiveFibonacci(position: Int, memoization: inout [Int : 
     if let result = memoization[position] {
         return result
     }
+
+    let result: Int
     if position < 2 {
-        memoization[position] = position
-        return position
+        result = position
     } else {
-        let result = memoizedRecursiveFibonacci(position: position - 1, memoization: &memoization) + memoizedRecursiveFibonacci(position: position - 2, memoization: &memoization)
-        memoization[position] = result
-        return result
+        result = memoizedRecursiveFibonacci(position: position - 1, memoization: &memoization) + memoizedRecursiveFibonacci(position: position - 2, memoization: &memoization)
     }
+    memoization[position] = result
+    return result
 }
