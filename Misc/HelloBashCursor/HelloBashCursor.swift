@@ -6,7 +6,7 @@ import Darwin
  Prerequisite Knowledge:
  - `fflush(__stdoutp)`: Forces output lacking new-line.
  - `\r`: Puts the cursor at the beginning of the line (a.k.a. carriage return).
- - `\u{1B}`: Escape character (`\033` in bash).
+ - `\u{1B}`: Unicode escape character (`\033` in bash).
  - `7`: When it follows an escape character, it saves the current cursor position.
  - `8`: When it follows an escape character, it restores the cursor position.
  - `[3A`: When it follows an escape character, it moves the cursor UP 3 rows.
