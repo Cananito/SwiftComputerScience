@@ -20,7 +20,7 @@ public struct Trie<T> {
         }
         
         var currentNode = rootNode
-        for (_, character) in key.characters.enumerated() {
+        for (_, character) in key.enumerated() {
             if let node = currentNode.childNodeWithKey(character) {
                 currentNode = node
             } else {
@@ -37,7 +37,7 @@ public struct Trie<T> {
         }
         
         var currentNode = rootNode
-        for (_, character) in key.characters.enumerated() {
+        for (_, character) in key.enumerated() {
             if let node = currentNode.childNodeWithKey(character) {
                 currentNode = node
             } else {
@@ -54,7 +54,7 @@ public struct Trie<T> {
         }
         
         var currentNode = rootNode
-        for (_, character) in key.characters.enumerated() {
+        for (_, character) in key.enumerated() {
             if let node = currentNode.childNodeWithKey(character) {
                 currentNode = node
             } else {
