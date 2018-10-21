@@ -1,28 +1,29 @@
 //
-//  String+Palindrome.swift
+//  String+PalindromeDetector.swift
 //  PalindromeDetector
 //
 //  Created by Rogelio Gudino on 5/1/16.
 //  Copyright © 2016 Rogelio Gudino. All rights reserved.
 //
 
-import DataStructures
+import DataStructures_LinkedList_LinkedList
+import DataStructures_Stack_Stack
 
-extension String {
-    func withoutWhiteSpaces() -> String {
-        return self.characters.lazy.filter { $0 != " " }.reduce("") { $0 + String($1) }
+public extension String {
+    public func withoutWhiteSpaces() -> String {
+        return self.lazy.filter { $0 != " " }.reduce("") { $0 + String($1) }
     }
     
-    func isPalindrome() -> Bool {
+    public func isPalindrome() -> Bool {
         return isPalindromeUsingIteration()
     }
     
-    func isPalindromeUsingIteration() -> Bool {
+    public func isPalindromeUsingIteration() -> Bool {
         if isEmptyOrSingleCharacter() {
             return true
         }
         
-        let characters = Array(self.characters)
+        let characters = Array(self)
         var leftIndex = 0
         var rightIndex = characters.count - 1
         while leftIndex < rightIndex {
@@ -35,22 +36,22 @@ extension String {
         return true
     }
     
-    func isPalindromeUsingRecursion() -> Bool {
+    public func isPalindromeUsingRecursion() -> Bool {
         if isEmptyOrSingleCharacter() {
             return true
         }
         
-        let length = self.characters.count
-        let firstCharacter = self[self.startIndex.advancedBy(0)]
-        let lastCharacter = self[self.startIndex.advancedBy(length - 1)]
+        let length = self.count
+        let firstCharacter = self[self.index(self.startIndex, offsetBy: 0)]
+        let lastCharacter = self[self.index(self.startIndex, offsetBy: length - 1)]
         let matchingEnds = firstCharacter == lastCharacter
         if matchingEnds && length == 2 {
             return true
         } else if matchingEnds {
-            let secondCharacterStringIndex = self.startIndex.advancedBy(1)
-            let secondToLastCharacterStringIndex = self.startIndex.advancedBy(length - 2)
+            let secondCharacterStringIndex = self.index(self.startIndex, offsetBy: 1)
+            let secondToLastCharacterStringIndex = self.index(self.startIndex, offsetBy: length - 2)
             let range = secondCharacterStringIndex...secondToLastCharacterStringIndex
-            let newString = self[range]
+            let newString = String(self[range])
             
             return newString.isPalindromeUsingRecursion()
         }
@@ -58,12 +59,12 @@ extension String {
         return false
     }
     
-    func isPalindromeUsingStack() -> Bool {
+    public func isPalindromeUsingStack() -> Bool {
         if isEmptyOrSingleCharacter() {
             return true
         }
         
-        let characters = Array(self.characters)
+        let characters = Array(self)
         var stack = Stack(elements: characters)
         
         let middleIndex: Int
@@ -87,12 +88,12 @@ extension String {
         return true
     }
     
-    func isPalindromeUsingLinkedList() -> Bool {
+    public func isPalindromeUsingLinkedList() -> Bool {
         if isEmptyOrSingleCharacter() {
             return true
         }
         
-        let characters = Array(self.characters)
+        let characters = Array(self)
         let linkedList = LinkedList<Character>()
         
         for character in characters {
@@ -103,14 +104,14 @@ extension String {
             if linkedList.firstNode?.value != linkedList.lastNode?.value {
                 return false
             }
-            linkedList.detachFirstValue()
-            linkedList.detachLastValue()
+            _ = linkedList.detachFirstValue()
+            _ = linkedList.detachLastValue()
         }
         
         return true
     }
     
-    func isPalindromeUsingArrayDeque() -> Bool {
+    public func isPalindromeUsingArrayDeque() -> Bool {
         // TODO: Implement.
         // 1. Fill up the deque.
         // 2. Grab (remove) and compare first and last values.
@@ -120,6 +121,6 @@ extension String {
     // MARK: Private
     
     private func isEmptyOrSingleCharacter() -> Bool {
-        return self.isEmpty || self.characters.count == 1
+        return self.isEmpty || self.count == 1
     }
 }

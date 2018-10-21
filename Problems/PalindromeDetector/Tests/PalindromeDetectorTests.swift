@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Rogelio Gudino. All rights reserved.
 //
 
-import Cocoa
 import XCTest
+import Problems_PalindromeDetector_PalindromeDetector
 
 class PalindromeDetectorTests: XCTestCase {
     let first = ""
