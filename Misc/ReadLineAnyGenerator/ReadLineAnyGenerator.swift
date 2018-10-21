@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  ReadLineAnyGenerator.swift
 //  ReadLineAnyGenerator
 //
 //  Created by Rogelio Gudino on 7/16/16.
