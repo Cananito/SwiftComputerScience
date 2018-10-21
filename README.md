@@ -9,7 +9,7 @@ Collection of Swift projects for Computer Science concepts and topics.
 
 **Note**: All `App` and `Tests` targets are macOS-only because of [bazelbuild/rules_swift/issues/51](https://github.com/bazelbuild/rules_swift/issues/51#issuecomment-413661604). If that ever gets fixed, switching to `swift_binary` and `swift_test` will be possible, and thus have Linux support.
 
-### Sources
+## Sources
 
 * [Stanford's CS106](https://www.youtube.com/playlist?list=PLFE6E58F856038C69)
 * [Stanford CS Education Library](http://cslibrary.stanford.edu/)
