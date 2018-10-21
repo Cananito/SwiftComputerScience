@@ -29,7 +29,6 @@ class LinkedListTests: XCTestCase {
         linkedList.prependValue(3)
         linkedList.prependValue(2)
         linkedList.prependValue(1)
-        print(linkedList.description)
         XCTAssert(linkedList.description == "1 -> 2 -> 3", "List with 3 prepended values should print them in reverse order")
         
         var node = linkedList.firstNode
@@ -72,7 +71,6 @@ class LinkedListTests: XCTestCase {
         XCTAssert(linkedList.detachFirstValue() == 1, "First detached value should be 1")
         XCTAssert(linkedList.detachFirstValue() == 2, "Second detached value should be 2")
         XCTAssert(linkedList.detachFirstValue() == 3, "Third detached value should be 3")
-        print("\(linkedList.firstNode?.value)")
         XCTAssert(linkedList.detachFirstValue() == nil, "Fourth detached value should be nil")
     }
     
