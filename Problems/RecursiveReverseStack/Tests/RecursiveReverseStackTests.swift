@@ -7,8 +7,8 @@
 //
 
 import XCTest
-import DataStructures
-import RecursiveReverseStack
+import DataStructures_Stack_Stack
+import Problems_RecursiveReverseStack_RecursiveReverseStack
 
 class RecursiveReverseStackTests: XCTestCase {    
     func testRecursiveReverseStack() {

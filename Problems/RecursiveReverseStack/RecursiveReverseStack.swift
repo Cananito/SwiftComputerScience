@@ -6,7 +6,7 @@
 //  Copyright © 2017 Rogelio Gudino. All rights reserved.
 //
 
-import DataStructures
+import DataStructures_Stack_Stack
 
 public extension Stack {
     public static func reverseStack(_ stack: inout Stack<T>) {
