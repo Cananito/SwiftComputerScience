@@ -9,7 +9,7 @@
 // https://twitter.com/kametrixom/status/739960738794594309
 print("Type 3 lines:")
 
-let g = AnyGenerator {
+let g = AnyIterator {
     readLine()
 }
 
@@ -17,6 +17,6 @@ let g = AnyGenerator {
 //print("First 3 lines:\n\(threeLines)")
 
 let a = Array(g.prefix(3))
-for (i, l) in a.enumerate() {
+for (i, l) in a.enumerated() {
     print("\(i + 1) - \(l)")
 }
