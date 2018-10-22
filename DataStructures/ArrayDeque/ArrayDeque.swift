@@ -152,14 +152,16 @@ fileprivate class ArrayDequeStorage<T> {
     }
     
     private func elementAtIndex(_ index: Int) -> T {
-        let adjustedIndex = (index + startIndex) % capacity
+        let tempIndex = index + startIndex
+        let adjustedIndex = (tempIndex >= capacity) ? tempIndex - capacity : tempIndex
         return (storage + adjustedIndex).pointee
     }
     
     private func incrementStartIndex() {
         let shouldMatchOtherIndex = isEmpty() && endIndex == startIndex
         
-        startIndex = (startIndex + 1) % capacity
+        let tempIndex = startIndex + 1
+        startIndex = (tempIndex == capacity) ? 0 : tempIndex
         
         if shouldMatchOtherIndex {
             endIndex = startIndex
@@ -183,7 +185,8 @@ fileprivate class ArrayDequeStorage<T> {
     private func incrementEndIndex() {
         let shouldMatchOtherIndex = isEmpty() && startIndex == endIndex
         
-        endIndex = (endIndex + 1) % capacity
+        let tempIndex = endIndex + 1
+        endIndex = (tempIndex == capacity) ? 0 : tempIndex
         
         if shouldMatchOtherIndex {
             startIndex = endIndex
