@@ -1,5 +1,5 @@
 //
-//  KnuthMorrisPrattTests.swift
+//  BoyerMooreTests.swift
 //  StringSearching
 //
 //  Created by Rogelio Gudino on 8/28/16.
@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import StringSearching
+import Algorithms_StringSearching_StringSearching
 
-class KnuthMorrisPrattTests: XCTestCase {
+class BoyerMooreTests: XCTestCase {
 }

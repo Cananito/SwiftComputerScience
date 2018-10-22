@@ -7,14 +7,14 @@
 //
 
 import XCTest
-import StringSearching
+import Algorithms_StringSearching_StringSearching
 
 class NaiveStringSearchTests: XCTestCase {
     func testReturnsEmptyArray() {
         let pattern = "World"
         let string = "Hello Universe!"
         
-        let ranges = naiveStringSearch(pattern, string: string)
+        let ranges = naiveStringSearch(pattern: pattern, string: string)
         XCTAssert(ranges.count == 0)
     }
     
@@ -22,7 +22,7 @@ class NaiveStringSearchTests: XCTestCase {
         let pattern = "World"
         let string = "Hello Wor World!"
         
-        let ranges = naiveStringSearch(pattern, string: string)
+        let ranges = naiveStringSearch(pattern: pattern, string: string)
         XCTAssert(ranges.count == 1)
         
         let range = ranges[0]
@@ -33,7 +33,7 @@ class NaiveStringSearchTests: XCTestCase {
         let pattern = "World"
         let string = "World, Hello Wor WorldWorld"
         
-        let ranges = naiveStringSearch(pattern, string: string)
+        let ranges = naiveStringSearch(pattern: pattern, string: string)
         XCTAssert(ranges.count == 3)
         
         let firstRange = ranges[0]
@@ -49,28 +49,28 @@ class NaiveStringSearchTests: XCTestCase {
     func testMiscCases() {
         var pattern = "needle"
         var string = "Find a needle in a haystack"
-        var patternRanges = naiveStringSearch(pattern, string: string)
+        var patternRanges = naiveStringSearch(pattern: pattern, string: string)
         XCTAssert(patternRanges.count == 1)
         XCTAssert(patternRanges[0] == 7..<13)
         
         pattern = "orl"
         string = "Hello World!"
-        patternRanges = naiveStringSearch(pattern, string: string)
+        patternRanges = naiveStringSearch(pattern: pattern, string: string)
         XCTAssert(patternRanges.count == 1)
         XCTAssert(patternRanges[0] == 7..<10)
         
         pattern = "World"
         string = "Wo"
-        patternRanges = naiveStringSearch(pattern, string: string)
+        patternRanges = naiveStringSearch(pattern: pattern, string: string)
         XCTAssert(patternRanges.count == 0)
     }
     
     func testSpeedPerformanceSmall() {
-        let loremIpsumPath = NSBundle(forClass: NaiveStringSearchTests.self).pathForResource("LoremIpsum-Small", ofType: "txt")!
-        let string = (try! NSString(contentsOfFile: loremIpsumPath, encoding: NSUTF8StringEncoding)) as String
+        let loremIpsumPath = Bundle(for: NaiveStringSearchTests.self).path(forResource: "LoremIpsum-Small", ofType: "txt")!
+        let string = (try! NSString(contentsOfFile: loremIpsumPath, encoding: String.Encoding.utf8.rawValue)) as String
         let pattern = "Maecenas"
-        self.measureBlock {
-            let patternRanges = naiveStringSearch(pattern, string: string)
+        self.measure {
+            let patternRanges = naiveStringSearch(pattern: pattern, string: string)
             XCTAssert(patternRanges.count == 3)
         }
     }

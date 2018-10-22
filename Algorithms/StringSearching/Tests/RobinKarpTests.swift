@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import StringSearching
+import Algorithms_StringSearching_StringSearching
 
 class RobinKarpTests: XCTestCase {
 }
