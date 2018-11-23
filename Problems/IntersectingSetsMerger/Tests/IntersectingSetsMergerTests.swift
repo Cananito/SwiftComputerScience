@@ -7,22 +7,22 @@
 //
 
 import XCTest
-import IntersectingSetsMerger
+import Problems_IntersectingSetsMerger_IntersectingSetsMerger
 
 class IntersectingSetsMergerTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
+
     func testMergedIntersectingSets() {
         var input: [Set<Character>] = []
         var expected: [Set<Character>] = []
         XCTAssertEqual(mergedIntersectingSets(sets: input), expected)
-        
+
         input = [ Set(arrayLiteral: "a", "b", "c"), Set(arrayLiteral: "d", "e", "f") ]
         expected = input
         XCTAssertEqual(mergedIntersectingSets(sets: input), expected)
-        
+
         input = [
             Set(arrayLiteral: "a", "b", "c"),
             Set(arrayLiteral: "c", "d", "e"),

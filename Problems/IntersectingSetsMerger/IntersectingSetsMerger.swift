@@ -11,7 +11,7 @@ public func mergedIntersectingSets<T: Equatable>(sets: [Set<T>]) -> [Set<T>] {
     if sets.count <= 1 {
         return mergedSets
     }
-    
+
     var outerIndex = mergedSets.startIndex
     while outerIndex < (mergedSets.endIndex - 1) {
         var innerIndex = outerIndex.advanced(by: 1)
@@ -25,9 +25,9 @@ public func mergedIntersectingSets<T: Equatable>(sets: [Set<T>]) -> [Set<T>] {
                 innerIndex = innerIndex.advanced(by: 1)
             }
         }
-        
+
         outerIndex = outerIndex.advanced(by: 1)
     }
-    
+
     return mergedSets
 }
