@@ -39,7 +39,7 @@ class StableMarriageProblemTests: XCTestCase {
             lydia: wickham,
         ]
 
-        let result = StableMarriageProblem.solve(proposersPreferences, recipientsPreferences)
+        let result = StableMarriageProblem<String>.solve(proposersPreferences, recipientsPreferences)
         XCTAssertEqual(result!, expected)
     }
 }

@@ -6,17 +6,16 @@
 //  Copyright © 2018 Rogelio Gudino. All rights reserved.
 //
 
-public struct StableMarriageProblem {
-    public typealias Identifier = String
-    public typealias Preferences = [Identifier: [Identifier]]
+public struct StableMarriageProblem<T: Comparable & Hashable> {
+    public typealias Preferences = [T: [T]]
 
-    public static func solve(_ proposersPreferences: Preferences, _ recipientsPreferences: Preferences) -> [Identifier: Identifier]? {
+    public static func solve(_ proposersPreferences: Preferences, _ recipientsPreferences: Preferences) -> [T: T]? {
         if proposersPreferences.count != recipientsPreferences.count {
             return nil
         }
 
-        var result = [Identifier: Identifier]()
-        var inverseResult = [Identifier: Identifier]()
+        var result = [T: T]()
+        var inverseResult = [T: T]()
         while result.count < proposersPreferences.count {
             for proposer in proposersPreferences.keys {
                 // If the proposer is already matched, skip.
@@ -50,7 +49,7 @@ public struct StableMarriageProblem {
         return result
     }
 
-    private static func isNewProposerBetter(newProposer: Identifier, existingProposer: Identifier, rankings: [Identifier]) -> Bool {
+    private static func isNewProposerBetter(newProposer: T, existingProposer: T, rankings: [T]) -> Bool {
         for choice in rankings {
           if choice == newProposer {
               return true
