@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Fibonacci
+import Problems_Fibonacci_Fibonacci
 
 // 92 is the max position that doesn’t crash on 64-bit.
 let meassurePosition = 92
@@ -25,7 +25,7 @@ class FibonacciTests: XCTestCase {
         XCTAssertEqual(iterativeFibonacci(position: 8), 21)
         XCTAssertEqual(iterativeFibonacci(position: 9), 34)
     }
-    
+
     func testRecursiveFibonacci() {
         XCTAssertEqual(recursiveFibonacci(position: 0), 0)
         XCTAssertEqual(recursiveFibonacci(position: 1), 1)
@@ -38,7 +38,7 @@ class FibonacciTests: XCTestCase {
         XCTAssertEqual(recursiveFibonacci(position: 8), 21)
         XCTAssertEqual(recursiveFibonacci(position: 9), 34)
     }
-    
+
     func testMemoizedRecursiveFibonacci() {
         var memoization = [Int : Int]()
         XCTAssertEqual(memoizedRecursiveFibonacci(position: 0, memoization: &memoization), 0)
@@ -52,7 +52,7 @@ class FibonacciTests: XCTestCase {
         XCTAssertEqual(memoizedRecursiveFibonacci(position: 8, memoization: &memoization), 21)
         XCTAssertEqual(memoizedRecursiveFibonacci(position: 9, memoization: &memoization), 34)
     }
-    
+
     func testIterativeFibonacciPerformance() {
         // Time: 0.000 sec (25% STDEV)
         self.measure {
@@ -63,7 +63,7 @@ class FibonacciTests: XCTestCase {
             let _ = iterativeFibonacci(position: meassurePosition)
         }
     }
-    
+
     func testRecursiveFibonacciPerformance() {
         // Time: 0.011 sec (5% STDEV) (with `position: 30`)
         // Time: 0.119 sec (2% STDEV) (with `position: 35`)
@@ -72,7 +72,7 @@ class FibonacciTests: XCTestCase {
             let _ = recursiveFibonacci(position: 30)
         }
     }
-    
+
     func testPopulatedMemoizedRecursiveFibonacciPerformance_With() {
         var memoization = [Int : Int]()
         let _ = memoizedRecursiveFibonacci(position: meassurePosition, memoization: &memoization)
@@ -85,7 +85,7 @@ class FibonacciTests: XCTestCase {
             let _ = memoizedRecursiveFibonacci(position: meassurePosition, memoization: &memoization)
         }
     }
-    
+
     func testEmptyMemoizedRecursiveFibonacciPerformance() {
         var firstMemoization = [Int : Int]()
         var secondMemoization = [Int : Int]()
