@@ -29,9 +29,7 @@ public struct StableMarriageProblem {
                     if let competingProposer = inverseResult[choice] {
                         // Their choice is taken, can they upgrade?
                         let choicesRankings = recipientsPreferences[choice]!
-                        let proposerRanking = choicesRankings.index(where: { $0 == proposer })!
-                        let competingProposerRanking = choicesRankings.index(where: { $0 == competingProposer })!
-                        if proposerRanking < competingProposerRanking {
+                        if self.isNewProposerBetter(newProposer: proposer, existingProposer: competingProposer, rankings: choicesRankings) {
                             // Upgrade!
                             result[proposer] = choice
                             inverseResult[choice] = proposer
@@ -50,6 +48,18 @@ public struct StableMarriageProblem {
         }
 
         return result
+    }
+
+    private static func isNewProposerBetter(newProposer: Identifier, existingProposer: Identifier, rankings: [Identifier]) -> Bool {
+        for choice in rankings {
+          if choice == newProposer {
+              return true
+          }
+          if choice == existingProposer {
+              return false
+          }
+        }
+        return false
     }
 }
 
