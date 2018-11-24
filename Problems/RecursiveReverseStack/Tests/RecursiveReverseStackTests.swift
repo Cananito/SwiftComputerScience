@@ -23,9 +23,9 @@ class RecursiveReverseStackTests: XCTestCase {
         stack.push(2)
         stack.push(3)
         Stack.reverseStack(&stack)
-        XCTAssertEqual(stack.pop()!, 1)
-        XCTAssertEqual(stack.pop()!, 2)
-        XCTAssertEqual(stack.pop()!, 3)
+        XCTAssertEqual(stack.pop(), 1)
+        XCTAssertEqual(stack.pop(), 2)
+        XCTAssertEqual(stack.pop(), 3)
         XCTAssertEqual(stack.count(), 0)
     }
     

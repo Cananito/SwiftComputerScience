@@ -14,7 +14,7 @@ public extension Stack {
             return
         }
         
-        let value = stack.pop()!
+        let value = stack.pop()
         if stack.count() != 1 {
             reverseStack(&stack)
         }
@@ -22,7 +22,7 @@ public extension Stack {
     }
     
     private static func pushToBottom(_ bottomValue: T, stack: inout Stack<T>) {
-        let value = stack.pop()!
+        let value = stack.pop()
         if stack.count() != 0 {
             pushToBottom(bottomValue, stack: &stack)
         } else {
