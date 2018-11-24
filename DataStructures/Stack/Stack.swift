@@ -39,11 +39,11 @@ public struct Stack<T> {
         }
     }
     
-    public mutating func pop() -> T? {
+    public mutating func pop() -> T {
         if reversed {
-            return storage.removeFirst()
+            return storage.removeFirst()!
         }
-        return storage.removeLast()
+        return storage.removeLast()!
     }
     
     public mutating func reverse() {
