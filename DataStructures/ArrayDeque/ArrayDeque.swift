@@ -30,7 +30,11 @@ public struct ArrayDeque<T> {
     }
     
     public func last() -> T? {
-        let index = count() - 1
+        let count = self.count()
+        if count == 0 {
+            return nil
+        }
+        let index = count - 1
         return storage[index]
     }
     

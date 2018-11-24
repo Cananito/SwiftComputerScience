@@ -44,6 +44,77 @@ class ArrayDequeTests: XCTestCase {
         XCTAssert(arrayDeque.removeLast()! == 2)
         XCTAssert(arrayDeque.count() == 1)
     }
+
+    func testCapacityChangesAndLast() {
+        var arrayDeque = ArrayDeque<Int>()
+        XCTAssertEqual(arrayDeque.count(), 0)
+        XCTAssertNil(arrayDeque.last())
+
+        // Append.
+        arrayDeque.append(1)
+        XCTAssertEqual(arrayDeque.count(), 1)
+        XCTAssertEqual(arrayDeque.last(), 1)
+
+        arrayDeque.append(2)
+        XCTAssertEqual(arrayDeque.count(), 2)
+        XCTAssertEqual(arrayDeque.last(), 2)
+
+        arrayDeque.append(3)
+        XCTAssertEqual(arrayDeque.count(), 3)
+        XCTAssertEqual(arrayDeque.last(), 3)
+
+        arrayDeque.append(4)
+        XCTAssertEqual(arrayDeque.count(), 4)
+        XCTAssertEqual(arrayDeque.last(), 4)
+
+        arrayDeque.append(5)
+        XCTAssertEqual(arrayDeque.count(), 5)
+        XCTAssertEqual(arrayDeque.last(), 5)
+
+        arrayDeque.append(6)
+        XCTAssertEqual(arrayDeque.count(), 6)
+        XCTAssertEqual(arrayDeque.last(), 6)
+
+        arrayDeque.append(7)
+        XCTAssertEqual(arrayDeque.count(), 7)
+        XCTAssertEqual(arrayDeque.last(), 7)
+
+        arrayDeque.append(8)
+        XCTAssertEqual(arrayDeque.count(), 8)
+        XCTAssertEqual(arrayDeque.last(), 8)
+
+        arrayDeque.append(9)
+        XCTAssertEqual(arrayDeque.count(), 9)
+        XCTAssertEqual(arrayDeque.last(), 9)
+
+        // Pop.
+        XCTAssertEqual(arrayDeque.removeLast(), 9)
+        XCTAssertEqual(arrayDeque.last(), 8)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 8)
+        XCTAssertEqual(arrayDeque.last(), 7)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 7)
+        XCTAssertEqual(arrayDeque.last(), 6)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 6)
+        XCTAssertEqual(arrayDeque.last(), 5)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 5)
+        XCTAssertEqual(arrayDeque.last(), 4)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 4)
+        XCTAssertEqual(arrayDeque.last(), 3)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 3)
+        XCTAssertEqual(arrayDeque.last(), 2)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 2)
+        XCTAssertEqual(arrayDeque.last(), 1)
+
+        XCTAssertEqual(arrayDeque.removeLast(), 1)
+        XCTAssertNil(arrayDeque.last())
+    }
     
     func testInitializeWithArray() {
         let arrayDeque = ArrayDeque<Int>(array: [1, 2, 3])
