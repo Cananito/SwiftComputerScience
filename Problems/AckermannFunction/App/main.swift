@@ -28,5 +28,7 @@ guard let secondValue = Int(secondArgument) else {
   print("Second argument needs to be a valid integer.")
   exit(EXIT_FAILURE)
 }
+
+print(">>> Starting to calculate...")
 let result = ackermann(firstValue, secondValue)
-print("Ackerman Function result for (\(firstValue), \(secondValue)) is \(result)")
+print(">>> Ackerman Function result for (\(firstValue), \(secondValue)) is \(result)")

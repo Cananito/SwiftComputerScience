@@ -40,6 +40,6 @@ class AckermannFunctionTests: XCTestCase {
     XCTAssertEqual(ackermann(3, 5), 253)
 
     XCTAssertEqual(ackermann(4, 0), 13)
-    // ackermann(4, 1) crashes!
+    // ackermann(4, 1) segfaults!
   }
 }
