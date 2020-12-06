@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_BinaryTree_BinaryTree
+import BinaryTree
 
 class BinaryTreeTests: XCTestCase {
   let node2 = BinaryTreeNode<Int>(value: 2)
@@ -140,4 +140,11 @@ class BinaryTreeTests: XCTestCase {
     XCTAssert(node19.next() === node20)
     XCTAssert(node20.next() === node21)
   }
+
+  static var allTests = [
+    ("testEnumerateInOrder", testEnumerateInOrder),
+    ("testEnumeratePreOrder", testEnumeratePreOrder),
+    ("testEnumeratePostOrder", testEnumeratePostOrder), 
+    ("testEnumerateBreadthFirst", testEnumerateBreadthFirst),
+  ]
 }
