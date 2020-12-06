@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_ExpiringDictionary_ExpiringDictionary
+import ExpiringDictionary
 
 class ExpiringDictionaryTests: XCTestCase {
   func testExpiringDictionary() {
@@ -48,4 +48,8 @@ class ExpiringDictionaryTests: XCTestCase {
   private func nowByAddingTimeInterval(_ timeInterval: TimeInterval) -> TimeInterval {
     return Date().timeIntervalSince1970 + timeInterval
   }
+
+  static var allTests = [
+    ("testExpiringDictionary", testExpiringDictionary),
+  ]
 }

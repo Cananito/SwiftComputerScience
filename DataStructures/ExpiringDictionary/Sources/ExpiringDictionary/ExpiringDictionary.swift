@@ -1,5 +1,5 @@
 import Foundation
-import DataStructures_Heap_Heap
+import Heap
 
 public struct ExpiringDictionary<Key: Hashable, Value> {
   private struct ValueTimeInterval {
