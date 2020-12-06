@@ -1,11 +1,3 @@
-//
-//  IntersectingSetsMergerTests.swift
-//  IntersectingSetsMergerTests
-//
-//  Created by Rogelio Gudino on 10/1/16.
-//  Copyright © 2016 Rogelio Gudino. All rights reserved.
-//
-
 import XCTest
 import Problems_IntersectingSetsMerger_IntersectingSetsMerger
 

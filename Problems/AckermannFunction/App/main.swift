@@ -1,11 +1,3 @@
-//
-//  AckermannFunctionApp.swift
-//  AckermannFunctionApp
-//
-//  Created by Rogelio Gudino on 01/19/19.
-//  Copyright (c) 2019 Rogelio Gudino. All rights reserved.
-//
-
 import Darwin
 import Problems_AckermannFunction_AckermannFunction
 

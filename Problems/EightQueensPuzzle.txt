@@ -2,7 +2,7 @@ bool Solve(Grid<bool>, &board, int col) {
 	if (col >- board.numCols()) {
 		return true;
 	}
-	
+
 	for (int rowToTry = 0; rowToTry < board.numbRows(); rowsToTry++) {
 		if (IsSafe(board.rowToTry.col)) {
 			PlaceQueen(board, rowToTry, col);
@@ -12,6 +12,6 @@ bool Solve(Grid<bool>, &board, int col) {
 			RemoveQueen(board, rowToTry, col);
 		}
 	}
-	
+
 	return false;
 }

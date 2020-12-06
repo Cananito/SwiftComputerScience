@@ -1,26 +1,17 @@
-//
-//  Polynomial.swift
-//  DataStructures
-//
-//  Created by Rogelio Gudino on 8/16/15.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
-
 public typealias Coefficient = Int
 private typealias CoefficientGroupedTerms = [Coefficient: Term]
 
 public struct Term : CustomStringConvertible, CustomDebugStringConvertible {
     public let constant: Int
     public let coefficient: Coefficient
-    
+
     public init(constant: Int, coefficient: Coefficient) {
         self.constant = constant
         self.coefficient = coefficient
     }
-    
+
     // MARK: CustomStringConvertible
-    
+
     public var description: String {
         if coefficient == 0 {
             return "\(constant)"
@@ -29,9 +20,9 @@ public struct Term : CustomStringConvertible, CustomDebugStringConvertible {
         }
         return "\(constant)x^\(coefficient)"
     }
-    
+
     // MARK: CustomDebugStringConvertible
-    
+
     public var debugDescription: String {
         return description
     }
@@ -39,11 +30,11 @@ public struct Term : CustomStringConvertible, CustomDebugStringConvertible {
 
 public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible {
     public let terms: [Term]
-    
+
     public init(terms: [Term]) {
         self.terms = terms
     }
-    
+
     public func termForCoefficient(_ coefficient: Int) -> Term? {
         for term in terms {
             if term.coefficient == coefficient {
@@ -52,25 +43,25 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
         }
         return nil
     }
-    
+
     public func derived() -> Polynomial {
         let terms = self.simplified().terms.sorted { $0.coefficient > $1.coefficient }
-        
+
         var derivedTerms = [Term]()
         for term in terms {
             if term.coefficient == 0 {
                 continue
             }
-            
+
             let newConstant = term.constant * term.coefficient
             let newCoefficient = term.coefficient - 1
             let newTerm = Term(constant: newConstant, coefficient: newCoefficient)
             derivedTerms.append(newTerm)
         }
-        
+
         return Polynomial(terms: derivedTerms)
     }
-    
+
     public func simplified() -> Polynomial {
         var simplifiedTerms = [Term]()
         for (_, value) in coefficientGroupedTerms(terms) {
@@ -79,15 +70,15 @@ public struct Polynomial : CustomStringConvertible, CustomDebugStringConvertible
         }
         return Polynomial(terms: simplifiedTerms)
     }
-    
+
     // MARK: CustomStringConvertible
-    
+
     public var description: String {
         return terms.map { $0.description }.joined(separator: ", ")
     }
-    
+
     // MARK: CustomDebugStringConvertible
-    
+
     public var debugDescription: String {
         return description
     }

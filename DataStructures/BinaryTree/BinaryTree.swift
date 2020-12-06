@@ -1,25 +1,17 @@
-//
-//  BinaryTree.swift
-//  DataStructures
-//
-//  Created by Rogelio Gudino on 9/6/15.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
 public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConvertible {
     public let value: T
     public var leftNode: BinaryTreeNode?
     public var rightNode: BinaryTreeNode?
     public weak var parentNode: BinaryTreeNode?
-    
+
     public init(value: T) {
         self.value = value
     }
-    
+
     public func enumerate(_ body: (BinaryTreeNode) -> ()) {
         enumerateInOrder(body)
     }
-    
+
     public func enumerateInOrder(_ body: (BinaryTreeNode) -> ()) {
         if let leftNode = self.leftNode {
             leftNode.enumerateInOrder(body)
@@ -29,7 +21,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
             rightNode.enumerateInOrder(body)
         }
     }
-    
+
     public func enumeratePreOrder(_ body: (BinaryTreeNode) -> ()) {
         body(self)
         if let leftNode = self.leftNode {
@@ -39,7 +31,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
             rightNode.enumeratePreOrder(body)
         }
     }
-    
+
     public func enumeratePostOrder(_ body: (BinaryTreeNode) -> ()) {
         if let leftNode = self.leftNode {
             leftNode.enumeratePostOrder(body)
@@ -49,11 +41,11 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
         }
         body(self)
     }
-    
+
     public func enumerateBreadthFirst(_ body: (BinaryTreeNode) -> ()) {
         var queue = [BinaryTreeNode]()
         queue.append(self)
-        
+
         while queue.isEmpty == false {
             let current = queue.first!
             if let left = current.leftNode {
@@ -66,7 +58,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
             queue.removeFirst()
         }
     }
-    
+
     public func next() -> BinaryTreeNode? {
         var nextLeft = self.rightNode
         while nextLeft != nil {
@@ -76,7 +68,7 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
                 return nextLeft
             }
         }
-        
+
         var currentNode = self
         while currentNode.parentNode != nil {
             let parent = currentNode.parentNode!
@@ -85,18 +77,18 @@ public class BinaryTreeNode<T>: CustomStringConvertible, CustomDebugStringConver
             }
             currentNode = parent
         }
-        
+
         return nil
     }
-    
+
     // MARK: CustomStringConvertible
-    
+
     public var description: String {
         return "\(self.value)"
     }
-    
+
     // MARK: CustomDebugStringConvertible
-    
+
     public var debugDescription: String {
         return "\(self.value)"
     }

@@ -1,12 +1,3 @@
-//
-//  FibonacciTests.swift
-//  FibonacciTests
-//
-//  Created by Rogelio Gudino on 3/18/17.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
-import XCTest
 import Problems_Fibonacci_Fibonacci
 
 // 92 is the max position that doesn’t crash on 64-bit.

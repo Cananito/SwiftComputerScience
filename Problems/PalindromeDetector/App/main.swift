@@ -1,11 +1,3 @@
-//
-//  PalindromeDetectorApp.swift
-//  PalindromeDetector
-//
-//  Created by Rogelio Gudino on 10/21/18.
-//  Copyright (c) 2015 Rogelio Gudino. All rights reserved.
-//
-
 import Problems_PalindromeDetector_PalindromeDetector
 
 func printInputRequest() {

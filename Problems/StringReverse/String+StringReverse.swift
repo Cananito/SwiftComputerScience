@@ -1,11 +1,3 @@
-//
-//  String+StringReverse.swift
-//  StringReverse
-//
-//  Created by Rogelio Gudino on 11/24/18.
-//  Copyright (c) 2018 Rogelio Gudino. All rights reserved.
-//
-
 import DataStructures_Stack_Stack
 
 public extension String {

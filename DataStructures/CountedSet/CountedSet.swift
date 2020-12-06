@@ -1,14 +1,6 @@
-//
-//  CountedSet.swift
-//  DataStructures
-//
-//  Created by Rogelio Gudino on 2/5/17.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
 public struct CountedSet<T: Hashable> {
     private var dictionary = Dictionary<T, Int>()
-    
+
     public init() {
     }
 
@@ -22,7 +14,7 @@ public struct CountedSet<T: Hashable> {
         dictionary[element] = updatedCount
         return updatedCount
     }
-    
+
     public mutating func decrementCountForElement(element: T) -> Int {
         guard let currentCount = dictionary[element] else {
             return 0
@@ -35,14 +27,14 @@ public struct CountedSet<T: Hashable> {
         }
         return updatedCount
     }
-    
+
     public func countForElement(element: T) -> Int {
         guard let currentCount = dictionary[element] else {
             return 0
         }
         return currentCount
     }
-    
+
     public func elements() -> LazyCollection<Dictionary<T, Int>.Keys> {
         return dictionary.keys.lazy
     }

@@ -1,11 +1,3 @@
-//
-//  StableMarriageProblemTests.swift
-//  StableMarriageProblemTests
-//
-//  Created by Rogelio Gudino on 3/18/17.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
 import XCTest
 import Problems_StableMarriageProblem_StableMarriageProblem
 

@@ -1,11 +1,3 @@
-//
-//  IntersectingSetsMerger.swift
-//  IntersectingSetsMerger
-//
-//  Created by Rogelio Gudino on 10/1/16.
-//  Copyright © 2016 Rogelio Gudino. All rights reserved.
-//
-
 public func mergedIntersectingSets<T: Equatable>(sets: [Set<T>]) -> [Set<T>] {
     var mergedSets = sets
     if sets.count <= 1 {

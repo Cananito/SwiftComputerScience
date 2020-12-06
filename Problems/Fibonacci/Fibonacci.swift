@@ -1,11 +1,3 @@
-//
-//  Fibonacci.swift
-//  Fibonacci
-//
-//  Created by Rogelio Gudino on 3/18/17.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
 public func iterativeFibonacci(position: Int) -> Int {
     if position == 0 {
         return 0

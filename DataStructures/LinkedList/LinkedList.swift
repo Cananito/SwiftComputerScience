@@ -1,19 +1,12 @@
-//
-//  LinkedList.swift
-//  DataStructures
-//
-//  Created by Rogelio Gudino on 2/13/15.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
 public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugStringConvertible {
     public var firstNode: LinkedListNode<T>?
     public var lastNode: LinkedListNode<T>?
-    
+
     public init() {
     }
-    
+
     // MARK: Public Methods
+
     public func appendValue(_ value: T) {
         let newNode = LinkedListNode(value: value)
         newNode.previousNode = self.lastNode
@@ -23,7 +16,7 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
             self.firstNode = newNode
         }
     }
-    
+
     public func prependValue(_ value: T) {
         let newNode = LinkedListNode(value: value)
         newNode.nextNode = self.firstNode
@@ -33,10 +26,10 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
             self.lastNode = newNode
         }
     }
-    
+
     public func detachFirstValue() -> T? {
         let oldFirstNode = self.firstNode
-        
+
         if let newFirstNode = oldFirstNode?.nextNode {
             self.firstNode = newFirstNode
             self.firstNode?.previousNode = nil
@@ -44,14 +37,14 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
             self.firstNode = nil
             self.lastNode = nil
         }
-        
+
         oldFirstNode?.nextNode = nil
         return oldFirstNode?.value
     }
-    
+
     public func detachLastValue() -> T? {
         let oldLastNode = self.lastNode
-        
+
         if let newLastNode = oldLastNode?.previousNode {
             self.lastNode = newLastNode
             self.lastNode?.nextNode = nil
@@ -59,15 +52,15 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
             self.firstNode = nil
             self.lastNode = nil
         }
-        
+
         oldLastNode?.previousNode = nil
         return oldLastNode?.value
     }
-    
+
     public func deleteDuplicates() {
         deleteDuplicatesWithLinearTime()
     }
-    
+
     public func deleteDuplicatesWithConstantMemory() {
         var current: LinkedListNode? = self.firstNode
         while current != nil {
@@ -90,7 +83,7 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
             current = current?.nextNode
         }
     }
-    
+
     public func deleteDuplicatesWithLinearTime() {
         var current: LinkedListNode? = self.firstNode
         var previous: LinkedListNode<T>?
@@ -110,16 +103,18 @@ public class LinkedList<T: Hashable>: CustomStringConvertible, CustomDebugString
             current = current?.nextNode
         }
     }
-    
+
     // MARK: CustomStringConvertible
+
     public var description: String {
         if let firstNode = self.firstNode {
             return firstNode.description
         }
         return ""
     }
-    
+
     // MARK: CustomDebugStringConvertible
+
     public var debugDescription: String {
         if let firstNode = self.firstNode {
             return firstNode.debugDescription

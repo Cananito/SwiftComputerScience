@@ -1,11 +1,3 @@
-//
-//  AckermannFunctionTests.swift
-//  AckermannFunctionTests
-//
-//  Created by Rogelio Gudino on 01/19/19.
-//  Copyright (c) 2019 Rogelio Gudino. All rights reserved.
-//
-
 import XCTest
 import Problems_AckermannFunction_AckermannFunction
 

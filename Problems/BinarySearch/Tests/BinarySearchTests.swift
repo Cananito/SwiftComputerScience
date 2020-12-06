@@ -1,11 +1,3 @@
-//
-//  BinarySearchTests.swift
-//  BinarySearchTests
-//
-//  Created by Rogelio Gudino on 11/22/18.
-//  Copyright (c) 2018 Rogelio Gudino. All rights reserved.
-//
-
 import XCTest
 import Problems_BinarySearch_BinarySearch
 

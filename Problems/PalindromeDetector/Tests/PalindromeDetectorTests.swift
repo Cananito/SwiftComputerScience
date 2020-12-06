@@ -1,11 +1,3 @@
-//
-//  PalindromeDetectorTests.swift
-//  PalindromeDetectorTests
-//
-//  Created by Rogelio Gudino on 3/22/15.
-//  Copyright (c) 2015 Rogelio Gudino. All rights reserved.
-//
-
 import XCTest
 import Problems_PalindromeDetector_PalindromeDetector
 
@@ -17,15 +9,15 @@ class PalindromeDetectorTests: XCTestCase {
     let fifth = "abaa"
     let sixth = "aaba"
     let seventh = "anita lava la tina"
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testIsPalindromUsingIteration() {
         XCTAssertTrue(first.withoutWhiteSpaces().isPalindromeUsingIteration())
         XCTAssertTrue(second.withoutWhiteSpaces().isPalindromeUsingIteration())
@@ -35,7 +27,7 @@ class PalindromeDetectorTests: XCTestCase {
         XCTAssertFalse(sixth.withoutWhiteSpaces().isPalindromeUsingIteration())
         XCTAssertTrue(seventh.withoutWhiteSpaces().isPalindromeUsingIteration())
     }
-    
+
     func testIsPalindromeUsingRecursion() {
         XCTAssertTrue(first.withoutWhiteSpaces().isPalindromeUsingRecursion())
         XCTAssertTrue(second.withoutWhiteSpaces().isPalindromeUsingRecursion())
@@ -45,7 +37,7 @@ class PalindromeDetectorTests: XCTestCase {
         XCTAssertFalse(sixth.withoutWhiteSpaces().isPalindromeUsingRecursion())
         XCTAssertTrue(seventh.withoutWhiteSpaces().isPalindromeUsingRecursion())
     }
-    
+
     func testIsPalindromeUsingStack() {
         XCTAssertTrue(first.withoutWhiteSpaces().isPalindromeUsingStack())
         XCTAssertTrue(second.withoutWhiteSpaces().isPalindromeUsingStack())
@@ -55,7 +47,7 @@ class PalindromeDetectorTests: XCTestCase {
         XCTAssertFalse(sixth.withoutWhiteSpaces().isPalindromeUsingStack())
         XCTAssertTrue(seventh.withoutWhiteSpaces().isPalindromeUsingStack())
     }
-    
+
     func testIsPalindromeUsingLinkedList() {
         XCTAssertTrue(first.withoutWhiteSpaces().isPalindromeUsingLinkedList())
         XCTAssertTrue(second.withoutWhiteSpaces().isPalindromeUsingLinkedList())
@@ -65,7 +57,7 @@ class PalindromeDetectorTests: XCTestCase {
         XCTAssertFalse(sixth.withoutWhiteSpaces().isPalindromeUsingLinkedList())
         XCTAssertTrue(seventh.withoutWhiteSpaces().isPalindromeUsingLinkedList())
     }
-    
+
     func testIsPalindromeUsingArrayDeque() {
         XCTAssertFalse(first.withoutWhiteSpaces().isPalindromeUsingArrayDeque())
         XCTAssertFalse(second.withoutWhiteSpaces().isPalindromeUsingArrayDeque())

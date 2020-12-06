@@ -1,11 +1,3 @@
-//
-//  PriorityQueue.swift
-//  DataStructures
-//
-//  Created by Rogelio Gudino on 3/18/17.
-//  Copyright © 2017 Rogelio Gudino. All rights reserved.
-//
-
 public protocol PriorityQueue {
     associatedtype Element: Comparable
     init(leftIsHigherPriority: @escaping (Element, Element) -> Bool)

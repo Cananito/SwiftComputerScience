@@ -1,11 +1,3 @@
-//
-//  SetsOfNumbersThatAddUpTo.swift
-//  SetsOfNumbersThatAddUpTo
-//
-//  Created by Rogelio Gudino on 11/25/18.
-//  Copyright © 2018 Rogelio Gudino. All rights reserved.
-//
-
 public func setsOfNumbersThatAddUpTo(sum: Int, numbers: [Int]) -> [[Int]] {
   if sum == 0 || numbers.count == 0 {
     return [[]]

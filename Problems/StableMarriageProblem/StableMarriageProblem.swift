@@ -1,11 +1,3 @@
-//
-//  StableMarriageProblem.swift
-//  StableMarriageProblem
-//
-//  Created by Rogelio Gudino on 11/22/18.
-//  Copyright © 2018 Rogelio Gudino. All rights reserved.
-//
-
 public struct StableMarriageProblem<T: Comparable & Hashable> {
     public typealias Preferences = [T: [T]]
 
