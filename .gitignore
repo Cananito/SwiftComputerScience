@@ -1,1 +1,6 @@
 bazel-*
+.DS_Store
+.build
+Packages/
+/*.xcodeproj
+xcuserdata/
