@@ -8,14 +8,17 @@ let package = Package(
   products: [
     .library(
       name: "RunLengthEncoding",
-      targets: ["RunLengthEncoding"]),
+      targets: ["RunLengthEncoding"]
+    ),
   ],
   targets: [
     .target(
       name: "RunLengthEncoding",
-      dependencies: []),
+      dependencies: []
+    ),
     .testTarget(
       name: "RunLengthEncodingTests",
-      dependencies: ["RunLengthEncoding"]),
+      dependencies: ["RunLengthEncoding"]
+    ),
   ]
 )
