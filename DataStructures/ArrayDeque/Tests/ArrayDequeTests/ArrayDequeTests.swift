@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_ArrayDeque_ArrayDeque
+import ArrayDeque
 
 class ArrayDequeTests: XCTestCase {
   func testAddAndRemoveElements() {
@@ -223,4 +223,16 @@ class ArrayDequeTests: XCTestCase {
     element = arrayDeque.removeLast()
     XCTAssert(element == .none)
   }
+
+  static var allTests = [
+    ("testAddAndRemoveElements", testAddAndRemoveElements),
+    ("testCapacityChangesAndLast", testCapacityChangesAndLast),
+    ("testInitializeWithArray", testInitializeWithArray),
+    ("testCircularPrepending", testCircularPrepending),
+    ("testCopy", testCopy),
+    ("testDoublePrependAndRemoveLast", testDoublePrependAndRemoveLast),
+    ("testDoublePrependAndRemoveFirst", testDoublePrependAndRemoveFirst),
+    ("testDoubleAppendAndRemoveFirst", testDoubleAppendAndRemoveFirst),
+    ("testDoubleAppendAndRemoveLast", testDoubleAppendAndRemoveLast),
+  ]
 }

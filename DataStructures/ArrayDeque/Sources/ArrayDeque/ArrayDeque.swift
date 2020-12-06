@@ -70,7 +70,7 @@ fileprivate class ArrayDequeStorage<T> {
 
   fileprivate init(array: [T]) {
     storage = UnsafeMutablePointer<T>.allocate(capacity: array.count)
-    storage.initialize(from: array)
+    storage.initialize(from: array, count: array.count)
     count = array.count
     capacity = count
     if count != 0 {
@@ -89,7 +89,7 @@ fileprivate class ArrayDequeStorage<T> {
 
   deinit {
     storage.deinitialize(count: capacity)
-    storage.deallocate(capacity: capacity)
+    storage.deallocate()
   }
 
   fileprivate subscript(index: Int) -> T? {
@@ -222,7 +222,8 @@ fileprivate class ArrayDequeStorage<T> {
       (newStorage + index).initialize(to: elementAtIndex(index))
     }
 
-    storage.deallocate(capacity: capacity)
+    storage.deinitialize(count: capacity)
+    storage.deallocate()
     storage = newStorage
     capacity = newCapacity
 
