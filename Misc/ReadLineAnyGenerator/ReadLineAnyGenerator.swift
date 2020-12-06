@@ -18,5 +18,5 @@ let g = AnyIterator {
 
 let a = Array(g.prefix(3))
 for (i, l) in a.enumerated() {
-    print("\(i + 1) - \(l)")
+  print("\(i + 1) - \(l)")
 }

@@ -1,62 +1,62 @@
 public struct Trie<T> {
-    public typealias Key = String
+  public typealias Key = String
 
-    private var rootNode = TrieNode<T>(key: nil, value: nil)
+  private var rootNode = TrieNode<T>(key: nil, value: nil)
 
-    public init() {
+  public init() {
+  }
+
+  public func valueForKey(_ key: Key) -> T? {
+    if key.isEmpty {
+      return nil
     }
 
-    public func valueForKey(_ key: Key) -> T? {
-        if key.isEmpty {
-            return nil
-        }
-
-        var currentNode = rootNode
-        for (_, character) in key.enumerated() {
-            if let node = currentNode.childNodeWithKey(character) {
-                currentNode = node
-            } else {
-                return nil
-            }
-        }
-
-        return currentNode.value
+    var currentNode = rootNode
+    for (_, character) in key.enumerated() {
+      if let node = currentNode.childNodeWithKey(character) {
+        currentNode = node
+      } else {
+        return nil
+      }
     }
 
-    public mutating func setValue(_ value: T, key: Key) {
-        if key.isEmpty {
-            return
-        }
+    return currentNode.value
+  }
 
-        var currentNode = rootNode
-        for (_, character) in key.enumerated() {
-            if let node = currentNode.childNodeWithKey(character) {
-                currentNode = node
-            } else {
-                currentNode = currentNode.addChildNodeWithKey(character)
-            }
-        }
-
-        currentNode.value = value
+  public mutating func setValue(_ value: T, key: Key) {
+    if key.isEmpty {
+      return
     }
 
-    public mutating func removeValueForKey(_ key: Key) -> T? {
-        if key.isEmpty {
-            return nil
-        }
-
-        var currentNode = rootNode
-        for (_, character) in key.enumerated() {
-            if let node = currentNode.childNodeWithKey(character) {
-                currentNode = node
-            } else {
-                return nil
-            }
-        }
-
-        let value = currentNode.value
-        currentNode.value = nil
-        currentNode.trim()
-        return value
+    var currentNode = rootNode
+    for (_, character) in key.enumerated() {
+      if let node = currentNode.childNodeWithKey(character) {
+        currentNode = node
+      } else {
+        currentNode = currentNode.addChildNodeWithKey(character)
+      }
     }
+
+    currentNode.value = value
+  }
+
+  public mutating func removeValueForKey(_ key: Key) -> T? {
+    if key.isEmpty {
+      return nil
+    }
+
+    var currentNode = rootNode
+    for (_, character) in key.enumerated() {
+      if let node = currentNode.childNodeWithKey(character) {
+        currentNode = node
+      } else {
+        return nil
+      }
+    }
+
+    let value = currentNode.value
+    currentNode.value = nil
+    currentNode.trim()
+    return value
+  }
 }
