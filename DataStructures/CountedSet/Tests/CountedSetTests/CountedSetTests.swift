@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_CountedSet_CountedSet
+import CountedSet
 
 class CountedSetTests: XCTestCase {
   func testIncrementAndDecrementElements() {
@@ -99,4 +99,9 @@ class CountedSetTests: XCTestCase {
     _ = countedSet.decrementCountForElement(element: thirdElement)
     XCTAssertTrue(countedSet.elements().isEmpty)
   }
+
+  static var allTests = [
+    ("testIncrementAndDecrementElements", testIncrementAndDecrementElements),
+    ("testElements", testElements),
+  ]
 }
