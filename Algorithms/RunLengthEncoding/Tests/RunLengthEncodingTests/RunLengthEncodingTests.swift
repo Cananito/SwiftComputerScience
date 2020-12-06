@@ -1,5 +1,5 @@
 import XCTest
-@testable import RunLengthEncoding
+import RunLengthEncoding
 
 final class RunLengthEncodingTests: XCTestCase {
   func testRLEGenerator() {

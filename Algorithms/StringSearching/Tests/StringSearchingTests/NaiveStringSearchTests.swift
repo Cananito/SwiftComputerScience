@@ -1,5 +1,5 @@
 import XCTest
-@testable import StringSearching
+import StringSearching
 
 final class NaiveStringSearchTests: XCTestCase {
   func testReturnsEmptyArray() {
