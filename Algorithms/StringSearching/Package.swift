@@ -1,5 +1,6 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
+
 import PackageDescription
 
 let package = Package(
@@ -7,18 +8,17 @@ let package = Package(
   products: [
     .library(
       name: "StringSearching",
-      targets: ["StringSearching"]),
+      targets: ["StringSearching"]
+    ),
   ],
   targets: [
     .target(
       name: "StringSearching",
-      dependencies: []),
+      dependencies: []
+    ),
     .testTarget(
       name: "StringSearchingTests",
-      dependencies: ["StringSearching"],
-      resources: [
-        .copy("LoremIpsum-Big.txt"),
-        .copy("LoremIpsum-Small.txt")
-      ]),
+      dependencies: ["StringSearching"]
+    ),
   ]
 )

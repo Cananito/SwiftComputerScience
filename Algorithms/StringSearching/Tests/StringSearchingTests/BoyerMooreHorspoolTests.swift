@@ -58,8 +58,7 @@ final class BoyerMooreHorspoolTests: XCTestCase {
   }
 
   func testSpeedPerformanceSmall() {
-    let loremIpsumPath = Bundle(for: BoyerMooreHorspoolTests.self).path(forResource: "LoremIpsum-Small", ofType: "txt")!
-    let document = (try! NSString(contentsOfFile: loremIpsumPath, encoding: String.Encoding.utf8.rawValue)) as String
+    let document = LoremIpsum.small
     let pattern = BoyerMooreHorspoolPattern(string: "Maecenas")
     self.measure {
       let patternRanges = boyerMooreHorspoolStringSearch(pattern: pattern, document: document)
@@ -68,8 +67,7 @@ final class BoyerMooreHorspoolTests: XCTestCase {
   }
 
   func testSpeedPerformanceBig() {
-    let loremIpsumPath = Bundle(for: BoyerMooreHorspoolTests.self).path(forResource: "LoremIpsum-Big", ofType: "txt")!
-    let document = (try! NSString(contentsOfFile: loremIpsumPath, encoding: String.Encoding.utf8.rawValue)) as String
+    let document = LoremIpsum.big
     let pattern = BoyerMooreHorspoolPattern(string: "inceptos himenaeos.")
     self.measure {
       let patternRanges = boyerMooreHorspoolStringSearch(pattern: pattern, document: document)

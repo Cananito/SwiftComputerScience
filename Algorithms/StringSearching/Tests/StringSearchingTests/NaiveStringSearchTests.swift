@@ -58,8 +58,7 @@ final class NaiveStringSearchTests: XCTestCase {
   }
 
   func testSpeedPerformanceSmall() {
-    let loremIpsumPath = Bundle(for: NaiveStringSearchTests.self).path(forResource: "LoremIpsum-Small", ofType: "txt")!
-    let string = (try! NSString(contentsOfFile: loremIpsumPath, encoding: String.Encoding.utf8.rawValue)) as String
+    let string = LoremIpsum.small
     let pattern = "Maecenas"
     self.measure {
       let patternRanges = naiveStringSearch(pattern: pattern, string: string)
