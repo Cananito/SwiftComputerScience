@@ -6,9 +6,7 @@ public func naiveStringSearch(pattern: String, string: String) -> [Range<Int>] {
   var currentStart = 0
   while let range = rangeOfFirstOccurrance(start: currentStart, pattern: pattern, string: string) {
     results.append(range)
-    currentStart = range.upperBound
-    // TODO: Uncomment when upgrading to Xcode 10.
-    // currentStart = range.endIndex
+    currentStart = range.endIndex
   }
   return results
 }
