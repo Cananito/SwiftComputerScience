@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_Stack_Stack
+import Stack
 
 class StackTests: XCTestCase {
   func testCount() {
@@ -75,4 +75,11 @@ class StackTests: XCTestCase {
     XCTAssert(stack.pop() == 2)
     XCTAssert(stack.count() == 0)
   }
+
+  static var allTests = [
+    ("testCount", testCount),
+    ("testPeek", testPeek),
+    ("testMutation", testMutation),
+    ("testReverse", testReverse),
+  ]
 }

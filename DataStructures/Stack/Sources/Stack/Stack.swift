@@ -1,4 +1,4 @@
-import DataStructures_ArrayDeque_ArrayDeque
+import ArrayDeque
 
 public struct Stack<T> {
   private var storage: ArrayDeque<T>
