@@ -1,4 +1,4 @@
-import DataStructures_PriorityQueue_PriorityQueue
+import PriorityQueue
 
 public struct Heap<T: Comparable>: PriorityQueue {
   public typealias Element = T

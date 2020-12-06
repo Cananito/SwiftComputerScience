@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_Heap_Heap
+import Heap
 
 class HeapTests: XCTestCase {
   func testHeap() {
@@ -79,4 +79,8 @@ class HeapTests: XCTestCase {
     XCTAssertEqual(heap.count(), 0)
     XCTAssertTrue(heap.isEmpty())
   }
+
+  static var allTests = [
+    ("testHeap", testHeap),
+  ]
 }
