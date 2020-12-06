@@ -83,7 +83,7 @@ public func boyerMooreStringSearch(pattern: BoyerMoorePattern, document: String)
         if match == true {
             let start = document.distance(from: document.startIndex, to: currentDocumentIndex)
             let end = document.distance(from: document.startIndex, to: document.index(currentDocumentIndex, offsetBy: patternCharacterCount))
-            let range = Range<Int>(start..<end)
+            let range = start..<end
             ranges.append(range)
         }
         
