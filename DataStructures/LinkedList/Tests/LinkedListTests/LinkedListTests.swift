@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_LinkedList_LinkedList
+import LinkedList
 
 class LinkedListTests: XCTestCase {
   func testEmptyLinkedListDescription() {
@@ -105,4 +105,14 @@ class LinkedListTests: XCTestCase {
     XCTAssert(linkedList.detachLastValue() == 3, "Fourth detached value should be 3")
     XCTAssert(linkedList.detachLastValue() == nil, "Fifth detached value should be nil")
   }
+
+  static var allTests = [
+    ("testEmptyLinkedListDescription", testEmptyLinkedListDescription),
+    ("testPrependingValues", testPrependingValues),
+    ("testAppendingValues", testAppendingValues),
+    ("testDetachingFirstValues", testDetachingFirstValues),
+    ("testDetachingLastValues", testDetachingLastValues),
+    ("testDeleteDuplicatesWithConstantMemory", testDeleteDuplicatesWithConstantMemory),
+    ("testDeleteDuplicatesWithLinearTime", testDeleteDuplicatesWithLinearTime),
+  ]
 }
