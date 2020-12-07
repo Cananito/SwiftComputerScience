@@ -1,5 +1,5 @@
 import XCTest
-import Problems_StringReverse_StringReverse
+import StringReverse
 
 class StringReverseTests: XCTestCase {
   func testReversedViaStackIteration() {
@@ -17,4 +17,9 @@ class StringReverseTests: XCTestCase {
     XCTAssertEqual("Rogelio".reversedViaArrayTwoSideBuildup(), "oilegoR")
   }
 
+  static var allTests = [
+    ("testReversedViaStackIteration", testReversedViaStackIteration),
+    ("testReversedViaArrayIteration", testReversedViaArrayIteration),
+    ("testReversedViaArrayTwoSideBuildup", testReversedViaArrayTwoSideBuildup),
+  ]
 }

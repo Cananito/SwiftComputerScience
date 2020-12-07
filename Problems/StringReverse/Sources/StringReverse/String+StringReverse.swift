@@ -1,13 +1,13 @@
-import DataStructures_Stack_Stack
+import Stack
 
 public extension String {
-  public func reversedViaStackIteration() -> String {
-    if self.characters.count == 0 {
+  func reversedViaStackIteration() -> String {
+    if self.count == 0 {
       return self
     }
 
     var stack = Stack<Character>()
-    for character in self.characters {
+    for character in self {
       stack.push(character)
     }
     var result = [Character]()
@@ -17,25 +17,25 @@ public extension String {
     return String(result)
   }
 
-  public func reversedViaArrayIteration() -> String {
-    if self.characters.count == 0 {
+  func reversedViaArrayIteration() -> String {
+    if self.count == 0 {
       return self
     }
 
     var result = [Character]()
-    var characters = self.characters
+    var characters = self
     while characters.last != nil {
       result.append(characters.removeLast())
     }
     return String(result)
   }
 
-  public func reversedViaArrayTwoSideBuildup() -> String {
-    if self.characters.count == 0 {
+  func reversedViaArrayTwoSideBuildup() -> String {
+    if self.count == 0 {
       return self
     }
 
-    var result = Array(self.characters)
+    var result = Array(self)
     var leftIndex = 0
     var rightIndex = result.count - 1
 
