@@ -1,5 +1,5 @@
 import XCTest
-import DataStructures_Trie_Trie
+import Trie
 
 class TrieTests: XCTestCase {
   func testTrie() {
@@ -77,4 +77,8 @@ class TrieTests: XCTestCase {
     XCTAssert(trie.removeValueForKey("G")! == 11)
     XCTAssert(trie.valueForKey("G") == nil)
   }
+
+  static var allTests = [
+    ("testTrie", testTrie),
+  ]
 }
