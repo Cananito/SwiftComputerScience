@@ -70,6 +70,7 @@ fileprivate class ArrayDequeStorage<T> {
 
   fileprivate init(array: [T]) {
     storage = UnsafeMutablePointer<T>.allocate(capacity: array.count)
+    // TODO: This might be incorrect... See if the array as input is ok.
     storage.initialize(from: array, count: array.count)
     count = array.count
     capacity = count
@@ -148,9 +149,12 @@ fileprivate class ArrayDequeStorage<T> {
   }
 
   private func elementAtIndex(_ index: Int) -> T {
+    return (storage + self.adjustedIndex(from: index)).pointee
+  }
+
+  private func adjustedIndex(from index: Int) -> Int {
     let tempIndex = index + startIndex
-    let adjustedIndex = (tempIndex >= capacity) ? tempIndex - capacity : tempIndex
-    return (storage + adjustedIndex).pointee
+    return (tempIndex >= capacity) ? tempIndex - capacity : tempIndex
   }
 
   private func incrementStartIndex() {
@@ -217,12 +221,8 @@ fileprivate class ArrayDequeStorage<T> {
 
   private func adjustStorageToNewCapacity(_ newCapacity: Int) {
     let newStorage = UnsafeMutablePointer<T>.allocate(capacity: newCapacity)
+    newStorage.moveInitialize(from: (storage + self.adjustedIndex(from: 0)), count: newCapacity)
 
-    for index in 0 ..< count {
-      (newStorage + index).initialize(to: elementAtIndex(index))
-    }
-
-    storage.deinitialize(count: capacity)
     storage.deallocate()
     storage = newStorage
     capacity = newCapacity
