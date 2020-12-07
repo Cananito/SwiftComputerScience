@@ -4,12 +4,11 @@ Collection of Swift projects for Computer Science concepts and topics.
 
 ## Usage
 
+TODO: Change this section with instructions on how to build anything, run binaries, test xctests, and debug binaries and xctests.
+
 * Standalone scripts need to be run with `swift <FileName.swift>`.
 * Directories with a `Package.swift` file can be built, run, and/or tested by `cd`ing into the directory and executing `swift build`, `swift run`, and/or `swift test` accordingly.
-* Directories with a `BUILD` file or `.xcodeproj` directory are being migrated to SwiftPM.
-* Directories wit a `BUILD` file require [Bazel](https://bazel.build/), as well as knowledge about its [targets, labels, and BUILD files](https://docs.bazel.build/versions/master/build-ref.html).
-
-**Note**: All `App` and `Tests` targets are macOS-only because of [bazelbuild/rules_swift/issues/51](https://github.com/bazelbuild/rules_swift/issues/51#issuecomment-413661604). If that ever gets fixed, switching to `swift_binary` and `swift_test` will be possible, and thus have Linux support.
+* Directories with a `BUILD` file or `.xcodeproj` directory are being migrated to SwiftPM and likely don't compile.
 
 ## Sources
 
