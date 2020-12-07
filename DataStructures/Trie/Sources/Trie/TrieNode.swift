@@ -35,7 +35,7 @@ public class TrieNode<T> {
     if value != nil || children.count > 0 {
       return
     }
-    if let index = parent?.children.index(where: { return $0 === self }) {
+    if let index = parent?.children.firstIndex(where: { return $0 === self }) {
       parent?.children.remove(at: index)
     }
     parent?.trim()
