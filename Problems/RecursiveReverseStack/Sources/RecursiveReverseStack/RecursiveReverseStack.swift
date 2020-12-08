@@ -1,7 +1,7 @@
-import DataStructures_Stack_Stack
+import Stack
 
 public extension Stack {
-  public static func reverseStack(_ stack: inout Stack<T>) {
+  static func reverseStack(_ stack: inout Stack<T>) {
     if stack.count() < 2 {
       return
     }

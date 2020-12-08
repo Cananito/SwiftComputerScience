@@ -1,6 +1,6 @@
 import XCTest
-import DataStructures_Stack_Stack
-import Problems_RecursiveReverseStack_RecursiveReverseStack
+import Stack
+import RecursiveReverseStack
 
 class RecursiveReverseStackTests: XCTestCase {
   func testRecursiveReverseStack() {
@@ -42,4 +42,10 @@ class RecursiveReverseStackTests: XCTestCase {
       stack.reverse()
     }
   }
+
+  static var allTests = [
+    ("testRecursiveReverseStack", testRecursiveReverseStack),
+    ("testRecursiveReverseStackPerformance", testRecursiveReverseStackPerformance),
+    ("testFlagFlipReverseStackPerformance", testFlagFlipReverseStackPerformance),
+  ]
 }
