@@ -1,5 +1,5 @@
 import XCTest
-import Problems_SetsOfNumbersThatAddUpTo_SetsOfNumbersThatAddUpTo
+import SetsOfNumbersThatAddUpTo
 
 class SetsOfNumbersThatAddUpToTests : XCTestCase {
   func testSetsOfNumbersThatAddUpTo() {
@@ -23,4 +23,9 @@ class SetsOfNumbersThatAddUpToTests : XCTestCase {
     }
     XCTAssertEqual(result, [[6, 10], [2, 4, 10]])
   }
+
+  static var allTests = [
+    ("testSetsOfNumbersThatAddUpTo", testSetsOfNumbersThatAddUpTo),
+    ("testMemoizedSetsOfNumbersThatAddUpTo", testMemoizedSetsOfNumbersThatAddUpTo),
+  ]
 }
