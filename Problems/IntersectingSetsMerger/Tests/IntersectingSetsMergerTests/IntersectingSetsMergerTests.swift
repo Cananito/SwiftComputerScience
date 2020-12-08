@@ -1,5 +1,5 @@
 import XCTest
-import Problems_IntersectingSetsMerger_IntersectingSetsMerger
+import IntersectingSetsMerger
 
 class IntersectingSetsMergerTests: XCTestCase {
   func testMergedIntersectingSets() {
@@ -23,4 +23,8 @@ class IntersectingSetsMergerTests: XCTestCase {
     ]
     XCTAssertEqual(mergedIntersectingSets(sets: input), expected)
   }
+
+  static var allTests = [
+    ("testMergedIntersectingSets", testMergedIntersectingSets),
+  ]
 }
