@@ -1,5 +1,5 @@
 import XCTest
-import Problems_BinarySearch_BinarySearch
+import BinarySearch
 
 class BinarySearchTests: XCTestCase {
   func testBinarySearch() {
@@ -15,4 +15,8 @@ class BinarySearchTests: XCTestCase {
     XCTAssertEqual(array.binarySearch(11), 6)
     XCTAssertEqual(array.binarySearch(30), 7)
   }
+
+  static var allTests = [
+    ("testBinarySearch", testBinarySearch),
+  ]
 }

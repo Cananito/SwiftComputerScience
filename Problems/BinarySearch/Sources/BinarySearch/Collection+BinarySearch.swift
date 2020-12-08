@@ -1,5 +1,5 @@
 public extension Collection where Element: Comparable {
-  public func binarySearch(_ value: Element) -> Self.Index? {
+  func binarySearch(_ value: Element) -> Self.Index? {
     if self.count == 0 {
       return nil
     }
