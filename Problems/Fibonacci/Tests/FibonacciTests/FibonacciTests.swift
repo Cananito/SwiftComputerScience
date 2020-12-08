@@ -1,4 +1,5 @@
-import Problems_Fibonacci_Fibonacci
+import XCTest
+import Fibonacci
 
 // 92 is the max position that doesn’t crash on 64-bit.
 let meassurePosition = 92
@@ -64,7 +65,7 @@ class FibonacciTests: XCTestCase {
     }
   }
 
-  func testPopulatedMemoizedRecursiveFibonacciPerformance_With() {
+  func testPopulatedMemoizedRecursiveFibonacciPerformance() {
     var memoization = [Int : Int]()
     let _ = memoizedRecursiveFibonacci(position: meassurePosition, memoization: &memoization)
     // Time: 0.000 sec (88% STDEV)
@@ -92,4 +93,14 @@ class FibonacciTests: XCTestCase {
       let _ = memoizedRecursiveFibonacci(position: meassurePosition, memoization: &fifthMemoization)
     }
   }
+
+  static var allTests = [
+    ("testIterativeFibonacci", testIterativeFibonacci),
+    ("testRecursiveFibonacci", testRecursiveFibonacci),
+    ("testMemoizedRecursiveFibonacci", testMemoizedRecursiveFibonacci),
+    ("testIterativeFibonacciPerformance", testIterativeFibonacciPerformance),
+    ("testRecursiveFibonacciPerformance", testRecursiveFibonacciPerformance),
+    ("testPopulatedMemoizedRecursiveFibonacciPerformance", testPopulatedMemoizedRecursiveFibonacciPerformance),
+    ("testEmptyMemoizedRecursiveFibonacciPerformance", testEmptyMemoizedRecursiveFibonacciPerformance),
+  ]
 }
