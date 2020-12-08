@@ -1,5 +1,5 @@
 import XCTest
-import Problems_StableMarriageProblem_StableMarriageProblem
+import StableMarriageProblem
 
 class StableMarriageProblemTests: XCTestCase {
   func testStableMarriageProblem() {
@@ -34,4 +34,8 @@ class StableMarriageProblemTests: XCTestCase {
     let result = StableMarriageProblem<String>.solve(proposersPreferences, recipientsPreferences)
     XCTAssertEqual(result!, expected)
   }
+
+  static var allTests = [
+    ("testStableMarriageProblem", testStableMarriageProblem),
+  ]
 }
