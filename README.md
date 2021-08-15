@@ -9,6 +9,28 @@ TODO: Change this section with instructions on how to build anything, run binari
 * Standalone scripts need to be run with `swift <FileName.swift>`.
 * Directories with a `Package.swift` file can be built, run, and/or tested by `cd`ing into the directory and executing `swift build`, `swift run`, and/or `swift test` accordingly.
 * Directories with a `BUILD` file or `.xcodeproj` directory are being migrated to SwiftPM and likely don't compile.
+* To debug a test:
+
+```
+$ lldb .build/debug/<executable name>
+
+(lldb) r
+```
+
+```
+# Get xctest command to use in the next step.
+$ swift test -v
+
+$ lldb /Applications/<Xcode>/Contents/Developer/usr/bin/xctest <path to .xctest>
+
+# Launches xctest, not the test itself.
+(lldb) process launch
+
+<breakpoint set-up>
+
+# Launches the test.
+(lldb) process launch
+```
 
 ## Sources
 
